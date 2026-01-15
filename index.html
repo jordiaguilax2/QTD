@@ -3,54 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itinerari Mallorca | Març 2026</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Accés Protegit | Itinerari Mallorca</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .login-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        p.subtitle {
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #2980b9;
+            outline: none;
+        }
+        button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #1c5a7a;
+        }
+        .alert {
+            color: #e74c3c;
+            margin-top: 1rem;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ffeaea;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Capçalera -->
-        <header class="header">
-            <h1><i class="fas fa-suitcase-rolling"></i> Mallorca 2026</h1>
-            <p class="subtitle">4-7 de març | Viatge en parella</p>
-            <p class="destino"><i class="fas fa-map-marker-alt"></i> Palma de Mallorca & Serra de Tramuntana</p>
-        </header>
-
-        <!-- Pestanyes de dies -->
-        <div class="tabs-container">
-            <nav class="tabs" id="tabsList">
-                <!-- Les pestanyes es generaran amb JavaScript des de viatge.json -->
-            </nav>
-        </div>
-
-        <!-- Contingut del dia seleccionat -->
-        <main class="main-content">
-            <section class="day-header" id="dayHeader">
-                <!-- La capçalera del dia es carregarà aquí -->
-            </section>
-
-            <div class="day-content" id="dayContent">
-                <!-- El contingut del dia es carregarà aquí -->
-            </div>
-
-            <!-- Panell d'informació general (Checklist) -->
-            <section class="info-panel" id="infoPanel">
-                <h3><i class="fas fa-tasks"></i> Checklist i Consells Generals</h3>
-                <ul id="checklist">
-                    <!-- La checklist es carregarà des de viatge.json -->
-                </ul>
-            </section>
-        </main>
-
-        <!-- Peu de pàgina -->
-        <footer class="footer">
-            <p>Itinerari creat amb <i class="fas fa-heart"></i> per unes vacances perfectes</p>
-            <p class="tip"><i class="fas fa-lightbulb"></i> Recordeu: Aquest pla és flexible. L'important és gaudir!</p>
-        </footer>
+    <div class="login-box">
+        <h1>🔒 Itinerari Privat</h1>
+        <p class="subtitle">Introdueix la contrasenya per accedir al planificador del viatge a Mallorca</p>
+        
+        <input type="password" id="passwordInput" placeholder="Contrasenya" autocomplete="off">
+        <button id="loginButton">Accedir</button>
+        
+        <div class="alert" id="alertMessage">Contrasenya incorrecta. Torna a intentar-ho.</div>
     </div>
 
-    <!-- Scripts -->
-    <script src="viatge.json"></script> <!-- Carreguem primer les dades -->
-    <script src="app.js"></script> <!-- Després la lògica que les utilitza -->
+    <!-- Inclou la biblioteca SHA1 -->
+    <script src="./sha1.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('passwordInput');
+            const loginButton = document.getElementById('loginButton');
+            const alertMessage = document.getElementById('alertMessage');
+            
+            // Permetre prémer "Enter" per fer login
+            passwordInput.addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    loginButton.click();
+                }
+            });
+            
+            loginButton.addEventListener('click', function() {
+                const password = passwordInput.value;
+                
+                if (!password) {
+                    alertMessage.textContent = "Si us plau, introdueix una contrasenya.";
+                    alertMessage.style.display = 'block';
+                    return;
+                }
+                
+                // 1. CALCULA el HASH SHA-1 de la contrasenya introduïda
+                const hash = sha1(password); // Funció de sha1.js
+                
+                // 2. PROVA si existeix la carpeta amb aquest hash
+                // LA URL SERÀ: /EL_TEU_HASH_REAL/index.html
+                const testUrl = './' + hash + '/index.html';
+                
+                // Fem una petició oculta per comprovar si la carpeta existeix
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', testUrl, true);
+                
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        // ¡ÈXIT! La carpeta existeix.
+                        // Afegim un paràmetre que caduca en 1 SEGON
+                        const expiryTime = new Date().getTime() + 1000; // Ara + 1 segon
+                        // Redirigim a la carpeta protegida
+                        window.location.href = testUrl + '?nva=' + expiryTime;
+                    } else {
+                        // ERROR: Contrasenya incorrecta
+                        showError();
+                    }
+                };
+                
+                xhr.onerror = function() {
+                    // Error de xarxa o carpeta no trobada
+                    showError();
+                };
+                
+                xhr.send();
+                
+                function showError() {
+                    alertMessage.style.display = 'block';
+                    passwordInput.value = '';
+                    passwordInput.placeholder = "Contrasenya incorrecta";
+                    passwordInput.focus();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
