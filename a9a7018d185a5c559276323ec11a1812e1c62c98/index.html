@@ -1,1 +1,86 @@
-aa
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerari Mallorca | Març 2026</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- VERIFICACIÓ D'ACCÉS - NO ES POT COMPARTIR L'ENLLAÇ -->
+<script>
+    // Aquest codi comprova si l'enllaç és vàlid o ha caducat
+    (function() {
+        // 1. Obtenir el paràmetre 'nva' (not-valid-after) de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nvaParam = urlParams.get('nva');
+        
+        // 2. Si NO hi ha paràmetre, redirigeix al login
+        if (!nvaParam) {
+            console.log('Accés directe no permès. Redirigint...');
+            window.location.href = '/'; // Tornem a l'arrel (login)
+            return;
+        }
+        
+        // 3. Comprova si el paràmetre ha CADUCAT (és una data en mil·lisegons)
+        const now = new Date().getTime();
+        const expiryTime = parseInt(nvaParam, 10);
+        
+        if (isNaN(expiryTime) || now > expiryTime) {
+            console.log('Enllaç caducat. Redirigint...');
+            window.location.href = '/'; // Tornem a l'arrel (login)
+            return;
+        }
+        
+        // 4. Si tot és correcte, l'usuari pot veure la pàgina
+        console.log('Accés autoritzat. Benvingut/da!');
+    })();
+</script>
+  
+    <div class="container">
+        <!-- Capçalera -->
+        <header class="header">
+            <h1><i class="fas fa-suitcase-rolling"></i> Mallorca 2026</h1>
+            <p class="subtitle">4-7 de març | Viatge en parella</p>
+            <p class="destino"><i class="fas fa-map-marker-alt"></i> Palma de Mallorca & Serra de Tramuntana</p>
+        </header>
+
+        <!-- Pestanyes de dies -->
+        <div class="tabs-container">
+            <nav class="tabs" id="tabsList">
+                <!-- Les pestanyes es generaran amb JavaScript des de viatge.json -->
+            </nav>
+        </div>
+
+        <!-- Contingut del dia seleccionat -->
+        <main class="main-content">
+            <section class="day-header" id="dayHeader">
+                <!-- La capçalera del dia es carregarà aquí -->
+            </section>
+
+            <div class="day-content" id="dayContent">
+                <!-- El contingut del dia es carregarà aquí -->
+            </div>
+
+            <!-- Panell d'informació general (Checklist) -->
+            <section class="info-panel" id="infoPanel">
+                <h3><i class="fas fa-tasks"></i> Checklist i Consells Generals</h3>
+                <ul id="checklist">
+                    <!-- La checklist es carregarà des de viatge.json -->
+                </ul>
+            </section>
+        </main>
+
+        <!-- Peu de pàgina -->
+        <footer class="footer">
+            <p>Itinerari creat amb <i class="fas fa-heart"></i> per unes vacances perfectes</p>
+            <p class="tip"><i class="fas fa-lightbulb"></i> Recordeu: Aquest pla és flexible. L'important és gaudir!</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./viatge.json"></script> <!-- Carreguem primer les dades -->
+    <script src="./app.js"></script> <!-- Després la lògica que les utilitza -->
+</body>
+</html>
