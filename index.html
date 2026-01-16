@@ -86,65 +86,40 @@
     <script src="./sha1.js"></script>
     
 <script>
-// Esperem a que la pàgina i la biblioteca SHA-1 estiguin carregades
-function initLogin() {
+document.addEventListener('DOMContentLoaded', function() {
     const passInput = document.getElementById('pass');
     const loginBtn = document.getElementById('btn');
     const errorMsg = document.getElementById('error');
-    
+
     function tryLogin() {
-        // Verifiquem que la funció sha1 existeixi
-        if (typeof sha1 === 'undefined') {
-            console.error('Error: La funció sha1 no està disponible.');
-            errorMsg.textContent = 'Error de configuració. Actualitza la pàgina.';
-            errorMsg.style.display = 'block';
-            return;
-        }
-        
         const password = passInput.value;
-        console.log('Contrasenya introduïda:', password);
-        
-        // 1. Calcula el HASH
+        // 1. Calcula el HASH amb la funció local 'sha1()'
         const hash = sha1(password);
-        console.log('Hash calculat:', hash);
-        
         // 2. Prova si la carpeta existeix
         const testUrl = './' + hash + '/index.html';
-        console.log('Provant URL:', testUrl);
-        
-        // Fem la petició amb fetch (més modern)
+
         fetch(testUrl)
             .then(response => {
-                console.log('Resposta del servidor:', response.status);
                 if (response.ok) {
-                    // ¡ÈXIT! Afegim el paràmetre que caduca en 1 SEGON
+                    // ¡ÈXIT! Redirigeix amb el paràmetre que caduca en 1 segon
                     const expiryTime = new Date().getTime() + 1000;
                     window.location.href = testUrl + '?nva=' + expiryTime;
                 } else {
-                    throw new Error('Carpeta no trobada (Password incorrecte)');
+                    throw new Error('Contrasenya incorrecta');
                 }
             })
             .catch(error => {
-                console.error('Error en l\'accés:', error);
                 errorMsg.style.display = 'block';
                 passInput.value = '';
                 passInput.focus();
             });
     }
-    
-    // Assignem els events
+
+    // Assigna els events
     loginBtn.addEventListener('click', tryLogin);
     passInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') tryLogin();
     });
-    
-    console.log('Formulari de login inicialitzat. Esperant entrada...');
-}
-
-// Iniciem quan la pàgina estigui carregada
-document.addEventListener('DOMContentLoaded', function() {
-    // Donem un temps per a que la biblioteca SHA-1 es carregui
-    setTimeout(initLogin, 800); // 800ms de marge
 });
 </script>
 </body>
