@@ -82,45 +82,128 @@
         <div class="alert" id="alertMessage">Contrasenya incorrecta. Torna a intentar-ho.</div>
     </div>
 
-    <!-- Inclou la biblioteca SHA1 -->
-    <script src="./sha1.js"></script>
-    
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const passInput = document.getElementById('pass');
-    const loginBtn = document.getElementById('btn');
-    const errorMsg = document.getElementById('error');
-
-    function tryLogin() {
-        const password = passInput.value;
-        // 1. Calcula el HASH amb la funció local 'sha1()'
-        const hash = sha1(password);
-        // 2. Prova si la carpeta existeix
-        const testUrl = './' + hash + '/index.html';
-
-        fetch(testUrl)
-            .then(response => {
-                if (response.ok) {
-                    // ¡ÈXIT! Redirigeix amb el paràmetre que caduca en 1 segon
-                    const expiryTime = new Date().getTime() + 1000;
-                    window.location.href = testUrl + '?nva=' + expiryTime;
-                } else {
-                    throw new Error('Contrasenya incorrecta');
+    <!-- A PARTIR D'AQUÍ VA TOT EL JAVASCRIPT, INCLOENT SHA-1 -->
+    <script>
+        // 🛡️ IMPLEMENTACIÓ DE SHA-1 - NO DEPÈN DE RES MÉS
+        function sha1(msg) {
+            function rotate_left(n, s) {
+                return (n << s) | (n >>> (32 - s));
+            }
+            function cvt_hex(val) {
+                let str = '';
+                for (let i = 7; i >= 0; i--) {
+                    str += ((val >>> (i * 4)) & 0x0f).toString(16);
                 }
-            })
-            .catch(error => {
-                errorMsg.style.display = 'block';
-                passInput.value = '';
-                passInput.focus();
-            });
-    }
+                return str;
+            }
+            let blockstart, i, j, W = [], H0 = 0x67452301, H1 = 0xEFCDAB89,
+                H2 = 0x98BADCFE, H3 = 0x10325476, H4 = 0xC3D2E1F0,
+                A, B, C, D, E, temp, msg_len = msg.length, word_array = [];
+            for (i = 0; i < msg_len - 3; i += 4) {
+                j = msg.charCodeAt(i) << 24 | msg.charCodeAt(i + 1) << 16 |
+                    msg.charCodeAt(i + 2) << 8 | msg.charCodeAt(i + 3);
+                word_array.push(j);
+            }
+            switch (msg_len % 4) {
+                case 0: i = 0x080000000; break;
+                case 1: i = msg.charCodeAt(msg_len - 1) << 24 | 0x0800000; break;
+                case 2: i = msg.charCodeAt(msg_len - 2) << 24 | msg.charCodeAt(msg_len - 1) << 16 | 0x08000; break;
+                case 3: i = msg.charCodeAt(msg_len - 3) << 24 | msg.charCodeAt(msg_len - 2) << 16 | msg.charCodeAt(msg_len - 1) << 8 | 0x80; break;
+            }
+            word_array.push(i);
+            while ((word_array.length % 16) != 14) word_array.push(0);
+            word_array.push(msg_len >>> 29);
+            word_array.push((msg_len << 3) & 0x0ffffffff);
+            for (blockstart = 0; blockstart < word_array.length; blockstart += 16) {
+                for (i = 0; i < 16; i++) W[i] = word_array[blockstart + i];
+                for (i = 16; i <= 79; i++) W[i] = rotate_left(W[i - 3] ^ W[i - 8] ^ W[i - 14] ^ W[i - 16], 1);
+                A = H0; B = H1; C = H2; D = H3; E = H4;
+                for (i = 0; i <= 19; i++) {
+                    temp = (rotate_left(A, 5) + ((B & C) | (~B & D)) + E + W[i] + 0x5A827999) & 0x0ffffffff;
+                    E = D; D = C; C = rotate_left(B, 30); B = A; A = temp;
+                }
+                for (i = 20; i <= 39; i++) {
+                    temp = (rotate_left(A, 5) + (B ^ C ^ D) + E + W[i] + 0x6ED9EBA1) & 0x0ffffffff;
+                    E = D; D = C; C = rotate_left(B, 30); B = A; A = temp;
+                }
+                for (i = 40; i <= 59; i++) {
+                    temp = (rotate_left(A, 5) + ((B & C) | (B & D) | (C & D)) + E + W[i] + 0x8F1BBCDC) & 0x0ffffffff;
+                    E = D; D = C; C = rotate_left(B, 30); B = A; A = temp;
+                }
+                for (i = 60; i <= 79; i++) {
+                    temp = (rotate_left(A, 5) + (B ^ C ^ D) + E + W[i] + 0xCA62C1D6) & 0x0ffffffff;
+                    E = D; D = C; C = rotate_left(B, 30); B = A; A = temp;
+                }
+                H0 = (H0 + A) & 0x0ffffffff;
+                H1 = (H1 + B) & 0x0ffffffff;
+                H2 = (H2 + C) & 0x0ffffffff;
+                H3 = (H3 + D) & 0x0ffffffff;
+                H4 = (H4 + E) & 0x0ffffffff;
+            }
+            return cvt_hex(H0) + cvt_hex(H1) + cvt_hex(H2) + cvt_hex(H3) + cvt_hex(H4);
+        }
+        // 🏁 FI DE LA IMPLEMENTACIÓ SHA-1
+        // ✅ ARA LA FUNCIÓ sha1(msg) ESTÀ DISPONIBLE GLOBALMENT
 
-    // Assigna els events
-    loginBtn.addEventListener('click', tryLogin);
-    passInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') tryLogin();
-    });
-});
-</script>
+        // LÒGICA DEL FORMULARI DE LOGIN
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('passwordInput');
+            const loginButton = document.getElementById('loginButton');
+            const alertMessage = document.getElementById('alertMessage');
+
+            // Funció per intentar fer login
+            function attemptLogin() {
+                const password = passwordInput.value;
+                
+                if (!password) {
+                    alertMessage.textContent = "Si us plau, introdueix una contrasenya.";
+                    alertMessage.style.display = 'block';
+                    return;
+                }
+                
+                // 1. CALCULA el HASH SHA-1 de la contrasenya
+                const hash = sha1(password);
+                console.log('Hash calculat:', hash); // Per depurar
+                
+                // 2. CONSTRUEIX la URL de la carpeta
+                const protectedPageUrl = './' + hash + '/index.html';
+                
+                // 3. PROVA si la carpeta existeix (petició oculta)
+                fetch(protectedPageUrl)
+                    .then(response => {
+                        console.log('Resposta del servidor:', response.status); // Per depurar
+                        if (response.ok) {
+                            // ¡ÈXIT! Redirigeix amb el paràmetre que caduca en 1 SEGON
+                            const expiryTime = new Date().getTime() + 1000;
+                            window.location.href = protectedPageUrl + '?nva=' + expiryTime;
+                        } else {
+                            // Contrasenya incorrecta (carpeta no trobada)
+                            showError();
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error de xarxa:', error);
+                        showError();
+                    });
+            }
+
+            function showError() {
+                alertMessage.style.display = 'block';
+                passwordInput.value = '';
+                passwordInput.placeholder = "Contrasenya incorrecta";
+                passwordInput.focus();
+            }
+
+            // Assigna els events
+            loginButton.addEventListener('click', attemptLogin);
+            passwordInput.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    attemptLogin();
+                }
+            });
+            
+            console.log('Pàgina de login carregada i preparada.');
+        });
+    </script>
 </body>
 </html>
