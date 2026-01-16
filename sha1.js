@@ -1,4 +1,21 @@
-// sha1.js - Biblioteca per calcular SHA-1 (adaptada per a navegadors)
-(function(){function f(b,a){var c=(b&65535)+(a&65535);return(b>>16)+(a>>16)+(c>>16)<<16|c&65535}function g(b,a,c,d,e){return f(e<<5|e>>>27,f(f(a,c),f(d,b)))}function h(b,a,c,d,e,h,k){return g(a&c|~a&d,b,a,e,h,k)}function m(b,a,c,d,e,h,k){return g(a&d|c&~d,b,a,e,h,k)}function n(b,a,c,d,e,h,k){return g(a^c^d,b,a,e,h,k)}function p(b,a,c,d,e,h,k){return g(c^(a|~d),b,a,e,h,k)}function q(b,a){var c=[],d;a=a||0;for(var e=0;e<b.length;e++)c[e>>>2]|=(b.charCodeAt(e)&255)<<
-(3-e%4)*8;c[b.length>>>2]|=128<<(3-(b.length%4))*8;c[((b.length+64>>>9)<<4)+15]=b.length*8;b=1732584193;a=4023233417;var h=2562383102,k=271733878,r=3285377520;for(e=0;e<c.length;e+=16){var t=b,s=a,u=h,v=k,w=r;a=p(a=p(a=p(a=p(a=n(a=n(a=n(a=n(a=m(a=m(a=m(a=m(a=h(a=h(a=h(a=h(a,a,h,k,r,c[e],7,3614090360),h,k,c[e+1],12,3905402710),h,k,c[e+2],17,606105819),h,k,c[e+3],22,3250441966),a,h,k,c[e+4],7,4118548399),a,h,k,c[e+5],12,1200080426),a,h,k,c[e+6],17,2821735955),a,h,k,c[e+7],22,4249261313),a,h,k,c[e+8],7,1770035416),a,h,k,c[e+9],12,2336552879),a,h,k,c[e+10],17,4294925233),a,h,k,c[e+11],22,2304563134),a,h,k,c[e+12],7,1804603682),a,h,k,c[e+13],12,4254626195),a,h,k,c[e+14],17,2792965006),a,h,k,c[e+15],22,1236535329);r=p(r=p(r=p(r=p(r=n(r=n(r=n(r=n(r=m(r=m(r=m(r=m(r=h(r=h(r=h(r=h(r,r,k,a,h,c[e+1],5,4129170786),k,a,c[e+6],9,3225465664),k,a,c[e+11],14,643717713),k,a,c[e],20,3921069994),r,k,a,c[e+5],5,3593408605),r,k,a,c[e+10],9,38016083),r,k,a,c[e+15],14,3634488961),r,k,a,c[e+4],20,3889429448),r,k,a,c[e+9],5,568446438),r,k,a,c[e+14],9,3275163606),r,k,a,c[e+3],14,4107603335),r,k,a,c[e+8],20,1163531501),r,k,a,c[e+13],5,2850285829),r,k,a,c[e+2],9,4243563512),r,k,a,c[e+7],14,1735328473),r,k,a,c[e+12],20,2368359562);k=p(k=p(k=p(k=p(k=n(k=n(k=n(k=n(k=m(k=m(k=m(k=m(k=h(k=h(k=h(k=h(k,k,r,a,h,c[e+5],4,4294588738),k,r,c[e+8],11,2272392833),k,r,c[e+11],16,1839030562),k,r,c[e+14],23,4259657740),k,k,r,c[e+1],4,2763975236),k,k,r,c[e+4],11,1272893353),k,k,r,c[e+7],16,4139469664),k,k,r,c[e+10],23,3200236656),k,k,r,c[e+13],4,681279174),k,k,r,c[e],11,3936430074),k,k,r,c[e+3],16,3572445317),k,k,r,c[e+6],23,76029189),k,k,r,c[e+9],4,3654602809),k,k,r,c[e+12],11,3873151461),k,k,r,c[e+15],16,530742520),k,k,r,c[e+2],23,3299628645);a=p(a=p(a=p(a=p(a=n(a=n(a=n(a=n(a=m(a=m(a=m(a=m(a=h(a=h(a=h(a=h(a,a,k,r,h,c[e],6,4096336452),a,k,c[e+7],10,1126891415),a,k,c[e+14],15,2878612391),a,k,c[e+5],21,4237533241),a,a,k,c[e+12],6,1700485571),a,a,k,c[e+3],10,2399980690),a,a,k,c[e+10],15,4293915773),a,a,k,c[e+1],21,2240044497),a,a,k,c[e+8],6,1873313359),a,a,k,c[e+15],10,4264355552),a,a,k,c[e+6],15,2734768916),a,a,k,c[e+13],21,1309151649),a,a,k,c[e+4],6,4149444226),a,a,k,c[e+11],10,3174756917),a,a,k,c[e+2],15,718787259),a,a,k,c[e+9],21,3951481745);h=f(h,a);k=f(k,r);a=f(a,t);h=f(h,s);k=f(k,u);a=f(a,v);h=f(h,w)}return[h>>>24&255,h>>>16&255,h>>>8&255,h&255,k>>>24&255,k>>>16&255,k>>>8&255,k&255,a>>>24&255,a>>>16&255,a>>>8&255,a&255]}function r(b){for(var a="",c=0;c<4*b.length;c++)a+="0123456789abcdef".charAt(b[c>>2]>>(3-c%4)*8+4&15)+"0123456789abcdef".charAt(b[c>>2]>>(3-c%4)*8&15);return a}window.sha1=function(b){return r(q(b))};
+// sha1.js - Carrega una biblioteca SHA-1 externa i fiable
+(function() {
+  var script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js';
+  script.integrity = 'sha512-E3YpFkKq6GwJV4R5EHAgN6p6nQvRzCq6Q6k2q+w5FvIhqpZbZ8nYhPxR8tZcLeLlqejNFqS8QraBpZHR5t5uVw==';
+  script.crossOrigin = 'anonymous';
+  
+  script.onload = function() {
+    console.log('[SHA1] Biblioteca carregada correctament.');
+    // Assegura't que la funció global es digui 'sha1' (alguns CDN poden usar noms diferents)
+    if (typeof window.sha1 === 'undefined' && typeof window.jssha1 !== 'undefined') {
+      window.sha1 = window.jssha1;
+    }
+  };
+  
+  script.onerror = function() {
+    console.error('[SHA1] Error carregant la biblioteca.');
+  };
+  
+  document.head.appendChild(script);
 })();
