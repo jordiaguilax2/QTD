@@ -1,4 +1,4 @@
-// app.js - Lògica principal de l'aplicació d'itinerari
+// app.js - Lògica principal de l'aplicació d'itinerari (VERSIÓ ACTUALITZADA)
 
 // Variable global per emmagatzemar les dades del viatge
 let dadesViatge = null;
@@ -81,7 +81,7 @@ function generarPestanyes(dies) {
     });
 }
 
-// Mostrar el contingut d'un dia específic
+// Mostrar el contingut d'un dia específic (VERSIÓ MILLORADA)
 function mostrarDia(dia) {
     // Actualitzar la capçalera del dia
     const dayHeader = document.getElementById('dayHeader');
@@ -115,10 +115,35 @@ function mostrarDia(dia) {
         dayContent.innerHTML = '<p class="no-activities">No hi ha activitats programades per a aquest dia.</p>';
     }
     
-    // Afegir enllaços especials si existeixen (rutes, restaurants)
+    // NOVA SECCIÓ: Informació de contacte i permisos especials
+    if (dia.permis && dia.permis.obligatori) {
+        const permisSection = document.createElement('div');
+        permisSection.className = 'permis-section';
+        permisSection.style.cssText = `
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        `;
+        
+        permisSection.innerHTML = `
+            <h4 style="color: #856404; margin-bottom: 0.8rem;">
+                <i class="fas fa-exclamation-triangle"></i> Permís Obligatori
+            </h4>
+            <p style="margin-bottom: 0.5rem;"><strong>Contacte:</strong> ${dia.permis.contacte}</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Email:</strong> ${dia.permis.email}</p>
+            <p style="margin-bottom: 0;"><strong>Solicitar amb:</strong> ${dia.permis.antelacio} d'antelació</p>
+        `;
+        
+        dayContent.appendChild(permisSection);
+    }
+    
+    // SECCIÓ MILLORADA: Enllaços especials amb contactes
     const specialLinks = document.createElement('div');
     specialLinks.className = 'special-links';
     
+    // Enllaç a la ruta de senderisme
     if (dia.enllacRuta) {
         const rutaLink = document.createElement('a');
         rutaLink.href = dia.enllacRuta;
@@ -128,18 +153,47 @@ function mostrarDia(dia) {
         specialLinks.appendChild(rutaLink);
     }
     
+    // NOVA: Llista millorada de restaurants amb telèfons i mapes
     if (dia.restaurantsSopar && dia.restaurantsSopar.length > 0) {
-        const restaurantsLink = document.createElement('div');
-        restaurantsLink.className = 'restaurantes-info';
-        restaurantsLink.innerHTML = `
-            <p style="margin-top: 1rem; font-weight: bold; color: #2c3e50;">
-                <i class="fas fa-utensils"></i> Restaurants recomanats:
-            </p>
-            <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
-                ${dia.restaurantsSopar.map(r => `<li><strong>${r.nom}</strong> - ${r.especialitat} (${r.ubicacio})</li>`).join('')}
-            </ul>
+        const restaurantsSection = document.createElement('div');
+        restaurantsSection.style.cssText = `
+            margin-top: 1.5rem;
+            padding: 1.2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
         `;
-        specialLinks.appendChild(restaurantsLink);
+        
+        let restaurantsHTML = `
+            <h4 style="color: #2c3e50; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-utensils"></i> Restaurants per al sopar
+            </h4>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+        `;
+        
+        dia.restaurantsSopar.forEach(restaurant => {
+            const telefonHTML = restaurant.telefon ? 
+                `<p style="margin: 0.3rem 0;"><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${restaurant.telefon}</p>` : '';
+            
+            const mapaHTML = restaurant.enllacMapa ? 
+                `<a href="${restaurant.enllacMapa}" target="_blank" style="display: inline-flex; align-items: center; gap: 5px; color: #1565c0; text-decoration: none; margin-top: 0.5rem;">
+                    <i class="fas fa-map-marked-alt"></i> Veure al mapa
+                </a>` : '';
+            
+            restaurantsHTML += `
+                <div style="padding: 0.8rem; background: white; border-radius: 6px; border-left: 3px solid #3498db;">
+                    <h5 style="color: #2c3e50; margin-bottom: 0.5rem;">${restaurant.nom}</h5>
+                    <p style="margin: 0.3rem 0; color: #555;"><strong>Especialitat:</strong> ${restaurant.especialitat}</p>
+                    <p style="margin: 0.3rem 0; color: #555;"><strong>Ubicació:</strong> ${restaurant.ubicacio}</p>
+                    ${telefonHTML}
+                    ${mapaHTML}
+                </div>
+            `;
+        });
+        
+        restaurantsHTML += '</div>';
+        restaurantsSection.innerHTML = restaurantsHTML;
+        specialLinks.appendChild(restaurantsSection);
     }
     
     if (specialLinks.children.length > 0) {
