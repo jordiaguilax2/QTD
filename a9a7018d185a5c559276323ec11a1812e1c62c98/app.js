@@ -1,7 +1,8 @@
-// app.js - Lògica principal de l'aplicació d'itinerari (VERSIÓ ACTUALITZADA)
+// app.js - Lògica principal de l'aplicació d'itinerari (VERSIÓ COMPLETA)
 
 // Variable global per emmagatzemar les dades del viatge
 let dadesViatge = null;
+let viatgeActual = null;
 
 // Carregar les dades del viatge des de l'arxiu JSON
 async function carregarDadesViatge() {
@@ -11,6 +12,7 @@ async function carregarDadesViatge() {
             throw new Error(`Error en carregar les dades: ${resposta.status}`);
         }
         dadesViatge = await resposta.json();
+        viatgeActual = dadesViatge.viatge;
         inicialitzarAplicacio();
     } catch (error) {
         console.error('Error:', error);
@@ -24,67 +26,107 @@ async function carregarDadesViatge() {
 
 // Inicialitzar l'aplicació un cop carregades les dades
 function inicialitzarAplicacio() {
-    if (!dadesViatge || !dadesViatge.viatge) {
+    if (!viatgeActual) {
         console.error('Estructura de dades incorrecta');
         return;
     }
-
-    const viatge = dadesViatge.viatge;
     
     // Actualitzar el títol de la pàgina
-    document.title = `Itinerari ${viatge.destinacio} | ${viatge.dates}`;
+    document.title = `Itinerari ${viatgeActual.destinacio} | ${viatgeActual.dates}`;
     
-    // Generar les pestanyes de dies
-    generarPestanyes(viatge.dies);
-    
-    // Generar la checklist general
-    generarChecklist(viatge.checklistGeneral);
+    // Generar les pestanyes de dies i les noves pestanyes
+    generarPestanyes(viatgeActual);
     
     // Mostrar el primer dia per defecte
-    mostrarDia(viatge.dies[0]);
+    mostrarDia(viatgeActual.dies[0]);
     
-    // Configurar esdeveniment per al botó de tornar a dalt
+    // Configurar esdeveniments
     configurarEsdeveniments();
 }
 
-// Generar les pestanyes de navegació entre dies
-function generarPestanyes(dies) {
+// Generar les pestanyes de navegació (dies + checklist + contactes)
+function generarPestanyes(viatge) {
     const tabsContainer = document.getElementById('tabsList');
     
-    dies.forEach((dia, index) => {
+    // 1. Pestanyes per a cada dia
+    viatge.dies.forEach((dia, index) => {
         const boto = document.createElement('button');
         boto.className = 'tab-button';
+        boto.dataset.type = 'dia';
+        boto.dataset.index = index;
+        
         if (index === 0) boto.classList.add('active');
         
         boto.innerHTML = `
-            <i class="fas fa-calendar-day"></i>
+            <i class="fas fa-${obtenirIconaDia(dia.numero)}"></i>
             Dia ${dia.numero}
         `;
         
         boto.addEventListener('click', () => {
-            // Treure classe active de totes les pestanyes
-            document.querySelectorAll('.tab-button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Afegir classe active a la pestanya clicada
-            boto.classList.add('active');
-            
-            // Mostrar el contingut del dia seleccionat
-            mostrarDia(dia);
-            
-            // Desplaçar suaument cap a dalt (útil en mòbils)
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            canviarPestanya('dia', dia);
+            activarPestanya(boto);
         });
         
         tabsContainer.appendChild(boto);
     });
+    
+    // 2. Pestanya de Checklist
+    const botoChecklist = document.createElement('button');
+    botoChecklist.className = 'tab-button';
+    botoChecklist.dataset.type = 'checklist';
+    
+    botoChecklist.innerHTML = `
+        <i class="fas fa-tasks"></i>
+        Checklist
+    `;
+    
+    botoChecklist.addEventListener('click', () => {
+        mostrarChecklist();
+        activarPestanya(botoChecklist);
+    });
+    
+    tabsContainer.appendChild(botoChecklist);
+    
+    // 3. Pestanya de Contactes
+    const botoContactes = document.createElement('button');
+    botoContactes.className = 'tab-button';
+    botoContactes.dataset.type = 'contactes';
+    
+    botoContactes.innerHTML = `
+        <i class="fas fa-address-book"></i>
+        Contactes
+    `;
+    
+    botoContactes.addEventListener('click', () => {
+        mostrarContactes();
+        activarPestanya(botoContactes);
+    });
+    
+    tabsContainer.appendChild(botoContactes);
 }
 
-// Mostrar el contingut d'un dia específic (VERSIÓ MILLORADA)
+// Activar la pestanya clicada
+function activarPestanya(pestanya) {
+    document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    pestanya.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Canviar al contingut d'un dia
+function canviarPestanya(tipus, contingut) {
+    if (tipus === 'dia') {
+        mostrarDia(contingut);
+    }
+}
+
+// Mostrar el contingut d'un dia específic
 function mostrarDia(dia) {
-    // Actualitzar la capçalera del dia
     const dayHeader = document.getElementById('dayHeader');
+    const dayContent = document.getElementById('dayContent');
+    
+    // Capçalera del dia
     dayHeader.innerHTML = `
         <h2 class="day-title">
             <i class="fas fa-${obtenirIconaDia(dia.numero)}"></i>
@@ -94,8 +136,7 @@ function mostrarDia(dia) {
         ${dia.notesDia ? `<div class="day-notes"><i class="fas fa-info-circle"></i> ${dia.notesDia}</div>` : ''}
     `;
     
-    // Generar el contingut de les franges horàries
-    const dayContent = document.getElementById('dayContent');
+    // Contingut de les franges horàries
     dayContent.innerHTML = '';
     
     if (dia.franges && dia.franges.length > 0) {
@@ -111,35 +152,22 @@ function mostrarDia(dia) {
             `;
             dayContent.appendChild(franjaElement);
         });
-    } else {
-        dayContent.innerHTML = '<p class="no-activities">No hi ha activitats programades per a aquest dia.</p>';
     }
     
-    // NOVA SECCIÓ: Informació de contacte i permisos especials
+    // Secció de permisos obligatoris (Dia 2)
     if (dia.permis && dia.permis.obligatori) {
         const permisSection = document.createElement('div');
-        permisSection.className = 'permis-section';
-        permisSection.style.cssText = `
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 1.2rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
-        `;
-        
+        permisSection.className = 'day-info-panel';
         permisSection.innerHTML = `
-            <h4 style="color: #856404; margin-bottom: 0.8rem;">
-                <i class="fas fa-exclamation-triangle"></i> Permís Obligatori
-            </h4>
-            <p style="margin-bottom: 0.5rem;"><strong>Contacte:</strong> ${dia.permis.contacte}</p>
-            <p style="margin-bottom: 0.5rem;"><strong>Email:</strong> ${dia.permis.email}</p>
-            <p style="margin-bottom: 0;"><strong>Solicitar amb:</strong> ${dia.permis.antelacio} d'antelació</p>
+            <h4><i class="fas fa-exclamation-triangle"></i> Permís Obligatori</h4>
+            <p><strong>Contacte:</strong> ${dia.permis.contacte}</p>
+            <p><strong>Email:</strong> ${dia.permis.email}</p>
+            <p><strong>Solicitar amb:</strong> ${dia.permis.antelacio} d'antelació</p>
         `;
-        
         dayContent.appendChild(permisSection);
     }
     
-    // SECCIÓ MILLORADA: Enllaços especials amb contactes
+    // Enllaços especials (rutes i restaurants)
     const specialLinks = document.createElement('div');
     specialLinks.className = 'special-links';
     
@@ -153,40 +181,34 @@ function mostrarDia(dia) {
         specialLinks.appendChild(rutaLink);
     }
     
-    // NOVA: Llista millorada de restaurants amb telèfons i mapes
+    // Restaurants amb contacte i mapa (Dia 3)
     if (dia.restaurantsSopar && dia.restaurantsSopar.length > 0) {
         const restaurantsSection = document.createElement('div');
-        restaurantsSection.style.cssText = `
-            margin-top: 1.5rem;
-            padding: 1.2rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-        `;
+        restaurantsSection.className = 'day-info-panel';
         
         let restaurantsHTML = `
-            <h4 style="color: #2c3e50; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-utensils"></i> Restaurants per al sopar
-            </h4>
-            <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <h4><i class="fas fa-utensils"></i> Restaurants per al sopar</h4>
+            <div class="contact-list">
         `;
         
         dia.restaurantsSopar.forEach(restaurant => {
             const telefonHTML = restaurant.telefon ? 
-                `<p style="margin: 0.3rem 0;"><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${restaurant.telefon}</p>` : '';
+                `<p><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${restaurant.telefon}</p>` : '';
             
             const mapaHTML = restaurant.enllacMapa ? 
-                `<a href="${restaurant.enllacMapa}" target="_blank" style="display: inline-flex; align-items: center; gap: 5px; color: #1565c0; text-decoration: none; margin-top: 0.5rem;">
+                `<a href="${restaurant.enllacMapa}" target="_blank" class="contact-link">
                     <i class="fas fa-map-marked-alt"></i> Veure al mapa
                 </a>` : '';
             
             restaurantsHTML += `
-                <div style="padding: 0.8rem; background: white; border-radius: 6px; border-left: 3px solid #3498db;">
-                    <h5 style="color: #2c3e50; margin-bottom: 0.5rem;">${restaurant.nom}</h5>
-                    <p style="margin: 0.3rem 0; color: #555;"><strong>Especialitat:</strong> ${restaurant.especialitat}</p>
-                    <p style="margin: 0.3rem 0; color: #555;"><strong>Ubicació:</strong> ${restaurant.ubicacio}</p>
-                    ${telefonHTML}
-                    ${mapaHTML}
+                <div class="contact-card">
+                    <h4>${restaurant.nom}</h4>
+                    <div class="contact-info">
+                        <p><strong>Especialitat:</strong> ${restaurant.especialitat}</p>
+                        <p><strong>Ubicació:</strong> ${restaurant.ubicacio}</p>
+                        ${telefonHTML}
+                        ${mapaHTML}
+                    </div>
                 </div>
             `;
         });
@@ -201,16 +223,155 @@ function mostrarDia(dia) {
     }
 }
 
-// Generar la checklist general
-function generarChecklist(checklistItems) {
-    const checklistContainer = document.getElementById('checklist');
+// Mostrar la pestanya de Checklist
+function mostrarChecklist() {
+    const dayHeader = document.getElementById('dayHeader');
+    const dayContent = document.getElementById('dayContent');
     
-    if (checklistItems && checklistItems.length > 0) {
-        checklistContainer.innerHTML = checklistItems.map(item => 
-            `<li>${item}</li>`
-        ).join('');
+    dayHeader.innerHTML = `
+        <h2 class="day-title">
+            <i class="fas fa-tasks"></i>
+            Checklist i Tasques Pendents
+        </h2>
+        <p class="day-date"><i class="fas fa-info-circle"></i> Tota la informació que necessites preparar abans del viatge</p>
+    `;
+    
+    if (viatgeActual.checklistGeneral && viatgeActual.checklistGeneral.length > 0) {
+        const checklistContainer = document.createElement('div');
+        checklistContainer.className = 'checklist-container';
+        
+        let checklistHTML = '<div class="checklist-list">';
+        
+        viatgeActual.checklistGeneral.forEach((item, index) => {
+            checklistHTML += `
+                <div class="checklist-item" id="checklist-item-${index}">
+                    <span>${item}</span>
+                </div>
+            `;
+        });
+        
+        checklistHTML += '</div>';
+        checklistContainer.innerHTML = checklistHTML;
+        
+        // Afegir funcionalitat per marcar com a completat
+        checklistContainer.addEventListener('click', (e) => {
+            const item = e.target.closest('.checklist-item');
+            if (item) {
+                item.classList.toggle('completed');
+                
+                // Guardar l'estat a localStorage
+                const itemId = item.id;
+                const estaCompletat = item.classList.contains('completed');
+                localStorage.setItem(itemId, estaCompletat);
+            }
+        });
+        
+        // Restaurar estats des de localStorage
+        setTimeout(() => {
+            viatgeActual.checklistGeneral.forEach((_, index) => {
+                const itemId = `checklist-item-${index}`;
+                const itemElement = document.getElementById(itemId);
+                if (itemElement && localStorage.getItem(itemId) === 'true') {
+                    itemElement.classList.add('completed');
+                }
+            });
+        }, 100);
+        
+        dayContent.innerHTML = '';
+        dayContent.appendChild(checklistContainer);
     } else {
-        checklistContainer.innerHTML = '<li>No hi ha elements a la checklist</li>';
+        dayContent.innerHTML = '<p>No hi ha elements a la checklist.</p>';
+    }
+}
+
+// Mostrar la pestanya de Contactes
+function mostrarContactes() {
+    const dayHeader = document.getElementById('dayHeader');
+    const dayContent = document.getElementById('dayContent');
+    
+    dayHeader.innerHTML = `
+        <h2 class="day-title">
+            <i class="fas fa-address-book"></i>
+            Contactes i Informació Útil
+        </h2>
+        <p class="day-date"><i class="fas fa-phone-alt"></i> Tots els telèfons i ubicacions en un sol lloc</p>
+    `;
+    
+    if (viatgeActual.contactesGenerals) {
+        const contactesContainer = document.createElement('div');
+        
+        let contactesHTML = '<div class="contact-list">';
+        const contactes = viatgeActual.contactesGenerals;
+        
+        // Hotel
+        if (contactes.hotel) {
+            contactesHTML += `
+                <div class="contact-card">
+                    <h4><i class="fas fa-hotel"></i> ${contactes.hotel.nom}</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${contactes.hotel.telefon}</p>
+                        <a href="${contactes.hotel.enllacMapa}" target="_blank" class="contact-link">
+                            <i class="fas fa-map-marked-alt"></i> Veure ubicació al mapa
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Permís de senderisme
+        if (contactes.permisSenderisme) {
+            contactesHTML += `
+                <div class="contact-card">
+                    <h4><i class="fas fa-exclamation-triangle"></i> ${contactes.permisSenderisme.nom}</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${contactes.permisSenderisme.telefon}</p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> ${contactes.permisSenderisme.email}</p>
+                        <p><i class="fas fa-clock"></i> <strong>Important:</strong> Sol·licitar amb 2-6 dies d'antelació</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Forn d'ensaimades
+        if (contactes.fornEnsaimades) {
+            contactesHTML += `
+                <div class="contact-card">
+                    <h4><i class="fas fa-bread-slice"></i> ${contactes.fornEnsaimades.nom}</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${contactes.fornEnsaimades.telefon}</p>
+                        <a href="${contactes.fornEnsaimades.enllacMapa}" target="_blank" class="contact-link">
+                            <i class="fas fa-map-marked-alt"></i> Veure ubicació al mapa
+                        </a>
+                        <p><i class="fas fa-info-circle"></i> <strong>Recomanació:</strong> No marxar sense provar les ensaimades!</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Restaurants generals
+        if (contactes.restaurantsGenerals && contactes.restaurantsGenerals.length > 0) {
+            contactes.restaurantsGenerals.forEach(restaurant => {
+                contactesHTML += `
+                    <div class="contact-card">
+                        <h4><i class="fas fa-utensils"></i> ${restaurant.nom}</h4>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${restaurant.telefon}</p>
+                            <a href="${restaurant.enllacMapa}" target="_blank" class="contact-link">
+                                <i class="fas fa-map-marked-alt"></i> Veure ubicació al mapa
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+        
+        contactesHTML += '</div>';
+        contactesContainer.innerHTML = contactesHTML;
+        
+        dayContent.innerHTML = '';
+        dayContent.appendChild(contactesContainer);
+    } else {
+        dayContent.innerHTML = '<p>No hi ha contactes disponibles.</p>';
     }
 }
 
