@@ -9,34 +9,34 @@
 </head>
 <body>
     <!-- VERIFICACIÓ D'ACCÉS - NO ES POT COMPARTIR L'ENLLAÇ -->
-<script>
-    // Aquest codi comprova si l'enllaç és vàlid o ha caducat
-    (function() {
-        // 1. Obtenir el paràmetre 'nva' (not-valid-after) de la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const nvaParam = urlParams.get('nva');
-        
-        // 2. Si NO hi ha paràmetre, redirigeix al login
-        if (!nvaParam) {
-            console.log('Accés directe no permès. Redirigint...');
-            window.location.href = '/'; // Tornem a l'arrel (login)
-            return;
-        }
-        
-        // 3. Comprova si el paràmetre ha CADUCAT (és una data en mil·lisegons)
-        const now = new Date().getTime();
-        const expiryTime = parseInt(nvaParam, 10);
-        
-        if (isNaN(expiryTime) || now > expiryTime) {
-            console.log('Enllaç caducat. Redirigint...');
-            window.location.href = '/'; // Tornem a l'arrel (login)
-            return;
-        }
-        
-        // 4. Si tot és correcte, l'usuari pot veure la pàgina
-        console.log('Accés autoritzat. Benvingut/da!');
-    })();
-</script>
+    <script>
+        // Aquest codi comprova si l'enllaç és vàlid o ha caducat
+        (function() {
+            // 1. Obtenir el paràmetre 'nva' (not-valid-after) de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const nvaParam = urlParams.get('nva');
+            
+            // 2. Si NO hi ha paràmetre, redirigeix al login
+            if (!nvaParam) {
+                console.log('Accés directe no permès. Redirigint...');
+                window.location.href = '/'; // Tornem a l'arrel (login)
+                return;
+            }
+            
+            // 3. Comprova si el paràmetre ha CADUCAT (és una data en mil·lisegons)
+            const now = new Date().getTime();
+            const expiryTime = parseInt(nvaParam, 10);
+            
+            if (isNaN(expiryTime) || now > expiryTime) {
+                console.log('Enllaç caducat. Redirigint...');
+                window.location.href = '/'; // Tornem a l'arrel (login)
+                return;
+            }
+            
+            // 4. Si tot és correcte, l'usuari pot veure la pàgina
+            console.log('Accés autoritzat. Benvingut/da!');
+        })();
+    </script>
   
     <div class="container">
         <!-- Capçalera -->
@@ -46,32 +46,22 @@
             <p class="destino"><i class="fas fa-map-marker-alt"></i> Palma de Mallorca & Serra de Tramuntana</p>
         </header>
 
-        <!-- Pestanyes de dies -->
+        <!-- Pestanyes de dies i seccions -->
         <div class="tabs-container">
             <nav class="tabs" id="tabsList">
                 <!-- Les pestanyes es generaran amb JavaScript des de viatge.json -->
             </nav>
         </div>
 
-        <!-- Contingut del dia seleccionat -->
+        <!-- Contingut del dia/secció seleccionada -->
         <main class="main-content">
             <section class="day-header" id="dayHeader">
-                <!-- La capçalera del dia es carregarà aquí -->
+                <!-- La capçalera del dia/secció es carregarà aquí -->
             </section>
 
             <div class="day-content" id="dayContent">
-                <!-- El contingut del dia es carregarà aquí -->
+                <!-- El contingut del dia/secció es carregarà aquí -->
             </div>
-
-            <!--
-            <!-- Panell d'informació general (Checklist) -->
-            <section class="info-panel" id="infoPanel">
-                <h3><i class="fas fa-tasks"></i> Checklist i Consells Generals</h3>
-                <ul id="checklist">
-                    <!-- La checklist es carregarà des de viatge.json -->
-                </ul>
-            </section>
-            -->
         </main>
 
         <!-- Peu de pàgina -->
