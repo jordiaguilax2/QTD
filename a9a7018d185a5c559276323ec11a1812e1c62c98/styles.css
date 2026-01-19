@@ -272,3 +272,131 @@ body {
         padding: 1.5rem;
     }
 }
+
+/* ====== ESTILS PER A LES NOVES PESTANYES (CHECKLIST I CONTACTES) ====== */
+
+/* Contenidor per a les llistes de contactes */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #3498db;
+    transition: transform 0.2s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+}
+
+.contact-card h4 {
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.contact-info {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #e3f2fd;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: #bbdefb;
+    text-decoration: none;
+}
+
+/* Estils per a la pestanya de checklist */
+.checklist-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.checklist-item {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.checklist-item:last-child {
+    border-bottom: none;
+}
+
+.checklist-item:before {
+    content: "□";
+    color: #3498db;
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+}
+
+.checklist-item.completed:before {
+    content: "✓";
+    color: #2ecc71;
+}
+
+/* Estils per al panell d'informació dins de les pestanyes de dies */
+.day-info-panel {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-left: 4px solid #2ecc71;
+}
+
+.day-info-panel h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Millores per a les pestanyes quan n'hi ha més */
+@media (min-width: 768px) {
+    .tabs {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+    .tab-button {
+        flex: 0 0 auto;
+    }
+}
