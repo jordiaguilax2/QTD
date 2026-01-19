@@ -16,18 +16,23 @@ async function carregarDadesViatge() {
         inicialitzarAplicacio();
     } catch (error) {
         console.error('Error:', error);
-        document.getElementById('dayContent').innerHTML = 
-            `<div class="error-message">
-                <p>⚠️ No es van poder carregar les dades de l'itinerari.</p>
-                <p>Si us plau, verifiqueu que l'arxiu viatge.json existeix.</p>
-            </div>`;
+        mostrarError('No es van poder carregar les dades de l\'itinerari. Si us plau, verifiqueu que l\'arxiu viatge.json existeix.');
     }
+}
+
+// Mostrar missatge d'error
+function mostrarError(missatge) {
+    const dayContent = document.getElementById('dayContent');
+    dayContent.innerHTML = 
+        `<div class="error-message">
+            <p><i class="fas fa-exclamation-circle"></i> ⚠️ ${missatge}</p>
+        </div>`;
 }
 
 // Inicialitzar l'aplicació un cop carregades les dades
 function inicialitzarAplicacio() {
     if (!viatgeActual) {
-        console.error('Estructura de dades incorrecta');
+        mostrarError('Estructura de dades incorrecta al fitxer viatge.json.');
         return;
     }
     
@@ -47,6 +52,7 @@ function inicialitzarAplicacio() {
 // Generar les pestanyes de navegació (dies + checklist + contactes)
 function generarPestanyes(viatge) {
     const tabsContainer = document.getElementById('tabsList');
+    tabsContainer.innerHTML = '';
     
     // 1. Pestanyes per a cada dia
     viatge.dies.forEach((dia, index) => {
@@ -152,6 +158,8 @@ function mostrarDia(dia) {
             `;
             dayContent.appendChild(franjaElement);
         });
+    } else {
+        dayContent.innerHTML = '<p class="no-activities">No hi ha activitats programades per a aquest dia.</p>';
     }
     
     // Secció de permisos obligatoris (Dia 2)
@@ -159,10 +167,12 @@ function mostrarDia(dia) {
         const permisSection = document.createElement('div');
         permisSection.className = 'day-info-panel';
         permisSection.innerHTML = `
-            <h4><i class="fas fa-exclamation-triangle"></i> Permís Obligatori</h4>
-            <p><strong>Contacte:</strong> ${dia.permis.contacte}</p>
-            <p><strong>Email:</strong> ${dia.permis.email}</p>
-            <p><strong>Solicitar amb:</strong> ${dia.permis.antelacio} d'antelació</p>
+            <h4><i class="fas fa-exclamation-triangle"></i> Permís Obligatori per a la ruta</h4>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> <strong>Contacte:</strong> ${dia.permis.contacte}</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> ${dia.permis.email}</p>
+                <p><i class="fas fa-calendar-alt"></i> <strong>Solicitar amb:</strong> ${dia.permis.antelacio} d'antelació</p>
+            </div>
         `;
         dayContent.appendChild(permisSection);
     }
@@ -176,6 +186,7 @@ function mostrarDia(dia) {
         const rutaLink = document.createElement('a');
         rutaLink.href = dia.enllacRuta;
         rutaLink.target = '_blank';
+        rutaLink.rel = 'noopener noreferrer';
         rutaLink.className = 'link-button';
         rutaLink.innerHTML = '<i class="fas fa-hiking"></i> Veure ruta a Wikiloc';
         specialLinks.appendChild(rutaLink);
@@ -187,7 +198,7 @@ function mostrarDia(dia) {
         restaurantsSection.className = 'day-info-panel';
         
         let restaurantsHTML = `
-            <h4><i class="fas fa-utensils"></i> Restaurants per al sopar</h4>
+            <h4><i class="fas fa-utensils"></i> Restaurants recomanats per al sopar</h4>
             <div class="contact-list">
         `;
         
@@ -196,16 +207,16 @@ function mostrarDia(dia) {
                 `<p><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${restaurant.telefon}</p>` : '';
             
             const mapaHTML = restaurant.enllacMapa ? 
-                `<a href="${restaurant.enllacMapa}" target="_blank" class="contact-link">
+                `<a href="${restaurant.enllacMapa}" target="_blank" rel="noopener noreferrer" class="contact-link">
                     <i class="fas fa-map-marked-alt"></i> Veure al mapa
                 </a>` : '';
             
             restaurantsHTML += `
                 <div class="contact-card">
-                    <h4>${restaurant.nom}</h4>
+                    <h4><i class="fas fa-store"></i> ${restaurant.nom}</h4>
                     <div class="contact-info">
-                        <p><strong>Especialitat:</strong> ${restaurant.especialitat}</p>
-                        <p><strong>Ubicació:</strong> ${restaurant.ubicacio}</p>
+                        <p><i class="fas fa-star"></i> <strong>Especialitat:</strong> ${restaurant.especialitat}</p>
+                        <p><i class="fas fa-map-pin"></i> <strong>Ubicació:</strong> ${restaurant.ubicacio}</p>
                         ${telefonHTML}
                         ${mapaHTML}
                     </div>
@@ -310,9 +321,10 @@ function mostrarContactes() {
                     <h4><i class="fas fa-hotel"></i> ${contactes.hotel.nom}</h4>
                     <div class="contact-info">
                         <p><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${contactes.hotel.telefon}</p>
-                        <a href="${contactes.hotel.enllacMapa}" target="_blank" class="contact-link">
+                        <a href="${contactes.hotel.enllacMapa}" target="_blank" rel="noopener noreferrer" class="contact-link">
                             <i class="fas fa-map-marked-alt"></i> Veure ubicació al mapa
                         </a>
+                        <p><i class="fas fa-info-circle"></i> Recordeu reservar aparcament amb antelació</p>
                     </div>
                 </div>
             `;
@@ -322,11 +334,11 @@ function mostrarContactes() {
         if (contactes.permisSenderisme) {
             contactesHTML += `
                 <div class="contact-card">
-                    <h4><i class="fas fa-exclamation-triangle"></i> ${contactes.permisSenderisme.nom}</h4>
+                    <h4><i class="fas fa-hiking"></i> ${contactes.permisSenderisme.nom} (Permís senderisme)</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${contactes.permisSenderisme.telefon}</p>
+                        <p><i class="fas fa-phone"></i> <strong>Telèfon/WhatsApp:</strong> ${contactes.permisSenderisme.telefon}</p>
                         <p><i class="fas fa-envelope"></i> <strong>Email:</strong> ${contactes.permisSenderisme.email}</p>
-                        <p><i class="fas fa-clock"></i> <strong>Important:</strong> Sol·licitar amb 2-6 dies d'antelació</p>
+                        <p><i class="fas fa-exclamation-triangle"></i> <strong>Important:</strong> Sol·licitar amb 2-6 dies d'antelació</p>
                     </div>
                 </div>
             `;
@@ -339,7 +351,7 @@ function mostrarContactes() {
                     <h4><i class="fas fa-bread-slice"></i> ${contactes.fornEnsaimades.nom}</h4>
                     <div class="contact-info">
                         <p><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${contactes.fornEnsaimades.telefon}</p>
-                        <a href="${contactes.fornEnsaimades.enllacMapa}" target="_blank" class="contact-link">
+                        <a href="${contactes.fornEnsaimades.enllacMapa}" target="_blank" rel="noopener noreferrer" class="contact-link">
                             <i class="fas fa-map-marked-alt"></i> Veure ubicació al mapa
                         </a>
                         <p><i class="fas fa-info-circle"></i> <strong>Recomanació:</strong> No marxar sense provar les ensaimades!</p>
@@ -356,7 +368,7 @@ function mostrarContactes() {
                         <h4><i class="fas fa-utensils"></i> ${restaurant.nom}</h4>
                         <div class="contact-info">
                             <p><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${restaurant.telefon}</p>
-                            <a href="${restaurant.enllacMapa}" target="_blank" class="contact-link">
+                            <a href="${restaurant.enllacMapa}" target="_blank" rel="noopener noreferrer" class="contact-link">
                                 <i class="fas fa-map-marked-alt"></i> Veure ubicació al mapa
                             </a>
                         </div>
