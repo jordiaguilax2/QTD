@@ -195,17 +195,16 @@ body {
     transform: translateY(-2px);
 }
 
-/* PANELL D'INFORMACIÓ */
-.info-panel {
-    background-color: white;
-    border-radius: 12px;
+/* PANELL D'INFORMACIÓ DINS DELS DIES */
+.day-info-panel {
+    background-color: #f8f9fa;
+    border-radius: 10px;
     padding: 1.5rem;
-    margin-top: 2.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border-top: 5px solid #2ecc71;
+    margin-top: 2rem;
+    border-left: 4px solid #2ecc71;
 }
 
-.info-panel h3 {
+.day-info-panel h4 {
     color: #2c3e50;
     margin-bottom: 1rem;
     display: flex;
@@ -213,69 +212,7 @@ body {
     gap: 10px;
 }
 
-#checklist {
-    list-style-type: none;
-}
-
-#checklist li {
-    padding: 0.7rem 0;
-    border-bottom: 1px solid #f0f0f0;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-}
-
-#checklist li:last-child {
-    border-bottom: none;
-}
-
-#checklist li:before {
-    content: "✓";
-    color: #2ecc71;
-    font-weight: bold;
-    flex-shrink: 0;
-}
-
-/* PEU DE PÀGINA */
-.footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-}
-
-.tip {
-    font-size: 0.85rem;
-    opacity: 0.8;
-    margin-top: 0.5rem;
-    font-style: italic;
-}
-
-/* RESPONSIVE PER A TAULETS I ESCRIPTORI */
-@media (min-width: 768px) {
-    .header h1 {
-        font-size: 2.2rem;
-    }
-    
-    .tabs {
-        justify-content: center;
-        padding: 0;
-    }
-    
-    .main-content {
-        padding: 2rem;
-    }
-    
-    .time-slot {
-        padding: 1.5rem;
-    }
-}
-
-/* ====== ESTILS PER A LES NOVES PESTANYES (CHECKLIST I CONTACTES) ====== */
-
-/* Contenidor per a les llistes de contactes */
+/* CONTENIDOR PER A LES LLISTES DE CONTACTES */
 .contact-list {
     display: flex;
     flex-direction: column;
@@ -337,7 +274,7 @@ body {
     text-decoration: none;
 }
 
-/* Estils per a la pestanya de checklist */
+/* ESTILS PER A LA PESTANYA DE CHECKLIST */
 .checklist-container {
     background-color: white;
     border-radius: 12px;
@@ -353,6 +290,12 @@ body {
     align-items: flex-start;
     gap: 12px;
     font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.checklist-item:hover {
+    background-color: #f9f9f9;
 }
 
 .checklist-item:last-child {
@@ -372,24 +315,29 @@ body {
     color: #2ecc71;
 }
 
-/* Estils per al panell d'informació dins de les pestanyes de dies */
-.day-info-panel {
-    background-color: #f8f9fa;
-    border-radius: 10px;
+.checklist-item.completed {
+    color: #95a5a6;
+    text-decoration: line-through;
+}
+
+/* PEU DE PÀGINA */
+.footer {
+    text-align: center;
     padding: 1.5rem;
+    background-color: #2c3e50;
+    color: #ecf0f1;
     margin-top: 2rem;
-    border-left: 4px solid #2ecc71;
+    font-size: 0.9rem;
 }
 
-.day-info-panel h4 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.tip {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    font-style: italic;
 }
 
-/* Millores per a les pestanyes quan n'hi ha més */
+/* MILLORES PER A LES PESTANYES QUAN N'HI HA MÉS */
 @media (min-width: 768px) {
     .tabs {
         flex-wrap: wrap;
@@ -399,4 +347,67 @@ body {
     .tab-button {
         flex: 0 0 auto;
     }
+}
+
+/* RESPONSIVE PER A TAULETS I ESCRIPTORI */
+@media (min-width: 768px) {
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .tabs {
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .main-content {
+        padding: 2rem;
+    }
+    
+    .time-slot {
+        padding: 1.5rem;
+    }
+    
+    .contact-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+/* ESTILS PER ALS RESTAURANTS DINS DELS DIES */
+.restaurant-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-left: 3px solid #e74c3c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.restaurant-card h5 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* MISSATGES D'ERROR I ESTATS DE CARREGA */
+.error-message {
+    background-color: #fdecea;
+    border-left: 4px solid #e74c3c;
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 2rem 0;
+}
+
+.loading-message {
+    text-align: center;
+    padding: 3rem;
+    color: #7f8c8d;
+}
+
+.loading-message i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #3498db;
 }
