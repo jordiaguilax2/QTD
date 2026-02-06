@@ -175,11 +175,11 @@
         "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/cala-mesquida-talaia-son-jaumell-cala-agulla-64096320",
         "restaurantsSopar": [
           {
-            "nom": "Sa Cranca",
-            "especialitat": "Arrossos i peix fresc",
-            "ubicacio": "Passeig Marítim de Palma",
-            "telefon": "+34 971 737 447",
-            "enllacMapa": "https://maps.google.com/?q=Sa+Cranca+Palma"
+          "nom": "Restaurant Club Nàutic Portixol",
+          "especialitat": "Peix fresc del dia i arròs negre",
+          "ubicacio": "Passeig del Portixol, 71, Palma",
+          "telefon": "+34 971 271 098",
+          "enllacMapa": "https://maps.google.com/?q=Restaurant+Club+Nautic+Portixol+Palma"
           },
           {
             "nom": "Ca'n Manolo",
