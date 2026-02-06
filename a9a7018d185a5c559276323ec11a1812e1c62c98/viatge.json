@@ -78,6 +78,15 @@
             "detalls": "Ambient animat i local. Podeu anar de tapes en diversos llocs com Bar Catalina o La Vinya Vella. Ideal per a la primera nit relaxada."
           }
         ],
+        "restaurantsSopar": [
+        {
+          "nom": "X Etapas | Tapas gamberras",
+          "especialitat": "Tapes creatives i ambient desenfadat",
+          "ubicacio": "Carrer de Sant Magí, 69, Palma (a prop de l'Hotel Zurbarán)",
+          "telefon": "+34 871 57 06 07", // **ATENCIÓ: Telèfon no verificat, recomano confirmar**
+          "enllacMapa": "https://maps.google.com/?q=X+Etapas+Tapas+gamberras+Palma"
+        }
+      ],
         "notesDia": "Deixeu l'equipatge a l'hotel i gaudiu d'un passeig relaxat per començar a sentir l'ambient de Palma. No cal veure-ho tot el primer dia."
       },
       {
@@ -125,6 +134,15 @@
             "horari": "20:00 - 22:00",
             "activitat": "Sopar informal a Palma (sense cotxe)",
             "detalls": "Anar caminant o en taxi a una zona de tapeig. Recomanació: La Bóveda (especialitat en marisc) o passejar pel centre per trobar un lloc que us cridi l'atenció."
+          }
+        ],
+          "restaurantsSopar": [
+          {
+            "nom": "Vesuvio italian bistrot",
+            "especialitat": "Cuina italiana autèntica, pasta i pizzas",
+            "ubicacio": "Avinguda de Gabriel Roca, 33, Palma (a prop de l'Hotel Zurbarán)",
+            "telefon": "+34 871 57 06 07",
+            "enllacMapa": "https://maps.google.com/?q=Vesuvio+italian+bistrot+Palma"
           }
         ],
         "notesDia": "IMPORTANT: Aquesta ruta travessa la finca privada Muntanya del Voltor. És OBLIGATORI sol·licitar un permís gratuït amb 2-6 dies d'antelació per correu electrònic/WhatsApp. Sense ell, l'accés estarà restringit. Ruta no senyalitzada: el track GPS és essencial.",
