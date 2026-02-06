@@ -142,26 +142,26 @@
           },
           {
             "horari": "09:45 - 10:45",
-            "activitat": "Conducció a Cala Agulla",
+            "activitat": "Conducció a Cala Mesquida",
             "detalls": "Trajecte en cotxe des de Palma fins a la costa nord-est (~1 hora). Aparcar a l'aparcament de pagament a la vora de la platja (horari aproximat 9:00-19:00)."
           },
           {
-            "horari": "10:45 - 14:15",
-            "activitat": "Ruta circular: Cala Agulla - Talaia de Son Jaumell",
-            "detalls": "Distància: ~7,5 km. Durada: 2,5-3 hores a ritme pausat. Pujada a una talaia defensiva del segle XVI amb vistes panoràmiques al mar. Tornada per Cala Mesquida."
+            "horari": "10:45 - 15:00",
+            "activitat": "Ruta circular: Cala Mesquida - Talaia de Son Jaumell - Cala Agulla",
+            "detalls": "Ruta més llarga i completa: ~10 km amb 280 m de desnivell. Durada: 4 hores a ritme pausat. Pujada a la talaia defensiva del segle XVI amb vistes panoràmiques espectaculars. Recorregut circular que passa per dues cales d'aigües cristal·lines. IMPORTANT: Ruta moderada, portar aigua suficient (1,5L per persona)."
           },
           {
-            "horari": "14:15 - 15:30",
+            "horari": "15:00 - 16:00",
             "activitat": "Temps a la platja i dinar tardà",
-            "detalls": "Bany opcional a les aigües cristal·lines de Cala Agulla o Cala Mesquida. Menjar en un xiringuito de platja o pícnic que pugueu portar."
+            "detalls": "Bany opcional a les aigües cristal·lines de Cala Agulla. Menjar en un xiringuito de platja o pícnic que pugueu portar."
           },
           {
-            "horari": "15:30 - 16:30",
+            "horari": "16:00 - 17:00",
             "activitat": "Conducció de tornada a Palma",
             "detalls": "Deixar el cotxe a l'aparcament de l'hotel. La resta del dia ja no el necessitareu."
           },
           {
-            "horari": "16:30 - 20:00",
+            "horari": "17:00 - 20:00",
             "activitat": "Temps lliure i relax a Palma",
             "detalls": "Passeig pel Passeig Marítim, descans a l'hotel o terrassa per a una cervesa. Temps per descansar abans del sopar especial."
           },
@@ -171,8 +171,8 @@
             "detalls": "Anar caminant o en taxi al vostre restaurant escollit. RESERVA OBLIGATÒRIA. En reservar, confirmeu: 1) Que serveixen arròs negre per sopar, 2) Si tenen terrassa, 3) Política sobre fumar-hi."
           }
         ],
-        "notesDia": "SOPAR: Reserva obligatòria per a l'arròs negre. Confirmar terrassa i política de fumadors. Recordeu que hi ha un avantprojecte de llei que podria prohibir de fumar a les terrasses; el seu estatus al març de 2026 és incert.",
-        "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/de-cala-agulla-a-cala-mesquida-por-la-atalaya-de-son-jaumell-12624755",
+        "notesDia": "SOPAR: Reserva obligatòria per a l'arròs negre. Confirmar terrassa i política de fumadors. Recordeu que hi ha un avantprojecte de llei que podria prohibir de fumar a les terrasses; el seu estatus al març de 2026 és incert. RUTA: La nova ruta és més llarga i completa - assegureu-vos de sortir a l'hora i portar aigua suficient.",
+        "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/cala-mesquida-talaia-son-jaumell-cala-agulla-64096320",
         "restaurantsSopar": [
           {
             "nom": "Sa Cranca",
