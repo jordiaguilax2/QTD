@@ -1,6 +1,35 @@
+/* Estils generals i mobile-first */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* CAPÇALERA */
+.header {
+    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .header h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;        /* reduït */
     margin-bottom: 0.3rem;
     display: flex;
     align-items: center;
@@ -9,13 +38,13 @@
 }
 
 .subtitle {
-    font-size: 0.9rem;
+    font-size: 0.95rem;       /* reduït */
     opacity: 0.9;
     margin-bottom: 0.5rem;
 }
 
 .destino {
-    font-size: 0.85rem;
+    font-size: 0.9rem;        /* reduït */
     background-color: rgba(255, 255, 255, 0.15);
     display: inline-block;
     padding: 0.4rem 0.8rem;
@@ -24,9 +53,22 @@
 }
 
 /* PESTANYES */
+.tabs-container {
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tabs {
+    display: flex;
+    min-width: min-content;
+    padding: 0 1rem;
+}
+
 .tab-button {
     flex: none;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 1rem;      /* reduït */
     background: none;
     border: none;
     border-bottom: 3px solid transparent;
@@ -35,13 +77,38 @@
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
-    font-size: 0.85rem;
+    font-size: 0.9rem;         /* reduït */
 }
 
-/* TÍTOLS DEL DIA */
+.tab-button:hover {
+    color: #2c3e50;
+    background-color: #f5f7fa;
+}
+
+.tab-button.active {
+    color: #2980b9;
+    border-bottom-color: #2980b9;
+    background-color: #f0f8ff;
+}
+
+/* CONTINGUT PRINCIPAL */
+.main-content {
+    flex: 1;
+    padding: 1.5rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.day-header {
+    margin-bottom: 1.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px dashed #3498db;
+}
+
 .day-title {
     color: #2c3e50;
-    font-size: 1.4rem;
+    font-size: 1.5rem;         /* reduït */
     margin-bottom: 0.3rem;
     display: flex;
     align-items: center;
@@ -50,15 +117,38 @@
 
 .day-date {
     color: #7f8c8d;
-    font-size: 0.95rem;
+    font-size: 1rem;           /* reduït */
     font-weight: 500;
 }
 
+.day-notes {
+    background-color: #fffde7;
+    border-left: 4px solid #f1c40f;
+    padding: 1rem;
+    margin-top: 1.2rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;         /* reduït */
+}
+
 /* FRANGES HORÀRIES */
+.time-slot {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #3498db;
+    transition: transform 0.2s ease;
+}
+
+.time-slot:hover {
+    transform: translateY(-3px);
+}
+
 .time-range {
     color: #2980b9;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.95rem;        /* reduït */
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -66,43 +156,169 @@
 }
 
 .activity-title {
-    font-size: 1rem;
+    font-size: 1.05rem;        /* reduït */
     color: #2c3e50;
     margin-bottom: 0.7rem;
 }
 
 .activity-details {
     color: #555;
-    font-size: 0.85rem;
+    font-size: 0.9rem;         /* reduït */
     line-height: 1.5;
 }
 
-/* TARGETES DE CONTACTE */
+/* ENLLAÇOS ESPECIALS (per a rutes, restaurants) */
+.special-links {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.7rem 1.2rem;
+    background-color: #e3f2fd;
+    color: #1565c0;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid #bbdefb;
+}
+
+.link-button:hover {
+    background-color: #bbdefb;
+    transform: translateY(-2px);
+}
+
+/* PANELL D'INFORMACIÓ DINS DELS DIES */
+.day-info-panel {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-left: 4px solid #2ecc71;
+}
+
+.day-info-panel h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;         /* una mica més gran que el text base */
+}
+
+/* CONTENIDOR PER A LES LLISTES DE CONTACTES */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #3498db;
+    transition: transform 0.2s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+}
+
 .contact-card h4 {
     color: #2c3e50;
     margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1rem;
+    font-size: 1rem;           /* reduït */
 }
 
 .contact-info {
     color: #555;
-    font-size: 0.85rem;
+    font-size: 0.9rem;         /* reduït */
     line-height: 1.5;
 }
 
-/* CHECKLIST */
+.contact-info p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #e3f2fd;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: #bbdefb;
+    text-decoration: none;
+}
+
+/* ESTILS PER A LA PESTANYA DE CHECKLIST */
+.checklist-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
 .checklist-item {
     padding: 0.8rem 0;
     border-bottom: 1px solid #f0f0f0;
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;         /* reduït */
     cursor: pointer;
     transition: background-color 0.2s ease;
+}
+
+.checklist-item:hover {
+    background-color: #f9f9f9;
+}
+
+.checklist-item:last-child {
+    border-bottom: none;
+}
+
+.checklist-item:before {
+    content: "□";
+    color: #3498db;
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+}
+
+.checklist-item.completed:before {
+    content: "✓";
+    color: #2ecc71;
+}
+
+.checklist-item.completed {
+    color: #95a5a6;
+    text-decoration: line-through;
 }
 
 /* PEU DE PÀGINA */
@@ -112,19 +328,87 @@
     background-color: #2c3e50;
     color: #ecf0f1;
     margin-top: 2rem;
-    font-size: 0.8rem;
+    font-size: 0.85rem;        /* reduït */
 }
 
 .tip {
-    font-size: 0.75rem;
+    font-size: 0.8rem;         /* reduït */
     opacity: 0.8;
     margin-top: 0.5rem;
     font-style: italic;
 }
 
+/* MILLORES PER A LES PESTANYES QUAN N'HI HA MÉS */
+@media (min-width: 768px) {
+    .tabs {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+    .tab-button {
+        flex: 0 0 auto;
+    }
+}
+
 /* RESPONSIVE PER A TAULETS I ESCRIPTORI */
 @media (min-width: 768px) {
     .header h1 {
-        font-size: 1.8rem; /* Una mica més gran a escriptori, però reduït */
+        font-size: 2rem;        /* reduït (abans 2.2rem) */
     }
+    
+    .tabs {
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .main-content {
+        padding: 2rem;
+    }
+    
+    .time-slot {
+        padding: 1.5rem;
+    }
+    
+    .contact-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+/* ESTILS PER ALS RESTAURANTS DINS DELS DIES */
+.restaurant-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-left: 3px solid #e74c3c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.restaurant-card h5 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* MISSATGES D'ERROR I ESTATS DE CARREGA */
+.error-message {
+    background-color: #fdecea;
+    border-left: 4px solid #e74c3c;
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 2rem 0;
+}
+
+.loading-message {
+    text-align: center;
+    padding: 3rem;
+    color: #7f8c8d;
+}
+
+.loading-message i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #3498db;
 }
