@@ -376,6 +376,21 @@ function mostrarContactes() {
                 `;
             });
         }
+
+        // Lloc especial (si existeix)
+        if (contactes.llocEspecial) {
+            contactesHTML += `
+                <div class="contact-card">
+                    <h4>${contactes.llocEspecial.nom}</h4>
+                    <div class="contact-info">
+                        ${contactes.llocEspecial.descripcio ? `<p>${contactes.llocEspecial.descripcio}</p>` : ''}
+                        <a href="${contactes.llocEspecial.enllacMapa}" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <i class="fas fa-map-marked-alt"></i> Veure ubicació al mapa
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
         
         contactesHTML += '</div>';
         contactesContainer.innerHTML = contactesHTML;
