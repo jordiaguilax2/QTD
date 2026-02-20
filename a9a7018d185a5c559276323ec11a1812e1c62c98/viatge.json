@@ -29,7 +29,12 @@
           "telefon": "+34 971 714 863",
           "enllacMapa": "https://maps.google.com/?q=La+Boveda+Palma"
         }
-      ]
+      ],
+    "llocEspecial": {
+    "nom": "❤️ El nostre racó especial",
+    "descripcio": "Un lloc amb molt de significat per a nosaltres",
+    "enllacMapa": "https://maps.app.goo.gl/a8hDrqyQ9UucBPgL9"
+    }
     },
     "dies": [
       {
