@@ -412,3 +412,213 @@ body {
     margin-bottom: 1rem;
     color: #3498db;
 }
+
+/* ====== ESTILS PER A LA PESTANYA DE TEMPS ====== */
+
+.weather-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+}
+
+.weather-current {
+    background: linear-gradient(135deg, #3498db10 0%, #2c3e5010 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #3498db;
+}
+
+.weather-location {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.weather-location i {
+    color: #e74c3c;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.weather-icon-temp {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.weather-icon-large {
+    width: 80px;
+    height: 80px;
+}
+
+.weather-temp-large {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #2c3e50;
+    line-height: 1;
+}
+
+.weather-condition {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.weather-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.weather-detail-item i {
+    width: 24px;
+    color: #3498db;
+    font-size: 1.1rem;
+}
+
+.weather-forecast-title {
+    color: #2c3e50;
+    margin: 1.5rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.weather-forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.weather-forecast-day {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.2rem;
+    transition: transform 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.weather-forecast-day:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.weather-forecast-day.trip-day {
+    border-left-color: #e74c3c;
+    background: linear-gradient(135deg, #fff9f9 0%, #ffeaea 100%);
+}
+
+.forecast-date {
+    margin-bottom: 0.8rem;
+}
+
+.forecast-dayname {
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    text-transform: capitalize;
+}
+
+.forecast-date-small {
+    font-size: 0.8rem;
+    color: #95a5a6;
+}
+
+.forecast-icon-temp {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.weather-icon-small {
+    width: 40px;
+    height: 40px;
+}
+
+.forecast-temps {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.forecast-max {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.forecast-min {
+    color: #95a5a6;
+}
+
+.forecast-condition {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-top: 0.3rem;
+}
+
+.weather-attribution {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #95a5a6;
+}
+
+.weather-attribution a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.weather-attribution a:hover {
+    text-decoration: underline;
+}
+
+/* Indicador de càrrega */
+.loading-message {
+    text-align: center;
+    padding: 3rem;
+    color: #7f8c8d;
+}
+
+.loading-message i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #3498db;
+}
+
+/* Responsive per a mòbils */
+@media (max-width: 600px) {
+    .weather-main {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .weather-icon-temp {
+        justify-content: center;
+    }
+    
+    .weather-forecast {
+        grid-template-columns: 1fr;
+    }
+    
+    .weather-details {
+        grid-template-columns: 1fr 1fr;
+    }
+}
