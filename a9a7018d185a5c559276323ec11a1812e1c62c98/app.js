@@ -109,6 +109,23 @@ function generarPestanyes(viatge) {
     });
     
     tabsContainer.appendChild(botoContactes);
+
+    // 4. Pestanya de Temps
+    const botoTemps = document.createElement('button');
+    botoTemps.className = 'tab-button';
+    botoTemps.dataset.type = 'temps';
+    
+    botoTemps.innerHTML = `
+        <i class="fas fa-cloud-sun"></i>
+        Temps
+    `;
+    
+    botoTemps.addEventListener('click', () => {
+        mostrarTemps();
+        activarPestanya(botoTemps);
+    });
+    
+    tabsContainer.appendChild(botoTemps);
 }
 
 // Activar la pestanya clicada
@@ -401,7 +418,139 @@ function mostrarContactes() {
         dayContent.innerHTML = '<p>No hi ha contactes disponibles.</p>';
     }
 }
+// Mostrar la pestanya de Temps
+function mostrarTemps() {
+    const dayHeader = document.getElementById('dayHeader');
+    const dayContent = document.getElementById('dayContent');
+    
+    dayHeader.innerHTML = `
+        <h2 class="day-title">
+            <i class="fas fa-cloud-sun"></i>
+            Temps a Palma de Mallorca
+        </h2>
+        <p class="day-date"><i class="fas fa-sync-alt"></i> Dades en temps real</p>
+    `;
+    
+    // Mostrar indicador de càrrega
+    dayContent.innerHTML = `
+        <div class="loading-message">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Carregant dades meteorològiques...</p>
+        </div>
+    `;
+    
+    // La teva API KEY de WeatherAPI.com
+    const API_KEY = 'AQUI_POSA_LA_TEVA_API_KEY'; // <-- Canvia això!
+    const location = 'Palma de Mallorca';
+    
+    // URL per obtenir dades actuals + previsió 3 dies
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=4&aqi=no&alerts=no&lang=ca`;
+    
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en carregar les dades');
+            }
+            return response.json();
+        })
+        .then(data => {
+            renderitzarTemps(data, dayContent);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            dayContent.innerHTML = `
+                <div class="error-message">
+                    <p><i class="fas fa-exclamation-circle"></i> No s'han pogut carregar les dades meteorològiques.</p>
+                    <p>Si us plau, verifiqueu la vostra connexió i que l'API key sigui correcta.</p>
+                </div>
+            `;
+        });
+}
 
+// Funció per renderitzar les dades del temps
+function renderitzarTemps(data, container) {
+    const current = data.current;
+    const location = data.location;
+    const forecast = data.forecast.forecastday;
+    
+    // Formatar data
+    const options = { weekday: 'long', day: 'numeric', month: 'long' };
+    
+    let html = `
+        <div class="weather-container">
+            <!-- Temps actual -->
+            <div class="weather-current">
+                <div class="weather-location">
+                    <i class="fas fa-map-pin"></i> ${location.name}, ${location.country}
+                </div>
+                <div class="weather-main">
+                    <div class="weather-icon-temp">
+                        <img src="https:${current.condition.icon}" alt="${current.condition.text}" class="weather-icon-large">
+                        <div class="weather-temp-large">${current.temp_c}°C</div>
+                    </div>
+                    <div class="weather-condition">${current.condition.text}</div>
+                </div>
+                <div class="weather-details">
+                    <div class="weather-detail-item">
+                        <i class="fas fa-temperature-low"></i>
+                        <span>Sensació: ${current.feelslike_c}°C</span>
+                    </div>
+                    <div class="weather-detail-item">
+                        <i class="fas fa-tint"></i>
+                        <span>Humitat: ${current.humidity}%</span>
+                    </div>
+                    <div class="weather-detail-item">
+                        <i class="fas fa-wind"></i>
+                        <span>Vent: ${current.wind_kph} km/h</span>
+                    </div>
+                    <div class="weather-detail-item">
+                        <i class="fas fa-sun"></i>
+                        <span>UV: ${current.uv}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="weather-forecast-title"><i class="fas fa-calendar-alt"></i> Previsió per als propers dies</h3>
+            <div class="weather-forecast">
+    `;
+    
+    // Afegir previsió per dia
+    forecast.forEach((day, index) => {
+        const date = new Date(day.date);
+        const dayName = date.toLocaleDateString('ca', { weekday: 'long' });
+        const formattedDate = date.toLocaleDateString('ca', { day: 'numeric', month: 'long' });
+        
+        // Destacar els dies del viatge
+        const isTripDay = [4, 5, 6, 7].includes(date.getDate()) && date.getMonth() === 2; // Març = mes 2
+        
+        html += `
+            <div class="weather-forecast-day ${isTripDay ? 'trip-day' : ''}">
+                <div class="forecast-date">
+                    <span class="forecast-dayname">${dayName}</span>
+                    <span class="forecast-date-small">${formattedDate}</span>
+                </div>
+                <div class="forecast-icon-temp">
+                    <img src="https:${day.day.condition.icon}" alt="${day.day.condition.text}" class="weather-icon-small">
+                    <div class="forecast-temps">
+                        <span class="forecast-max">${day.day.maxtemp_c}°</span>
+                        <span class="forecast-min">${day.day.mintemp_c}°</span>
+                    </div>
+                </div>
+                <div class="forecast-condition">${day.day.condition.text}</div>
+            </div>
+        `;
+    });
+    
+    html += `
+            </div>
+            <div class="weather-attribution">
+                Dades proporcionades per <a href="https://www.weatherapi.com/" target="_blank" rel="noopener">WeatherAPI.com</a>
+            </div>
+        </div>
+    `;
+    
+    container.innerHTML = html;
+}
 // Obtenir icona segons el número de dia
 function obtenirIconaDia(numeroDia) {
     const icones = ['plane', 'hiking', 'swimmer', 'plane-departure'];
