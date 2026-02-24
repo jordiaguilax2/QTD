@@ -440,7 +440,7 @@ function mostrarTemps() {
     `;
     
     // La teva API KEY de WeatherAPI.com
-    const API_KEY = 'AQUI_POSA_LA_TEVA_API_KEY'; // <-- Canvia això!
+    const API_KEY = '8ff63a61fb324802af290015262302'; // <-- Canvia això!
     const location = 'Palma de Mallorca';
     
     // URL per obtenir dades actuals + previsió 3 dies
