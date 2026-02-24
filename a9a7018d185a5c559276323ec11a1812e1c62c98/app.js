@@ -441,7 +441,7 @@ function mostrarTemps() {
     
     // La teva API KEY de WeatherAPI.com
     const API_KEY = '8ff63a61fb324802af290015262302'; // <-- Canvia això!
-    const location = 'Palma de Mallorca';
+    const location = 'Palma, Spain';
     
     // URL per obtenir dades actuals + previsió 3 dies
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=4&aqi=no&alerts=no&lang=ca`;
