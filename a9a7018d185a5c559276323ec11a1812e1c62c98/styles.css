@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
+    line-height: 1.5;
+    color: #2c3e50;
     background-color: #f8f9fa;
 }
 
@@ -19,9 +19,9 @@ body {
     flex-direction: column;
 }
 
-/* CAPÇALERA */
+/* Capçalera */
 .header {
-    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+    background: linear-gradient(135deg, #1e3c32 0%, #2a5a4a 100%);
     color: white;
     padding: 1.5rem 1rem;
     text-align: center;
@@ -44,7 +44,7 @@ body {
 }
 
 .destino {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     background-color: rgba(255, 255, 255, 0.15);
     display: inline-block;
     padding: 0.4rem 0.8rem;
@@ -52,7 +52,7 @@ body {
     margin-top: 0.5rem;
 }
 
-/* PESTANYES - estil base */
+/* Pestanyes */
 .tabs-container {
     background-color: white;
     border-bottom: 1px solid #e0e0e0;
@@ -77,7 +77,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .tab-button:hover {
@@ -85,58 +85,13 @@ body {
     background-color: #f5f7fa;
 }
 
-/* COLORS PER PESTANYA QUAN ESTAN ACTIVES */
-
-/* Dia 1 - Blau fosc */
-.tab-button[data-type="dia"][data-index="0"].active {
-    color: #2c3e50;
-    border-bottom-color: #2c3e50;
-    background-color: #e8f0fe;
+.tab-button.active {
+    color: #2a5a4a;
+    border-bottom-color: #2a5a4a;
+    background-color: #e8f5f0;
 }
 
-/* Dia 2 - Verd muntanya */
-.tab-button[data-type="dia"][data-index="1"].active {
-    color: #27ae60;
-    border-bottom-color: #27ae60;
-    background-color: #e8f8f0;
-}
-
-/* Dia 3 - Turquesa platja */
-.tab-button[data-type="dia"][data-index="2"].active {
-    color: #1abc9c;
-    border-bottom-color: #1abc9c;
-    background-color: #e0f7f4;
-}
-
-/* Dia 4 - Taronja tornada */
-.tab-button[data-type="dia"][data-index="3"].active {
-    color: #e67e22;
-    border-bottom-color: #e67e22;
-    background-color: #fef5e7;
-}
-
-/* Pestanya Checklist - Groc */
-.tab-button[data-type="checklist"].active {
-    color: #f39c12;
-    border-bottom-color: #f39c12;
-    background-color: #fff9e6;
-}
-
-/* Pestanya Contactes - Morat */
-.tab-button[data-type="contactes"].active {
-    color: #9b59b6;
-    border-bottom-color: #9b59b6;
-    background-color: #f3eaf9;
-}
-
-/* Pestanya Temps - Blau clar */
-.tab-button[data-type="temps"].active {
-    color: #3498db;
-    border-bottom-color: #3498db;
-    background-color: #e8f4fd;
-}
-
-/* CONTINGUT PRINCIPAL */
+/* Contingut principal */
 .main-content {
     flex: 1;
     padding: 1.5rem 1rem;
@@ -145,52 +100,15 @@ body {
     width: 100%;
 }
 
-/* Capçalera del dia - color dinàmic segons pestanya activa */
 .day-header {
     margin-bottom: 1.8rem;
     padding-bottom: 1rem;
-    border-bottom: 2px dashed #ccc;
-    transition: border-color 0.3s ease;
-}
-
-/* Quan la pestanya activa és dia 1 */
-body:has(.tab-button[data-type="dia"][data-index="0"].active) .day-header {
-    border-bottom-color: #2c3e50;
-}
-
-/* Dia 2 */
-body:has(.tab-button[data-type="dia"][data-index="1"].active) .day-header {
-    border-bottom-color: #27ae60;
-}
-
-/* Dia 3 */
-body:has(.tab-button[data-type="dia"][data-index="2"].active) .day-header {
-    border-bottom-color: #1abc9c;
-}
-
-/* Dia 4 */
-body:has(.tab-button[data-type="dia"][data-index="3"].active) .day-header {
-    border-bottom-color: #e67e22;
-}
-
-/* Checklist */
-body:has(.tab-button[data-type="checklist"].active) .day-header {
-    border-bottom-color: #f39c12;
-}
-
-/* Contactes */
-body:has(.tab-button[data-type="contactes"].active) .day-header {
-    border-bottom-color: #9b59b6;
-}
-
-/* Temps */
-body:has(.tab-button[data-type="temps"].active) .day-header {
-    border-bottom-color: #3498db;
+    border-bottom: 2px dashed #2a5a4a;
 }
 
 .day-title {
-    color: #2c3e50;
-    font-size: 1.5rem;
+    color: #1e3c32;
+    font-size: 1.4rem;
     margin-bottom: 0.3rem;
     display: flex;
     align-items: center;
@@ -199,7 +117,7 @@ body:has(.tab-button[data-type="temps"].active) .day-header {
 
 .day-date {
     color: #7f8c8d;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
 }
 
@@ -207,59 +125,26 @@ body:has(.tab-button[data-type="temps"].active) .day-header {
     background-color: #fffde7;
     border-left: 4px solid #f1c40f;
     padding: 1rem;
-    margin-top: 1.2rem;
+    margin-top: 1rem;
     border-radius: 0 8px 8px 0;
     font-size: 0.9rem;
 }
 
-/* FRANGES HORÀRIES - Colors segons dia (borda esquerra) */
+/* Franges horàries */
 .time-slot {
     background-color: white;
     border-radius: 10px;
     padding: 1.2rem;
     margin-bottom: 1rem;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    border-left: 4px solid #ccc; /* color per defecte */
-    transition: transform 0.2s ease, border-left-color 0.3s ease;
-}
-
-.time-slot:hover {
-    transform: translateY(-3px);
-}
-
-/* Color de la franja horària segons el dia actiu */
-body:has(.tab-button[data-type="dia"][data-index="0"].active) .time-slot {
-    border-left-color: #2c3e50;
-}
-
-body:has(.tab-button[data-type="dia"][data-index="1"].active) .time-slot {
-    border-left-color: #27ae60;
-}
-
-body:has(.tab-button[data-type="dia"][data-index="2"].active) .time-slot {
-    border-left-color: #1abc9c;
-}
-
-body:has(.tab-button[data-type="dia"][data-index="3"].active) .time-slot {
-    border-left-color: #e67e22;
-}
-
-body:has(.tab-button[data-type="checklist"].active) .time-slot {
-    border-left-color: #f39c12;
-}
-
-body:has(.tab-button[data-type="contactes"].active) .time-slot {
-    border-left-color: #9b59b6;
-}
-
-body:has(.tab-button[data-type="temps"].active) .time-slot {
-    border-left-color: #3498db;
+    border-left: 4px solid #3498db;
+    transition: transform 0.2s ease;
 }
 
 .time-range {
     color: #2980b9;
     font-weight: bold;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -267,18 +152,18 @@ body:has(.tab-button[data-type="temps"].active) .time-slot {
 }
 
 .activity-title {
-    font-size: 1.05rem;
-    color: #2c3e50;
-    margin-bottom: 0.7rem;
+    font-size: 1rem;
+    color: #1e3c32;
+    margin-bottom: 0.5rem;
 }
 
 .activity-details {
     color: #555;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.5;
 }
 
-/* ENLLAÇOS ESPECIALS (per a rutes, restaurants) */
+/* Enllaços especials */
 .special-links {
     margin-top: 1.5rem;
     display: flex;
@@ -296,68 +181,53 @@ body:has(.tab-button[data-type="temps"].active) .time-slot {
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
     border: 1px solid #bbdefb;
 }
 
-.link-button:hover {
-    background-color: #bbdefb;
-    transform: translateY(-2px);
-}
-
-/* PANELL D'INFORMACIÓ DINS DELS DIES */
+/* Panell d'informació */
 .day-info-panel {
     background-color: #f8f9fa;
     border-radius: 10px;
-    padding: 1.5rem;
-    margin-top: 2rem;
+    padding: 1.2rem;
+    margin-top: 1.5rem;
     border-left: 4px solid #2ecc71;
 }
 
 .day-info-panel h4 {
-    color: #2c3e50;
+    color: #1e3c32;
     margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.1rem;
-}
-
-/* CONTENIDOR PER A LES LLISTES DE CONTACTES */
-.contact-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.contact-card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 1.2rem;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    border-left: 4px solid #3498db;
-    transition: transform 0.2s ease;
-}
-
-.contact-card:hover {
-    transform: translateY(-2px);
-}
-
-.contact-card h4 {
-    color: #2c3e50;
-    margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 1rem;
 }
 
-.contact-info {
-    color: #555;
-    font-size: 0.9rem;
-    line-height: 1.5;
+/* Targetes de contacte */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.contact-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #e67e22;
+    transition: transform 0.2s ease;
+}
+
+.contact-card h4 {
+    color: #1e3c32;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
 }
 
 .contact-info p {
@@ -365,6 +235,7 @@ body:has(.tab-button[data-type="temps"].active) .time-slot {
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: 0.85rem;
 }
 
 .contact-link {
@@ -375,24 +246,87 @@ body:has(.tab-button[data-type="temps"].active) .time-slot {
     text-decoration: none;
     font-weight: 500;
     margin-top: 0.5rem;
-    padding: 0.4rem 0.8rem;
+    padding: 0.3rem 0.7rem;
     background-color: #e3f2fd;
     border-radius: 6px;
-    transition: all 0.3s ease;
+    font-size: 0.85rem;
 }
 
-.contact-link:hover {
-    background-color: #bbdefb;
-    text-decoration: none;
-}
-
-/* ESTILS PER A LA PESTANYA DE CHECKLIST */
-.checklist-container {
+/* Secció de temps */
+.weather-container {
     background-color: white;
     border-radius: 12px;
-    padding: 1.5rem;
-    margin-top: 1rem;
+    padding: 1.2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.weather-current {
+    background: linear-gradient(135deg, #e8f5f0 0%, #d4ebe4 100%);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.weather-icon-large {
+    width: 70px;
+    height: 70px;
+}
+
+.weather-temp-large {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #1e3c32;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.weather-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+}
+
+.weather-forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.weather-forecast-day {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.forecast-max {
+    font-weight: 600;
+    color: #e67e22;
+}
+
+.forecast-min {
+    color: #95a5a6;
+}
+
+/* Checklist */
+.checklist-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.2rem;
 }
 
 .checklist-item {
@@ -400,31 +334,9 @@ body:has(.tab-button[data-type="temps"].active) .time-slot {
     border-bottom: 1px solid #f0f0f0;
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    font-size: 0.9rem;
+    gap: 10px;
+    font-size: 0.85rem;
     cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.checklist-item:hover {
-    background-color: #f9f9f9;
-}
-
-.checklist-item:last-child {
-    border-bottom: none;
-}
-
-.checklist-item:before {
-    content: "□";
-    color: #3498db;
-    font-weight: bold;
-    flex-shrink: 0;
-    font-size: 1.1rem;
-}
-
-.checklist-item.completed:before {
-    content: "✓";
-    color: #2ecc71;
 }
 
 .checklist-item.completed {
@@ -432,270 +344,39 @@ body:has(.tab-button[data-type="temps"].active) .time-slot {
     text-decoration: line-through;
 }
 
-/* ESTILS PER A LA PESTANYA DE TEMPS (ja existents) */
-.weather-container {
-    background-color: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    margin-top: 1rem;
-}
-
-.weather-current {
-    background: linear-gradient(135deg, #3498db10 0%, #2c3e5010 100%);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-left: 4px solid #3498db;
-}
-
-.weather-location {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.weather-location i {
-    color: #e74c3c;
-}
-
-.weather-main {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.weather-icon-temp {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.weather-icon-large {
-    width: 80px;
-    height: 80px;
-}
-
-.weather-temp-large {
-    font-size: 3rem;
-    font-weight: 300;
-    color: #2c3e50;
-    line-height: 1;
-}
-
-.weather-condition {
-    font-size: 1.3rem;
-    color: #7f8c8d;
-}
-
-.weather-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.weather-detail-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #555;
-    font-size: 0.95rem;
-}
-
-.weather-detail-item i {
-    width: 24px;
-    color: #3498db;
-    font-size: 1.1rem;
-}
-
-.weather-forecast-title {
-    color: #2c3e50;
-    margin: 1.5rem 0 1rem 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.2rem;
-}
-
-.weather-forecast {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.weather-forecast-day {
-    background: #f8f9fa;
-    border-radius: 10px;
-    padding: 1.2rem;
-    transition: transform 0.2s ease;
-    border-left: 3px solid transparent;
-}
-
-.weather-forecast-day:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.weather-forecast-day.trip-day {
-    border-left-color: #e74c3c;
-    background: linear-gradient(135deg, #fff9f9 0%, #ffeaea 100%);
-}
-
-.forecast-date {
-    margin-bottom: 0.8rem;
-}
-
-.forecast-dayname {
-    display: block;
-    font-weight: 600;
-    color: #2c3e50;
-    text-transform: capitalize;
-}
-
-.forecast-date-small {
-    font-size: 0.8rem;
-    color: #95a5a6;
-}
-
-.forecast-icon-temp {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.weather-icon-small {
-    width: 40px;
-    height: 40px;
-}
-
-.forecast-temps {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.forecast-max {
-    font-weight: 600;
-    color: #2c3e50;
-}
-
-.forecast-min {
-    color: #95a5a6;
-}
-
-.forecast-condition {
-    font-size: 0.85rem;
-    color: #7f8c8d;
-    margin-top: 0.3rem;
-}
-
-.weather-attribution {
-    margin-top: 1.5rem;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #95a5a6;
-}
-
-.weather-attribution a {
-    color: #3498db;
-    text-decoration: none;
-}
-
-.weather-attribution a:hover {
-    text-decoration: underline;
-}
-
-/* PEU DE PÀGINA */
+/* Peu de pàgina */
 .footer {
     text-align: center;
-    padding: 1.5rem;
-    background-color: #2c3e50;
+    padding: 1.2rem;
+    background-color: #1e3c32;
     color: #ecf0f1;
     margin-top: 2rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
 .tip {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     opacity: 0.8;
-    margin-top: 0.5rem;
-    font-style: italic;
+    margin-top: 0.3rem;
 }
 
-/* MILLORES PER A LES PESTANYES QUAN N'HI HA MÉS */
-@media (min-width: 768px) {
-    .tabs {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-    
-    .tab-button {
-        flex: 0 0 auto;
-    }
-}
-
-/* RESPONSIVE PER A TAULETS I ESCRIPTORI */
+/* Responsive */
 @media (min-width: 768px) {
     .header h1 {
         font-size: 2rem;
-    }
-    
-    .tabs {
-        justify-content: center;
-        padding: 0;
     }
     
     .main-content {
         padding: 2rem;
     }
     
-    .time-slot {
-        padding: 1.5rem;
-    }
-    
     .contact-list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.2rem;
     }
-}
-
-/* ESTILS PER ALS RESTAURANTS DINS DELS DIES */
-.restaurant-card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-top: 1rem;
-    border-left: 3px solid #e74c3c;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.restaurant-card h5 {
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
-
-/* MISSATGES D'ERROR I ESTATS DE CARREGA */
-.error-message {
-    background-color: #fdecea;
-    border-left: 4px solid #e74c3c;
-    padding: 1.5rem;
-    border-radius: 0 8px 8px 0;
-    margin: 2rem 0;
-}
-
-.loading-message {
-    text-align: center;
-    padding: 3rem;
-    color: #7f8c8d;
-}
-
-.loading-message i {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #3498db;
+    
+    .weather-forecast {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
