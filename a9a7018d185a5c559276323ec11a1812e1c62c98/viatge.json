@@ -24,141 +24,21 @@
       "hotel": {
         "nom": "Alaró Natura Rural Suites",
         "telefon": "No disponible",
-        "enllacMapa": "https://maps.app.goo.gl/exampleHotel",
+        "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Alar%C3%B3+Natura+Rural+Suites",
         "politicaFum": "COMPLETAMENT PROHIBIT fumar a tot l'establiment (habitacions, terrasses, zones comunes). Per fumar cal sortir al carrer o al jardí (preguntar a recepció).",
         "checkIn": "14:00",
         "checkOut": "10:30"
       },
       "companyiaLloguer": {
         "nom": "Autos Mallorca",
-        "telefon": "No disponible",
-        "condicions": "Segur a tot risc SENSE FRANQUÍCIA. Dipòsit 0 €. Combustible: lleno-lleno. Cancel·lació gratuïta fins 24h abans. La targeta de crèdit ha de ser Visa o Mastercard (no Revolut/N26) i a nom del conductor principal."
+        "telefon": "pendent de posar (troba’l a la reserva o a Google Maps)",
+        "condicions": "Segur a tot risc SENSE FRANQUÍCIA. Dipòsit 0 €. Combustible: lleno-lleno. Cancel·lació gratuïta fins 24h abans. La targeta de crèdit ha de ser Visa o Mastercard (no Revolut/N26) i a nom del conductor principal.",
+        "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Autos+Mallorca+Palma"
       },
-      "restaurantsGenerals": [
-        {
-          "nom": "Es Verger",
-          "ubicacio": "Cami del Castell, s/n, Alaró",
-          "telefon": "971 182 126",
-          "enllacMapa": "https://maps.app.goo.gl/exampleEsVerger",
-          "especialitat": "Cordero a la brasa, cuina mallorquina tradicional"
-        },
-        {
-          "nom": "Sa Tafona",
-          "ubicacio": "Carrer de la Verge del Refugi, 1, Alaró",
-          "telefon": "971 879 208 / 677 668 722",
-          "enllacMapa": "https://maps.app.goo.gl/exampleSaTafona",
-          "especialitat": "Cuina mallorquina tradicional"
-        },
-        {
-          "nom": "Traffic Restaurant",
-          "ubicacio": "Plaça de la Vila, 8, Alaró",
-          "telefon": "971 879 117",
-          "enllacMapa": "https://maps.app.goo.gl/exampleTraffic",
-          "especialitat": "Cuina mallorquina i mediterrània"
-        },
-        {
-          "nom": "Vila Cinc",
-          "ubicacio": "Plaça de la Vila, 5, Alaró",
-          "telefon": "605 412 327",
-          "enllacMapa": "https://maps.app.goo.gl/exampleVilaCinc",
-          "especialitat": "Cuina mediterrània, tapes"
-        },
-        {
-          "nom": "El Trastero Cuina Bar",
-          "ubicacio": "Plaça Cabrit i Bassa, 5, Alaró",
-          "telefon": "677 986 639",
-          "enllacMapa": "https://maps.app.goo.gl/exampleTrastero",
-          "especialitat": "Cuina mediterrània, tapes, opcions vegetarianes"
-        },
-        {
-          "nom": "Celler Ca'n Ripoll",
-          "ubicacio": "Inca",
-          "telefon": "No disponible",
-          "enllacMapa": "https://maps.app.goo.gl/exampleCaRipoll",
-          "especialitat": "Bodega tradicional, arrossos"
-        },
-        {
-          "nom": "Restaurant Can Arabí",
-          "ubicacio": "Finca Bellveures, s/n, Binissalem",
-          "telefon": "971 512 211",
-          "enllacMapa": "https://maps.app.goo.gl/exampleCanArabi",
-          "especialitat": "Cuina mediterrània i mallorquina, arrossos, carn a la pedra"
-        },
-        {
-          "nom": "Celler Sa Vinya",
-          "ubicacio": "Binissalem",
-          "telefon": "No disponible",
-          "enllacMapa": "https://maps.app.goo.gl/exampleSaVinya",
-          "especialitat": "Rústic, familiar, arrossos"
-        },
-        {
-          "nom": "Es Turo",
-          "ubicacio": "Fornalutx",
-          "telefon": "No disponible",
-          "enllacMapa": "https://maps.app.goo.gl/exampleEsTuro",
-          "especialitat": "Vistes a la vall, arrossos"
-        },
-        {
-          "nom": "Ses Oliveres",
-          "ubicacio": "Port de Sóller",
-          "telefon": "No disponible",
-          "enllacMapa": "https://maps.app.goo.gl/exampleSesOliveres",
-          "especialitat": "Clàssic amb terrassa, arròs negre tradicional"
-        },
-        {
-          "nom": "The Blue Bar",
-          "ubicacio": "Port de Sóller",
-          "telefon": "No disponible",
-          "enllacMapa": "https://maps.app.goo.gl/exampleBlueBar",
-          "especialitat": "Modern, un dels millors arrossos negres"
-        },
-        {
-          "nom": "Bistro Mar",
-          "ubicacio": "Port de Sóller",
-          "telefon": "No disponible",
-          "enllacMapa": "https://maps.app.goo.gl/exampleBistroMar",
-          "especialitat": "Refinat, cuina elegant"
-        },
-        {
-          "nom": "Origen Tapas Concept",
-          "ubicacio": "Palma",
-          "telefon": "No disponible",
-          "enllacMapa": "https://maps.app.goo.gl/exampleOrigen",
-          "especialitat": "Tapes creatives"
-        },
-        {
-          "nom": "Quina Creu",
-          "ubicacio": "Palma",
-          "telefon": "No disponible",
-          "enllacMapa": "https://maps.app.goo.gl/exampleQuinaCreu",
-          "especialitat": "Tapes"
-        },
-        {
-          "nom": "Mercado de Santa Catalina",
-          "ubicacio": "Palma",
-          "telefon": "No disponible",
-          "enllacMapa": "https://maps.app.goo.gl/exampleMercat",
-          "especialitat": "Tapes, producte fresc, ambient local"
-        },
-        {
-          "nom": "Sa Tafona (Alaró)",
-          "ubicacio": "Carrer de la Verge del Refugi, 1, Alaró",
-          "telefon": "971 879 208",
-          "enllacMapa": "https://maps.app.goo.gl/exampleSaTafona",
-          "especialitat": "Cuina mallorquina tradicional"
-        },
-        {
-          "nom": "Traffic Restaurant (Alaró)",
-          "ubicacio": "Plaça de la Vila, 8, Alaró",
-          "telefon": "971 879 117",
-          "enllacMapa": "https://maps.app.goo.gl/exampleTraffic",
-          "especialitat": "Cuina mallorquina tradicional"
-        }
-      ],
       "fornEnsaimades": {
         "nom": "Can Joan de s'Aigo",
         "telefon": "+34 971 71 40 47",
-        "enllacMapa": "https://maps.app.goo.gl/exampleCanJoan",
+        "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Can+Joan+de+s%27Aigo+Palma",
         "recomanacio": "No marxeu sense provar les ensaimades!"
       },
       "llocEspecial": {
@@ -243,23 +123,32 @@
             "detalls": "Recomanació: Traffic Restaurant (971 879 117) o Vila Cinc (605 412 327), amb cuina tradicional mallorquina i mediterrània. Bon ambient i terrasses a la plaça."
           }
         ],
-        "notesDia": "Recordeu que a Alaró Natura NO es pot fumar enlloc de l'establiment (habitacions, terrasses, zones comunes). Per fumar cal sortir al carrer o al jardí. El cotxe té assegurança total, però les rodes i llunes SÍ estan cobertes; les exclusions lògiques són: baixos, sostre, interior, conducció temerària i camins sense asfaltar.",
+        "restaurantsDinar": [
+          {
+            "nom": "Es Verger",
+            "especialitat": "Cordero a la brasa, cuina mallorquina tradicional",
+            "ubicacio": "Cami del Castell, s/n, Alaró",
+            "telefon": "971 182 126",
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Verger+Alar%C3%B3"
+          }
+        ],
         "restaurantsSopar": [
           {
             "nom": "Sa Tafona",
             "especialitat": "Cuina mallorquina tradicional",
             "ubicacio": "Carrer de la Verge del Refugi, 1, Alaró",
             "telefon": "971 879 208",
-            "enllacMapa": "https://maps.app.goo.gl/exampleSaTafona"
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Sa+Tafona+Alar%C3%B3"
           },
           {
             "nom": "Traffic Restaurant",
-            "especialitat": "Cuina mallorquina tradicional",
+            "especialitat": "Cuina mallorquina i mediterrània",
             "ubicacio": "Plaça de la Vila, 8, Alaró",
             "telefon": "971 879 117",
-            "enllacMapa": "https://maps.app.goo.gl/exampleTraffic"
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Traffic+Restaurant+Alar%C3%B3"
           }
-        ]
+        ],
+        "notesDia": "Recordeu que a Alaró Natura NO es pot fumar enlloc de l'establiment (habitacions, terrasses, zones comunes). Per fumar cal sortir al carrer o al jardí. El cotxe té assegurança total, però les rodes i llunes SÍ estan cobertes; les exclusions lògiques són: baixos, sostre, interior, conducció temerària i camins sense asfaltar."
       },
       {
         "numero": 2,
@@ -284,7 +173,7 @@
           {
             "horari": "14:30 - 16:00",
             "activitat": "Dinar d'arròs negre (elecció d'una opció)",
-            "detalls": "Opcions d'arrossos fora de la zona d'Alcúdia per no desvetllar la sorpresa del concert:<br><br>1. Es Turo (Fornalutx) – 25-30 min – 'El millor arròs negre de Mallorca'<br>2. Celler Ca'n Ripoll (Inca) – 15-20 min – bodega tradicional<br>3. Restaurant Can Arabí (Binissalem) – 15-20 min – cuina mallorquina<br>4. Ses Oliveres (Port de Sóller) – 35-40 min – arrossos amb vistes al mar<br><br><strong>IMPORTANT:</strong> Reserveu amb 1-2 dies d'antelació (juliol és temporada alta)."          },
+            "detalls": "Opcions d'arrossos fora de la zona d'Alcúdia per no desvetllar la sorpresa del concert:<br><br>1. Es Turo (Fornalutx) – 25-30 min – 'El millor arròs negre de Mallorca'<br>2. Celler Ca'n Ripoll (Inca) – 15-20 min – bodega tradicional<br>3. Restaurant Can Arabí (Binissalem) – 15-20 min – cuina mallorquina<br>4. Ses Oliveres (Port de Sóller) – 35-40 min – arrossos amb vistes al mar<br><br><strong>IMPORTANT:</strong> Reserveu amb 1-2 dies d'antelació (juliol és temporada alta)."
           },
           {
             "horari": "16:00 - 18:30",
@@ -297,23 +186,37 @@
             "detalls": "Si heu dinat l'arròs tard, sopar lleuger a El Trastero (tapes) o Vila Cinc. Si heu dinat aviat, sopar normal a Traffic Restaurant."
           }
         ],
-        "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà. IMPORTANT: Cal reservar l'arròs negre amb antelació (juliol és temporada alta). La cala alternativa si Cala Tuent està plena pot ser Cala Murta/Figuera (accés a peu 20-30 min des del pàrquing de terra del Km 14) o Cala Estellencs (10 min a peu des del poble).",
         "restaurantsDinar": [
           {
             "nom": "Es Turo",
             "especialitat": "Arrós negre",
             "ubicacio": "Fornalutx",
             "telefon": "No disponible",
-            "enllacMapa": "https://maps.app.goo.gl/exampleEsTuro"
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Turo+Fornalutx"
           },
           {
             "nom": "Celler Ca'n Ripoll",
             "especialitat": "Arrossos, bodega tradicional",
             "ubicacio": "Inca",
             "telefon": "No disponible",
-            "enllacMapa": "https://maps.app.goo.gl/exampleCaRipoll"
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Celler+Ca%27n+Ripoll+Inca"
+          },
+          {
+            "nom": "Restaurant Can Arabí",
+            "especialitat": "Cuina mediterrània, arrossos, carn a la pedra",
+            "ubicacio": "Binissalem",
+            "telefon": "971 512 211",
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Restaurant+Can+Arab%C3%AD+Binissalem"
+          },
+          {
+            "nom": "Ses Oliveres",
+            "especialitat": "Arrossos amb vistes al mar",
+            "ubicacio": "Port de Sóller",
+            "telefon": "No disponible",
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Ses+Oliveres+Port+de+S%C3%B3ller"
           }
-        ]
+        ],
+        "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà. IMPORTANT: Cal reservar l'arròs negre amb antelació (juliol és temporada alta). La cala alternativa si Cala Tuent està plena pot ser Cala Murta/Figuera (accés a peu 20-30 min des del pàrquing de terra del Km 14) o Cala Estellencs (10 min a peu des del poble)."
       },
       {
         "numero": 3,
@@ -361,30 +264,46 @@
             "detalls": "Recomanació: Es Verger (vistes, cordero a la brasa), Sa Tafona (acollidor, cuina tradicional) o Vila Cinc (informal modern, tapes)."
           }
         ],
-        "notesDia": "Porteu calçat còmode per caminar per Palma. Protecció solar imprescindible. El Castell de Bellver tanca a les 18:00, planifiqueu bé l'horari si hi voleu pujar.",
         "restaurantsDinar": [
           {
             "nom": "Origen Tapas Concept",
             "especialitat": "Tapes creatives",
             "ubicacio": "Palma",
             "telefon": "No disponible",
-            "enllacMapa": "https://maps.app.goo.gl/exampleOrigen"
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Origen+Tapas+Concept+Palma"
           },
           {
             "nom": "Quina Creu",
             "especialitat": "Tapes",
             "ubicacio": "Palma",
             "telefon": "No disponible",
-            "enllacMapa": "https://maps.app.goo.gl/exampleQuinaCreu"
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Quina+Creu+Palma"
           },
           {
             "nom": "Mercado de Santa Catalina",
             "especialitat": "Tapes, producte fresc, ambient local",
             "ubicacio": "Palma",
             "telefon": "No disponible",
-            "enllacMapa": "https://maps.app.goo.gl/exampleMercat"
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Mercado+de+Santa+Catalina+Palma"
           }
-        ]
+        ],
+        "restaurantsSopar": [
+          {
+            "nom": "Es Verger (Alaró)",
+            "especialitat": "Cordero a la brasa",
+            "ubicacio": "Alaró",
+            "telefon": "971 182 126",
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Verger+Alar%C3%B3"
+          },
+          {
+            "nom": "Vila Cinc",
+            "especialitat": "Cuina mediterrània, tapes",
+            "ubicacio": "Plaça de la Vila, 5, Alaró",
+            "telefon": "605 412 327",
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Vila+Cinc+Alar%C3%B3"
+          }
+        ],
+        "notesDia": "Porteu calçat còmode per caminar per Palma. Protecció solar imprescindible. El Castell de Bellver tanca a les 18:00, planifiqueu bé l'horari si hi voleu pujar."
       },
       {
         "numero": 4,
@@ -457,16 +376,16 @@
             "detalls": "Conducció nocturna de tornada a Alaró (40-45 minuts). Conducció amb precaució, carreteres de muntanya fosques."
           }
         ],
-        "notesDia": "Avui és el gran dia! Recordeu: NO esmentar ni Alcúdia ni Joan Dausà fins a l'últim moment. La sorpresa és el millor regal d'aniversari. Porteu les entrades impreses o al mòbil, però assegureu-vos de tenir bateria suficient (porteu power bank). La pujada al Castell d'Alaró és exigent però les vistes ho valen. Calçat de muntanya imprescindible.",
         "restaurantsSopar": [
           {
             "nom": "Tapes a Alcúdia",
             "especialitat": "Tapes, pizza, menjar ràpid",
             "ubicacio": "Centre d'Alcúdia",
             "telefon": "No disponible",
-            "enllacMapa": "https://maps.app.goo.gl/exampleAlcudiaCentre"
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Alc%C3%BAdia+centre+restaurants"
           }
-        ]
+        ],
+        "notesDia": "Avui és el gran dia! Recordeu: NO esmentar ni Alcúdia ni Joan Dausà fins a l'últim moment. La sorpresa és el millor regal d'aniversari. Porteu les entrades impreses o al mòbil, però assegureu-vos de tenir bateria suficient (porteu power bank). La pujada al Castell d'Alaró és exigent però les vistes ho valen. Calçat de muntanya imprescindible."
       },
       {
         "numero": 5,
@@ -534,23 +453,23 @@
             "detalls": "Recollida del cotxe al pàrquing. Conducció de tornada a Sant Sadurní d'Anoia, arribada prevista cap a les 22:15. Final del viatge."
           }
         ],
-        "notesDia": "Recordeu deixar el dipòsit del cotxe PLE abans de tornar-lo (si no, us cobraran 10 € de taxa + el combustible). L'horari de check-out és a les 10:30, no a les 11:00. Puntualitat. Porteu les targetes d'embarcament digital o impresa. Les cues a l'aeroport de Palma a l'estiu poden ser llargues; aneu amb temps de sobres.",
         "restaurantsDinar": [
           {
             "nom": "Sa Tafona",
             "especialitat": "Cuina mallorquina tradicional",
-            "ubicacio": "Carrer de la Verge del Refugi, 1, Alaró",
+            "ubicacio": "Alaró",
             "telefon": "971 879 208",
-            "enllacMapa": "https://maps.app.goo.gl/exampleSaTafona"
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Sa+Tafona+Alar%C3%B3"
           },
           {
             "nom": "Traffic Restaurant",
             "especialitat": "Cuina mallorquina tradicional",
-            "ubicacio": "Plaça de la Vila, 8, Alaró",
+            "ubicacio": "Alaró",
             "telefon": "971 879 117",
-            "enllacMapa": "https://maps.app.goo.gl/exampleTraffic"
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Traffic+Restaurant+Alar%C3%B3"
           }
-        ]
+        ],
+        "notesDia": "Recordeu deixar el dipòsit del cotxe PLE abans de tornar-lo (si no, us cobraran 10 € de taxa + el combustible). L'horari de check-out és a les 10:30, no a les 11:00. Puntualitat. Porteu les targetes d'embarcament digital o impresa. Les cues a l'aeroport de Palma a l'estiu poden ser llargues; aneu amb temps de sobres."
       }
     ],
     "infoVol": {
