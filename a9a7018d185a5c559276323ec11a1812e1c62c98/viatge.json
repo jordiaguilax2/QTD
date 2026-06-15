@@ -151,73 +151,73 @@
         "notesDia": "Recordeu que a Alaró Natura NO es pot fumar enlloc de l'establiment (habitacions, terrasses, zones comunes). Per fumar cal sortir al carrer o al jardí. El cotxe té assegurança total, però les rodes i llunes SÍ estan cobertes; les exclusions lògiques són: baixos, sostre, interior, conducció temerària i camins sense asfaltar."
       },
       {
-        "numero": 2,
-        "data": "Dimecres, 15 de juliol",
-        "titol": "Cala tranquila + arrossos fora d'Alcúdia",
-        "franges": [
-          {
-            "horari": "09:30 - 10:00",
-            "activitat": "Esmorzar a l'hotel",
-            "detalls": "Esmorzar bufet inclòs a l'hotel. Agafeu forces per al dia."
-          },
-          {
-            "horari": "10:00 - 10:45",
-            "activitat": "Sortida cap a Cala Tuent",
-            "detalls": "Conducció fins a Cala Tuent (Escorca), trajecte d'uns 40-45 minuts per carreteres de muntanya."
-          },
-          {
-            "horari": "10:45 - 14:30",
-            "activitat": "Matí a Cala Tuent",
-            "detalls": "Aparcament gratuït a la vora. Cala verge, aigües cristal·lines, poca gent si s'arriba aviat (abans de les 11:00). Zona no massificada, ideal per relaxar-se. Porteu picnic per dinar o mengeu després a l'hora de l'arros."
-          },
-          {
-            "horari": "14:30 - 16:00",
-            "activitat": "Dinar d'arròs negre (elecció d'una opció)",
-            "detalls": "Opcions d'arrossos fora de la zona d'Alcúdia per no desvetllar la sorpresa del concert:<br><br>1. Es Turo (Fornalutx) – 25-30 min – 'El millor arròs negre de Mallorca'<br>2. Celler Ca'n Ripoll (Inca) – 15-20 min – bodega tradicional<br>3. Restaurant Can Arabí (Binissalem) – 15-20 min – cuina mallorquina<br>4. Ses Oliveres (Port de Sóller) – 35-40 min – arrossos amb vistes al mar<br><br><strong>IMPORTANT:</strong> Reserveu amb 1-2 dies d'antelació (juliol és temporada alta)."
-          },
-          {
-            "horari": "16:00 - 18:30",
-            "activitat": "Tarda lliure: Port de Sóller o Fornalutx",
-            "detalls": "Després de dinar, podeu aprofitar per passejar per Port de Sóller, Fornalutx o tornar cap a l'hotel a descansar."
-          },
-          {
-            "horari": "19:00 - 21:00",
-            "activitat": "Sopar lleuger a Alaró",
-            "detalls": "Si heu dinat l'arròs tard, sopar lleuger a El Trastero (tapes) o Vila Cinc. Si heu dinat aviat, sopar normal a Traffic Restaurant."
-          }
-        ],
-        "restaurantsDinar": [
-          {
-            "nom": "Es Turo",
-            "especialitat": "Arrós negre",
-            "ubicacio": "Fornalutx",
-            "telefon": "No disponible",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Turo+Fornalutx"
-          },
-          {
-            "nom": "U Mayol",
-            "especialitat": "Cuina mallorquina",
-            "ubicacio": "Zona d'Alcúdia",
-            "telefon": "No disponible",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=U+Mayol+Alc%C3%BAdia+Mallorca"
-          },
-          {
-            "nom": "Mirador de la Victoria",
-            "especialitat": "Vistes i cuina mediterrània",
-            "ubicacio": "Alcúdia",
-            "telefon": "No disponible",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Mirador+de+la+Victoria+Alc%C3%BAdia"
-          },
-          {
-            "nom": "Ses Oliveres",
-            "especialitat": "Arrossos amb vistes al mar",
-            "ubicacio": "Port de Sóller",
-            "telefon": "No disponible",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Ses+Oliveres+Port+de+S%C3%B3ller"
-          }
-        ],
-        "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà. IMPORTANT: Cal reservar l'arròs negre amb antelació (juliol és temporada alta). La cala alternativa si Cala Tuent està plena pot ser Cala Murta/Figuera (accés a peu 20-30 min des del pàrquing de terra del Km 14) o Cala Estellencs (10 min a peu des del poble)."
-      },
+  "numero": 2,
+  "data": "Dimecres, 15 de juliol",
+  "titol": "Cala tranquila + arrossos fora d'Alcúdia",
+  "franges": [
+    {
+      "horari": "09:30 - 10:00",
+      "activitat": "Esmorzar a l'hotel",
+      "detalls": "Esmorzar bufet inclòs a l'hotel. Agafeu forces per al dia."
+    },
+    {
+      "horari": "10:00 - 10:45",
+      "activitat": "Sortida cap a Cala Tuent",
+      "detalls": "Conducció fins a Cala Tuent (Escorca), trajecte d'uns 40-45 minuts per carreteres de muntanya."
+    },
+    {
+      "horari": "10:45 - 14:30",
+      "activitat": "Matí a Cala Tuent",
+      "detalls": "Aparcament gratuït a la vora. Cala verge, aigües cristal·lines, poca gent si s'arriba aviat (abans de les 11:00). Zona no massificada, ideal per relaxar-se. Porteu picnic per dinar o mengeu després a l'hora de l'arros."
+    },
+    {
+      "horari": "14:30 - 16:00",
+      "activitat": "Dinar d'arròs negre (elecció d'una opció)",
+      "detalls": "Opcions d'arrossos fora de la zona d'Alcúdia per no desvetllar la sorpresa del concert:<br><br>1. Es Turo (Fornalutx) – 25-30 min – 'El millor arròs negre de Mallorca'<br>2. U Mayol (Alcúdia) – 20-25 min – Cuina mallorquina<br>3. Mirador de la Victoria (Alcúdia) – 20-25 min – Vistes espectaculars<br>4. Ses Oliveres (Port de Sóller) – 35-40 min – arrossos amb vistes al mar<br><br><strong>IMPORTANT:</strong> Reserveu amb 1-2 dies d'antelació (juliol és temporada alta)."
+    },
+    {
+      "horari": "16:00 - 18:30",
+      "activitat": "Tarda lliure: Port de Sóller o Fornalutx",
+      "detalls": "Després de dinar, podeu aprofitar per passejar per Port de Sóller, Fornalutx o tornar cap a l'hotel a descansar."
+    },
+    {
+      "horari": "19:00 - 21:00",
+      "activitat": "Sopar lleuger a Alaró",
+      "detalls": "Si heu dinat l'arròs tard, sopar lleuger a El Trastero (tapes) o Vila Cinc. Si heu dinat aviat, sopar normal a Traffic Restaurant."
+    }
+  ],
+  "restaurantsDinar": [
+    {
+      "nom": "Es Turo",
+      "especialitat": "Arrós negre",
+      "ubicacio": "Fornalutx",
+      "telefon": "No disponible",
+      "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Turo+Fornalutx"
+    },
+    {
+      "nom": "U Mayol",
+      "especialitat": "Cuina mallorquina",
+      "ubicacio": "Zona d'Alcúdia",
+      "telefon": "No disponible",
+      "enllacMapa": "https://www.google.com/maps/search/?api=1&query=U+Mayol+Alc%C3%BAdia+Mallorca"
+    },
+    {
+      "nom": "Mirador de la Victoria",
+      "especialitat": "Vistes i cuina mediterrània",
+      "ubicacio": "Alcúdia",
+      "telefon": "No disponible",
+      "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Mirador+de+la+Victoria+Alc%C3%BAdia"
+    },
+    {
+      "nom": "Ses Oliveres",
+      "especialitat": "Arrossos amb vistes al mar",
+      "ubicacio": "Port de Sóller",
+      "telefon": "No disponible",
+      "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Ses+Oliveres+Port+de+S%C3%B3ller"
+    }
+  ],
+  "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà. IMPORTANT: Cal reservar l'arròs negre amb antelació (juliol és temporada alta). La cala alternativa si Cala Tuent està plena pot ser Cala Murta/Figuera (accés a peu 20-30 min des del pàrquing de terra del Km 14) o Cala Estellencs (10 min a peu des del poble)."
+},
       {
         "numero": 3,
         "data": "Dijous, 16 de juliol",
