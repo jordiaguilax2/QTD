@@ -195,18 +195,18 @@
             "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Turo+Fornalutx"
           },
           {
-            "nom": "Celler Ca'n Ripoll",
-            "especialitat": "Arrossos, bodega tradicional",
-            "ubicacio": "Inca",
+            "nom": "U Mayol",
+            "especialitat": "Cuina mallorquina",
+            "ubicacio": "Zona d'Alcúdia",
             "telefon": "No disponible",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Celler+Ca%27n+Ripoll+Inca"
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=U+Mayol+Alc%C3%BAdia+Mallorca"
           },
           {
-            "nom": "Restaurant Can Arabí",
-            "especialitat": "Cuina mediterrània, arrossos, carn a la pedra",
-            "ubicacio": "Binissalem",
-            "telefon": "971 512 211",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Restaurant+Can+Arab%C3%AD+Binissalem"
+            "nom": "Mirador de la Victoria",
+            "especialitat": "Vistes i cuina mediterrània",
+            "ubicacio": "Alcúdia",
+            "telefon": "No disponible",
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Mirador+de+la+Victoria+Alc%C3%BAdia"
           },
           {
             "nom": "Ses Oliveres",
