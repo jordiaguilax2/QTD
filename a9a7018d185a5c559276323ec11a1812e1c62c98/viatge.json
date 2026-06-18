@@ -23,7 +23,7 @@
     "contactesGenerals": {
       "hotel": {
         "nom": "Alaró Natura Rural Suites",
-        "telefon": "No disponible",
+        "telefon": "(+34) 971 75 20 31",
         "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Alar%C3%B3+Natura+Rural+Suites",
         "politicaFum": "COMPLETAMENT PROHIBIT fumar a tot l'establiment (habitacions, terrasses, zones comunes). Per fumar cal sortir al carrer o al jardí (preguntar a recepció).",
         "checkIn": "14:00",
@@ -31,7 +31,7 @@
       },
       "companyiaLloguer": {
         "nom": "Autos Mallorca",
-        "telefon": "pendent de posar (troba’l a la reserva o a Google Maps)",
+        "telefon": "+34 628 78 66 51",
         "condicions": "Segur a tot risc SENSE FRANQUÍCIA. Dipòsit 0 €. Combustible: lleno-lleno. Cancel·lació gratuïta fins 24h abans. La targeta de crèdit ha de ser Visa o Mastercard (no Revolut/N26) i a nom del conductor principal.",
         "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Autos+Mallorca+Palma"
       },
@@ -187,35 +187,35 @@
     }
   ],
   "restaurantsDinar": [
-    {
-      "nom": "Es Turo",
-      "especialitat": "Arrós negre",
-      "ubicacio": "Fornalutx",
-      "telefon": "No disponible",
-      "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Turo+Fornalutx"
-    },
-    {
-      "nom": "U Mayol",
-      "especialitat": "Cuina mallorquina",
-      "ubicacio": "Zona d'Alcúdia",
-      "telefon": "No disponible",
-      "enllacMapa": "https://www.google.com/maps/search/?api=1&query=U+Mayol+Alc%C3%BAdia+Mallorca"
-    },
-    {
-      "nom": "Mirador de la Victoria",
-      "especialitat": "Vistes i cuina mediterrània",
-      "ubicacio": "Alcúdia",
-      "telefon": "No disponible",
-      "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Mirador+de+la+Victoria+Alc%C3%BAdia"
-    },
-    {
-      "nom": "Ses Oliveres",
-      "especialitat": "Arrossos amb vistes al mar",
-      "ubicacio": "Port de Sóller",
-      "telefon": "No disponible",
-      "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Ses+Oliveres+Port+de+S%C3%B3ller"
-    }
-  ],
+  {
+    "nom": "Es Turo",
+    "especialitat": "Arrós negre",
+    "ubicacio": "Carrer de la Font, 12, Fornalutx",
+    "telefon": "No disponible",
+    "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Turo+Fornalutx"
+  },
+  {
+    "nom": "U Mayol",
+    "especialitat": "Cuina mallorquina",
+    "ubicacio": "Carrer de les Cases Noves, 7, Alcúdia",
+    "telefon": "No disponible",
+    "enllacMapa": "https://www.google.com/maps/search/?api=1&query=U+Mayol+Alc%C3%BAdia+Mallorca"
+  },
+  {
+    "nom": "Mirador de la Victoria",
+    "especialitat": "Vistes i cuina mediterrània",
+    "ubicacio": "Carretera del Mirador, s/n, Alcúdia",
+    "telefon": "No disponible",
+    "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Mirador+de+la+Victoria+Alc%C3%BAdia"
+  },
+  {
+    "nom": "Ses Oliveres",
+    "especialitat": "Arrossos amb vistes al mar",
+    "ubicacio": "Passeig de la Marina, 23, Port de Sóller",
+    "telefon": "No disponible",
+    "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Ses+Oliveres+Port+de+S%C3%B3ller"
+  }
+],
   "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà. IMPORTANT: Cal reservar l'arròs negre amb antelació (juliol és temporada alta). La cala alternativa si Cala Tuent està plena pot ser Cala Murta/Figuera (accés a peu 20-30 min des del pàrquing de terra del Km 14) o Cala Estellencs (10 min a peu des del poble)."
 },
       {
