@@ -114,11 +114,32 @@ function mostrarDia(dia) {
         });
     }
     
-    // Mostrar restaurants del dia si n'hi ha
+    // --- NOU: Mostrar restaurants de DINAR (si n'hi ha) ---
+    if (dia.restaurantsDinar && dia.restaurantsDinar.length > 0) {
+        const restaurantsSection = document.createElement('div');
+        restaurantsSection.className = 'day-info-panel';
+        let html = `<h4><i class="fas fa-utensils"></i> Restaurants recomanats per dinar</h4><div class="contact-list">`;
+        dia.restaurantsDinar.forEach(r => {
+            html += `<div class="contact-card">
+                        <h4>${r.nom}</h4>
+                        <div class="contact-info">
+                            <p><i class="fas fa-star"></i> ${r.especialitat}</p>
+                            <p><i class="fas fa-map-pin"></i> ${r.ubicacio}</p>
+                            ${r.telefon && r.telefon !== "No disponible" ? `<p><i class="fas fa-phone"></i> ${r.telefon}</p>` : ''}
+                            ${r.enllacMapa ? `<a href="${r.enllacMapa}" target="_blank" class="contact-link"><i class="fas fa-map-marked-alt"></i> Veure al mapa</a>` : ''}
+                        </div>
+                    </div>`;
+        });
+        html += `</div>`;
+        restaurantsSection.innerHTML = html;
+        dayContent.appendChild(restaurantsSection);
+    }
+
+    // Mostrar restaurants de SOPAR (si n'hi ha)
     if (dia.restaurantsSopar && dia.restaurantsSopar.length > 0) {
         const restaurantsSection = document.createElement('div');
         restaurantsSection.className = 'day-info-panel';
-        let html = `<h4><i class="fas fa-utensils"></i> Restaurants recomanats per aquest dia</h4><div class="contact-list">`;
+        let html = `<h4><i class="fas fa-utensils"></i> Restaurants recomanats per sopar</h4><div class="contact-list">`;
         dia.restaurantsSopar.forEach(r => {
             html += `<div class="contact-card">
                         <h4>${r.nom}</h4>
@@ -193,6 +214,7 @@ function mostrarContactes() {
     const c = viatgeActual.contactesGenerals;
     let html = `<div class="contact-list">`;
     
+    // Hotel
     if (c.hotel) {
         html += `<div class="contact-card">
                     <h4><i class="fas fa-hotel"></i> ${c.hotel.nom}</h4>
@@ -203,7 +225,20 @@ function mostrarContactes() {
                     </div>
                 </div>`;
     }
+
+    // --- NOU: Autos Mallorca (companyia de lloguer) ---
+    if (c.companyiaLloguer) {
+        html += `<div class="contact-card">
+                    <h4><i class="fas fa-car"></i> ${c.companyiaLloguer.nom}</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> <strong>Telèfon:</strong> ${c.companyiaLloguer.telefon}</p>
+                        <p><i class="fas fa-info-circle"></i> ${c.companyiaLloguer.condicions}</p>
+                        <a href="${c.companyiaLloguer.enllacMapa}" target="_blank" class="contact-link"><i class="fas fa-map-marked-alt"></i> Veure al mapa</a>
+                    </div>
+                </div>`;
+    }
     
+    // Forn d'ensaimades
     if (c.fornEnsaimades) {
         html += `<div class="contact-card">
                     <h4><i class="fas fa-bread-slice"></i> ${c.fornEnsaimades.nom}</h4>
@@ -215,6 +250,7 @@ function mostrarContactes() {
                 </div>`;
     }
     
+    // Restaurants generals (si n'hi ha)
     if (c.restaurantsGenerals && c.restaurantsGenerals.length > 0) {
         c.restaurantsGenerals.forEach(r => {
             html += `<div class="contact-card">
@@ -222,13 +258,14 @@ function mostrarContactes() {
                         <div class="contact-info">
                             <p><i class="fas fa-star"></i> ${r.especialitat}</p>
                             <p><i class="fas fa-map-pin"></i> ${r.ubicacio}</p>
-                            ${r.telefon !== "No trobat" ? `<p><i class="fas fa-phone"></i> ${r.telefon}</p>` : '<p><i class="fas fa-phone"></i> Telèfon no trobat</p>'}
+                            ${r.telefon && r.telefon !== "No trobat" ? `<p><i class="fas fa-phone"></i> ${r.telefon}</p>` : '<p><i class="fas fa-phone"></i> Telèfon no trobat</p>'}
                             <a href="${r.enllacMapa}" target="_blank" class="contact-link"><i class="fas fa-map-marked-alt"></i> Veure al mapa</a>
                         </div>
                     </div>`;
         });
     }
     
+    // Lloc especial
     if (c.llocEspecial) {
         html += `<div class="contact-card">
                     <h4>${c.llocEspecial.nom}</h4>
