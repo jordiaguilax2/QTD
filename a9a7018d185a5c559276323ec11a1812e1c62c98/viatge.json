@@ -4,21 +4,21 @@
     "dates": "Del 14 al 18 de juliol de 2026",
     "allotjament": "Alaró Natura Rural Suites, Alaró",
     "participants": 2,
-    "nivellEnergia": "moderat",
+    "nivellEnergia": "moderat-alt",
     "transport": "Cotxe de lloguer (Autos Mallorca)",
-    "pressupost": "econòmic-mitjà (660,46 € de butxaca final)",
+    "pressupost": "econòmic-mitjà (628,30 € de butxaca final)",
     "infoPressupost": {
       "desglossament": {
         "vols": "195,96 €",
-        "cotxe": "210,00 €",
+        "cotxe": "177,84 €",
         "hotel": "588,00 €",
         "parkingBCN": "78,50 €",
         "concert": "88,00 €",
-        "totalFix": "1.160,46 €",
+        "totalFix": "1.128,30 €",
         "regalFamiliar": "-500,00 €",
-        "totalButxaca": "660,46 €"
+        "totalButxaca": "628,30 €"
       },
-      "notes": "Pressupost excel·lent per a juliol a Mallorca. El cotxe és un xollo (assegurança total sense franquícia, dipòsit 0 €)."
+      "notes": "Pressupost excel·lent per a juliol a Mallorca. El cotxe és un Renault Clio amb assegurança total sense franquícia."
     },
     "contactesGenerals": {
       "hotel": {
@@ -50,7 +50,7 @@
       {
         "numero": 1,
         "data": "Dimarts, 14 de juliol",
-        "titol": "Arribada i primeres passes per Alaró",
+        "titol": "Arribada, platja de Muro i primers passos",
         "franges": [
           {
             "horari": "02:30 - 03:30",
@@ -88,51 +88,39 @@
             "detalls": "Tràmits a Autos Mallorca. Assegurança a tot risc sense franquícia, dipòsit 0 €. Combustible: lleno-lleno. IMPORTANT: la targeta de crèdit ha de ser Visa/Mastercard (no Revolut/N26) i a nom del conductor principal."
           },
           {
-            "horari": "09:15 - 09:30",
-            "activitat": "Conducció fins a Alaró",
-            "detalls": "Trajecte d'uns 30-35 minuts fins a Alaró. Arribada a les 9:15 aproximadament."
+            "horari": "09:15 - 10:00",
+            "activitat": "Conducció fins a Alaró i deixar maletes",
+            "detalls": "Trajecte d'uns 30-35 minuts fins a Alaró. Arribada a l'hotel, deixar les maletes (el check-in oficial és a les 14:00)."
           },
           {
-            "horari": "09:30 - 11:30",
-            "activitat": "Arribada a Alaró Natura, deixar maletes i passeig",
-            "detalls": "Arribada a l'hotel, deixar les maletes (el check-in oficial és a les 14:00). Passeig tranquil pel poble d'Alaró, carrers empedrats, places amb encant. Esmorzar en alguna cafeteria del poble si cal."
+            "horari": "10:00 - 10:45",
+            "activitat": "Conducció cap a Platja de Muro",
+            "detalls": "Sortida cap a Platja de Muro (35-40 min en cotxe per la Ma-13)."
           },
           {
-            "horari": "11:30 - 12:30",
-            "activitat": "Visita a l'església de Sant Bartomeu i places",
-            "detalls": "L'església principal d'Alaró, situada a la plaça del poble, data del segle XIII. Passeig per la Plaça de la Vila i els carrerons del centre."
+            "horari": "10:45 - 15:00",
+            "activitat": "Matí i migdia a Platja de Muro",
+            "detalls": "Arribada a Platja de Muro. Aparcament gratuït. Gaudir del matí: bany, sol, ombra sota els pins del passeig. Dinar lleuger a la platja (picnic o chiringuito). Migdiada a la sorra o lectura."
           },
           {
-            "horari": "13:00 - 14:30",
-            "activitat": "Dinar de benvinguda a Alaró",
-            "detalls": "Recomanació: Es Verger (971 182 126), conegut pel seu cordero a la brasa. Alternativa: Sa Tafona o Vila Cinc."
+            "horari": "18:00 - 19:00",
+            "activitat": "Retorn a Alaró i check-in",
+            "detalls": "Retorn a Alaró. Arribada a l'hotel, check-in i dutxa."
           },
           {
-            "horari": "14:30 - 16:00",
-            "activitat": "Check-in oficial i descans",
-            "detalls": "Arribada a l'hotel, habitació disponible a partir de les 14:00. Estona de descans per recuperar energies."
-          },
-          {
-            "horari": "16:30 - 19:00",
-            "activitat": "Passeig pels voltants o piscina",
-            "detalls": "Tarda lliure per relaxar-se a la piscina de l'hotel o fer un passeig pels voltants d'Alaró (Biniamar, Orient)."
-          },
-          {
-            "horari": "20:30 - 22:30",
-            "activitat": "Sopar al poble",
-            "detalls": "Recomanació: Traffic Restaurant (971 879 117) o Vila Cinc (605 412 327), amb cuina tradicional mallorquina i mediterrània. Bon ambient i terrasses a la plaça."
+            "horari": "21:00 - 23:00",
+            "activitat": "Sopar tranquil a Alaró",
+            "detalls": "Sopar a Alaró (opcions: Es Verger, Sa Tafona o Traffic Restaurant)."
           }
         ],
-        "restaurantsDinar": [
+        "restaurantsSopar": [
           {
             "nom": "Es Verger",
             "especialitat": "Cordero a la brasa, cuina mallorquina tradicional",
             "ubicacio": "Cami del Castell, s/n, Alaró",
             "telefon": "971 182 126",
             "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Verger+Alar%C3%B3"
-          }
-        ],
-        "restaurantsSopar": [
+          },
           {
             "nom": "Sa Tafona",
             "especialitat": "Cuina mallorquina tradicional",
@@ -148,244 +136,173 @@
             "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Traffic+Restaurant+Alar%C3%B3"
           }
         ],
-        "notesDia": "Recordeu que a Alaró Natura NO es pot fumar enlloc de l'establiment (habitacions, terrasses, zones comunes). Per fumar cal sortir al carrer o al jardí. El cotxe té assegurança total, però les rodes i llunes SÍ estan cobertes; les exclusions lògiques són: baixos, sostre, interior, conducció temerària i camins sense asfaltar."
+        "notesDia": "Recordeu que a Alaró Natura NO es pot fumar enlloc de l'establiment (habitacions, terrasses, zones comunes). Per fumar cal sortir al carrer o al jardí."
       },
       {
-  "numero": 2,
-  "data": "Dimecres, 15 de juliol",
-  "titol": "Cala tranquila + arrossos fora d'Alcúdia",
-  "franges": [
-    {
-      "horari": "09:30 - 10:00",
-      "activitat": "Esmorzar a l'hotel",
-      "detalls": "Esmorzar bufet inclòs a l'hotel. Agafeu forces per al dia."
-    },
-    {
-      "horari": "10:00 - 10:45",
-      "activitat": "Sortida cap a Cala Tuent",
-      "detalls": "Conducció fins a Cala Tuent (Escorca), trajecte d'uns 40-45 minuts per carreteres de muntanya."
-    },
-    {
-      "horari": "10:45 - 14:30",
-      "activitat": "Matí a Cala Tuent",
-      "detalls": "Aparcament gratuït a la vora. Cala verge, aigües cristal·lines, poca gent si s'arriba aviat (abans de les 11:00). Zona no massificada, ideal per relaxar-se. Porteu picnic per dinar o mengeu després a l'hora de l'arros."
-    },
-    {
-      "horari": "14:30 - 16:00",
-      "activitat": "Dinar d'arròs negre (elecció d'una opció)",
-      "detalls": "Opcions d'arrossos fora de la zona d'Alcúdia per no desvetllar la sorpresa del concert:<br><br>1. Es Turo (Fornalutx) – 25-30 min – 'El millor arròs negre de Mallorca'<br>2. U Mayol (Alcúdia) – 20-25 min – Cuina mallorquina<br>3. Mirador de la Victoria (Alcúdia) – 20-25 min – Vistes espectaculars<br>4. Ses Oliveres (Port de Sóller) – 35-40 min – arrossos amb vistes al mar<br><br><strong>IMPORTANT:</strong> Reserveu amb 1-2 dies d'antelació (juliol és temporada alta)."
-    },
-    {
-      "horari": "16:00 - 18:30",
-      "activitat": "Tarda lliure: Port de Sóller o Fornalutx",
-      "detalls": "Després de dinar, podeu aprofitar per passejar per Port de Sóller, Fornalutx o tornar cap a l'hotel a descansar."
-    },
-    {
-      "horari": "19:00 - 21:00",
-      "activitat": "Sopar lleuger a Alaró",
-      "detalls": "Si heu dinat l'arròs tard, sopar lleuger a El Trastero (tapes) o Vila Cinc. Si heu dinat aviat, sopar normal a Traffic Restaurant."
-    }
-  ],
-  "restaurantsDinar": [
-  {
-    "nom": "Es Turo",
-    "especialitat": "Arrós negre",
-    "ubicacio": "Carrer de la Font, 12, Fornalutx",
-    "telefon": "No disponible",
-    "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Turo+Fornalutx"
-  },
-  {
-    "nom": "U Mayol",
-    "especialitat": "Cuina mallorquina",
-    "ubicacio": "Carrer de les Cases Noves, 7, Alcúdia",
-    "telefon": "No disponible",
-    "enllacMapa": "https://www.google.com/maps/search/?api=1&query=U+Mayol+Alc%C3%BAdia+Mallorca"
-  },
-  {
-    "nom": "Mirador de la Victoria",
-    "especialitat": "Vistes i cuina mediterrània",
-    "ubicacio": "Carretera del Mirador, s/n, Alcúdia",
-    "telefon": "No disponible",
-    "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Mirador+de+la+Victoria+Alc%C3%BAdia"
-  },
-  {
-    "nom": "Ses Oliveres",
-    "especialitat": "Arrossos amb vistes al mar",
-    "ubicacio": "Passeig de la Marina, 23, Port de Sóller",
-    "telefon": "No disponible",
-    "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Ses+Oliveres+Port+de+S%C3%B3ller"
-  }
-],
-  "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà. IMPORTANT: Cal reservar l'arròs negre amb antelació (juliol és temporada alta). La cala alternativa si Cala Tuent està plena pot ser Cala Murta/Figuera (accés a peu 20-30 min des del pàrquing de terra del Km 14) o Cala Estellencs (10 min a peu des del poble)."
-},
+        "numero": 2,
+        "data": "Dimecres, 15 de juliol",
+        "titol": "Camí des Correu (Esporles-Banyalbufar) i platja",
+        "franges": [
+          {
+            "horari": "09:00 - 09:45",
+            "activitat": "Esmorzar a l'hotel",
+            "detalls": "Esmorzar bufet inclòs a l'hotel. Agafeu forces per a l'excursió."
+          },
+          {
+            "horari": "09:45 - 10:15",
+            "activitat": "Sortida cap a Esporles",
+            "detalls": "Conducció fins a Esporles (25-30 min)."
+          },
+          {
+            "horari": "10:15 - 10:30",
+            "activitat": "Arribada a Esporles i preparació",
+            "detalls": "Arribada a Esporles. Aparcar a la Plaça d'Espanya, al costat de l'església parroquial."
+          },
+          {
+            "horari": "10:30 - 13:00",
+            "activitat": "Ruta: Camí des Correu (Esporles → Banyalbufar i tornada)",
+            "detalls": "Distància: 8 km (anada i tornada). Dificultat: Baixa-moderada, sense grans desnivells. Durada: Unes 2,5 – 3 hores. Sombra: Alta (transcorre per boscos d'alzines i pins). Punts d'interès: La ruta segueix l'antic camí de correus que unia Esporles i Banyalbufar. Passa per la Font de la Vila, una font històrica que proveeix d'aigua a Banyalbufar des de l'època musulmana, i ofereix vistes espectaculars dels bancals i de la costa."
+          },
+          {
+            "horari": "13:00 - 13:30",
+            "activitat": "Final de la ruta i trasllat a la platja",
+            "detalls": "Final de la ruta a Esporles. Trasllat en cotxe a la platja de Banyalbufar o Cala Deià (10-15 min)."
+          },
+          {
+            "horari": "13:30 - 19:00",
+            "activitat": "Tarda de platja i relax",
+            "detalls": "Bany i dinar lleuger (picnic o chiringuito). Migdiada i relax a la platja."
+          },
+          {
+            "horari": "19:00 - 21:00",
+            "activitat": "Retorn a Alaró",
+            "detalls": "Retorn a Alaró. Descans i dutxa."
+          },
+          {
+            "horari": "21:00 - 23:00",
+            "activitat": "Sopar tranquil a Alaró",
+            "detalls": "Sopar a Alaró."
+          }
+        ],
+        "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/el-cami-des-correu-esporles-banyalbufar-y-regreso-35602670",
+        "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà. La ruta té molta ombra, ideal per a un dia de calor."
+      },
       {
         "numero": 3,
         "data": "Dijous, 16 de juliol",
-        "titol": "Palma monumental i tapeo",
+        "titol": "Penyal de l'Honor (Bunyola) i sopar d'arròs negre",
         "franges": [
           {
-            "horari": "09:30 - 10:00",
+            "horari": "09:00 - 09:45",
             "activitat": "Esmorzar a l'hotel",
-            "detalls": "Esmorzar bufet inclòs. Energia per a un dia de ciutat."
+            "detalls": "Esmorzar bufet inclòs. Energia per a l'excursió."
           },
           {
-            "horari": "10:00 - 10:30",
-            "activitat": "Conducció cap a Palma",
-            "detalls": "Trajecte de 25-30 minuts fins a Palma. Aparcament recomanat: Parc de la Mar (junta a la Catedral) o pàrquing El Corte Inglés."
+            "horari": "09:45 - 10:15",
+            "activitat": "Sortida cap a Bunyola",
+            "detalls": "Conducció fins a Bunyola (20-25 min)."
           },
           {
-            "horari": "10:30 - 11:30",
-            "activitat": "Arribada a Palma i primeres passes",
-            "detalls": "Arribada, aparcament i inici de la ruta pel centre històric."
+            "horari": "10:15 - 10:30",
+            "activitat": "Arribada a Bunyola i preparació",
+            "detalls": "Arribada a Bunyola. Aparcar al poble."
           },
           {
-            "horari": "11:30 - 13:30",
-            "activitat": "Visita a la Catedral de Mallorca (La Seu) i Palau de l'Almudaina",
-            "detalls": "La Catedral gòtica, una de les més impressionants d'Espanya. Al costat, el Palau de l'Almudaina, antiga fortalesa àrab i residència dels reis de Mallorca."
+            "horari": "10:30 - 14:00",
+            "activitat": "Ruta: Penyal de l'Honor (Bunyola)",
+            "detalls": "Distància: 10,56 km. Desnivell: 526 metres. Dificultat: Moderada (exigeix una bona condició física). Durada: Unes 3 – 3,5 hores. Sombra: Molta, ja que la ruta transcorre per bosc gairebé tot el trajecte. Descripció: La ruta surt del poble de Bunyola i puja fins al Penyal de l'Honor, una formació rocosa des d'on s'albira un ampli paisatge. El camí està ben definit, tot i que té trams amb roques i pendent."
           },
           {
-            "horari": "13:30 - 16:00",
-            "activitat": "Tapeig per Santa Catalina o la Llonja",
-            "detalls": "Zona de tapes per excel·lència. Recomanacions: Origen Tapas Concept, Quina Creu, Mercado de Santa Catalina (ambient local i autèntic)."
+            "horari": "14:00 - 14:30",
+            "activitat": "Final de la ruta i trasllat a Cala Sant Vicenç",
+            "detalls": "Final de la ruta a Bunyola. Trasllat en cotxe a Cala Sant Vicenç (30-35 min)."
           },
           {
-            "horari": "16:00 - 18:30",
-            "activitat": "Passeig pel Born i visita al Castell de Bellver (opcional)",
-            "detalls": "Passeig pel Passeig del Born, el centre comercial i històric de Palma. Si teniu temps i ganes, pugeu al Castell de Bellver (tanca a les 18:00, dilluns tancat). Vistes panoràmiques de 360° de la ciutat."
+            "horari": "14:30 - 18:30",
+            "activitat": "Tarda de platja a Cala Sant Vicenç",
+            "detalls": "Arribada a Cala Sant Vicenç. Bany i relax a la platja."
           },
           {
-            "horari": "18:30 - 19:00",
-            "activitat": "Tornada a Alaró",
-            "detalls": "Conducció de tornada a Alaró (25-30 minuts)."
+            "horari": "18:30 - 19:30",
+            "activitat": "Preparatius per al sopar",
+            "detalls": "Preparar-se per al sopar (canviar-se al cotxe o en un servei de la platja)."
           },
           {
-            "horari": "20:30 - 22:30",
-            "activitat": "Sopar romàntic a Alaró",
-            "detalls": "Recomanació: Es Verger (vistes, cordero a la brasa), Sa Tafona (acollidor, cuina tradicional) o Vila Cinc (informal modern, tapes)."
+            "horari": "19:30 - 22:30",
+            "activitat": "Sopar d'arròs negre a U Mayol",
+            "detalls": "Sopar d'arròs a U Mayol (Cala Sant Vicenç). Especialitat: Arròs negre amb chipirones cruixents i all i oli d'all rostit (52 € la paella per a dues persones). Horari: Sopars de dijous a dissabte de 19:30 a 00:00. Reserva: Trucar al +34 629 462 125 amb antelació."
+          },
+          {
+            "horari": "22:30 - 23:15",
+            "activitat": "Retorn a Alaró",
+            "detalls": "Retorn a Alaró (40 min en cotxe). Descans."
           }
         ],
-        "restaurantsDinar": [
-          {
-            "nom": "Origen Tapas Concept",
-            "especialitat": "Tapes creatives",
-            "ubicacio": "Palma",
-            "telefon": "No disponible",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Origen+Tapas+Concept+Palma"
-          },
-          {
-            "nom": "Quina Creu",
-            "especialitat": "Tapes",
-            "ubicacio": "Palma",
-            "telefon": "No disponible",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Quina+Creu+Palma"
-          },
-          {
-            "nom": "Mercado de Santa Catalina",
-            "especialitat": "Tapes, producte fresc, ambient local",
-            "ubicacio": "Palma",
-            "telefon": "No disponible",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Mercado+de+Santa+Catalina+Palma"
-          }
-        ],
+        "enllacRuta": "https://es.wikiloc.com/rutas-carrera-por-montana/penyal-de-lhonor-77365916",
         "restaurantsSopar": [
           {
-            "nom": "Es Verger (Alaró)",
-            "especialitat": "Cordero a la brasa",
-            "ubicacio": "Alaró",
-            "telefon": "971 182 126",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Verger+Alar%C3%B3"
-          },
-          {
-            "nom": "Vila Cinc",
-            "especialitat": "Cuina mediterrània, tapes",
-            "ubicacio": "Plaça de la Vila, 5, Alaró",
-            "telefon": "605 412 327",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Vila+Cinc+Alar%C3%B3"
+            "nom": "U Mayol",
+            "especialitat": "Arròs negre amb chipirones cruixents i all i oli d'all rostit",
+            "ubicacio": "Cala Sant Vicenç",
+            "telefon": "+34 629 462 125",
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=U+Mayol+Cala+Sant+Vicen%C3%A7"
           }
         ],
-        "notesDia": "Porteu calçat còmode per caminar per Palma. Protecció solar imprescindible. El Castell de Bellver tanca a les 18:00, planifiqueu bé l'horari si hi voleu pujar."
+        "notesDia": "IMPORTANT: Reservar U Mayol amb antelació (trucar al +34 629 462 125). La ruta del Penyal de l'Honor és moderada, porteu aigua suficient i calçat adequat."
       },
       {
         "numero": 4,
         "data": "Divendres, 17 de juliol",
-        "titol": "Muntanya, Castell d'Alaró i CONCERT SORPRESA!",
+        "titol": "Alaró-Orient (pas de s'Escaleta i pas de s'Estaló) + CONCERT",
         "franges": [
           {
-            "horari": "09:00 - 09:30",
-            "activitat": "Esmorzar potent a l'hotel",
+            "horari": "09:00 - 09:45",
+            "activitat": "Esmorzar a l'hotel",
             "detalls": "Esmorzar bufet. Avui toca senderisme i nit de concert."
           },
           {
-            "horari": "09:30 - 10:30",
-            "activitat": "Preparació per al senderisme",
-            "detalls": "Motxilla amb aigua suficient (almenys 1,5L per persona), protecció solar, gorra, calçat adequat de muntanya, fruits secs o barretes energètiques."
+            "horari": "09:45 - 14:30",
+            "activitat": "Ruta: Alaró – Orient (pas de s'Escaleta i pas de s'Estaló)",
+            "detalls": "Inici de la ruta des del mateix Alaró. Distància: Uns 13 km. Dificultat: Moderada (el track original l'apunta com a 'molt fàcil', però tingues en compte que el desnivell és considerable i hi ha trams de pedra). Durada: Unes 4 – 5 hores (amb parades). Sombra: Bona part del recorregut transcorre per boscos d'alzines i pins. Punts d'interès: La ruta connecta els pobles d'Alaró i Orient. Passa per la Font de ses Artigues, una font històrica que data de l'època àrab. També travessa el Pas de s'Escaleta, un pas de muntanya amb vistes espectaculars, i enllaça amb el GR-221."
           },
           {
-            "horari": "10:30 - 13:00",
-            "activitat": "Senderisme al Castell d'Alaró",
-            "detalls": "Ruta de senderisme des del poble fins al Castell d'Alaró. Uns 5,2 km de pujada, desnivell considerable. Vistes espectaculars de 360° de la Serra de Tramuntana. Temps aproximat de pujada: 1h45. IMPORTANT: Porteu aigua suficient, ja que a dalt no n'hi ha."
+            "horari": "14:30 - 16:00",
+            "activitat": "Final de la ruta, dutxa i descans",
+            "detalls": "Final de la ruta a Alaró. Dutxa i descans."
           },
           {
-            "horari": "13:00 - 14:00",
-            "activitat": "Descens i tornada a l'hotel",
-            "detalls": "Descens més ràpid que la pujada (uns 45 minuts). Arribada a l'hotel, dutxa ràpida."
+            "horari": "16:00 - 18:00",
+            "activitat": "Temps lliure",
+            "detalls": "Temps lliure (migdiada, piscina, lectura)."
           },
           {
-            "horari": "14:00 - 15:30",
-            "activitat": "Dinar lleuger a Alaró",
-            "detalls": "Dinar ràpid a Sa Tafona, Traffic Restaurant o Vila Cinc. Que no sigui un àpat molt pesat, per tenir energia per al concert."
+            "horari": "18:00 - 18:45",
+            "activitat": "Sortida cap a Alcúdia",
+            "detalls": "Sortida en cotxe cap a Alcúdia (40-45 min)."
           },
           {
-            "horari": "15:30 - 17:30",
-            "activitat": "Descans i temps lliure",
-            "detalls": "Siesta o relax a la piscina de l'hotel. Recuperar forces per a la nit."
+            "horari": "18:45 - 21:45",
+            "activitat": "Arribada a Alcúdia i ambient pre-concert",
+            "detalls": "Arribada a Alcúdia. Aparcar amb temps a la zona del centre. Sopar lleuger a Alcúdia: tapes i cerveses en alguna terrassa del casc antic. És el moment de gaudir de l'ambient pre-concert."
           },
           {
-            "horari": "17:30 - 18:15",
-            "activitat": "Preparatius per al concert",
-            "detalls": "Dutxa, canvi de roba, agafar les entrades, mòbil carregat, alguna jaqueta lleugera (a la nit pot refrescar)."
-          },
-          {
-            "horari": "18:15 - 19:00",
-            "activitat": "Conducció cap a Alcúdia",
-            "detalls": "Trajecte de 40-45 minuts fins a Alcúdia. Important: conducció tranquila, arribareu amb temps de sobra per aparcar sense estrès."
-          },
-          {
-            "horari": "19:00 - 20:30",
-            "activitat": "Arribada a Alcúdia, passeig pel centre",
-            "detalls": "Aparcament a Alcúdia (recomano el pàrquing gratuït o de pagament a prop del centre). Passegeu pel casc antic, les muralles, eviteu zones amb cartells del concert per no desvelar la sorpresa."
-          },
-          {
-            "horari": "20:30 - 21:30",
-            "activitat": "Sopar ràpid a Alcúdia",
-            "detalls": "Sopar lleuger per no arribar tard al concert. Opcions: tapes en alguna terrassa de la plaça, pizza italiana, o un entrepà ràpid."
-          },
-          {
-            "horari": "21:30 - 22:00",
-            "activitat": "Arribada a la Plaça de Toros d'Alcúdia",
-            "detalls": "Desplaçament fins a la Plaça de Toros. Busqueu bones localitzacions dins el recinte."
+            "horari": "21:45 - 22:00",
+            "activitat": "Desplaçament cap a la Plaça de Toros",
+            "detalls": "Desplaçament cap a la Plaça de Toros d'Alcúdia."
           },
           {
             "horari": "22:00 - 00:30",
             "activitat": "🎸 CONCERT DE JOAN DAUSÀ 🎸",
-            "detalls": "Concert sorpresa! Gaudiu de l'espectacle. És la celebració del 40è aniversari. Duració aproximada: 1h30-2h. (No us oblideu de fer fotos i vídeos!)"
+            "detalls": "Concert sorpresa! Gaudiu de l'espectacle. És la celebració del 40è aniversari. Duració aproximada: 1h30-2h."
           },
           {
             "horari": "00:30 - 01:15",
-            "activitat": "Tornada tranquil·la a Alaró",
-            "detalls": "Conducció nocturna de tornada a Alaró (40-45 minuts). Conducció amb precaució, carreteres de muntanya fosques."
+            "activitat": "Retorn a Alaró",
+            "detalls": "Retorn a Alaró (conducció tranquil·la i amb precaució). Arribada a l'hotel i descans."
           }
         ],
-        "restaurantsSopar": [
-          {
-            "nom": "Tapes a Alcúdia",
-            "especialitat": "Tapes, pizza, menjar ràpid",
-            "ubicacio": "Centre d'Alcúdia",
-            "telefon": "No disponible",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Alc%C3%BAdia+centre+restaurants"
-          }
-        ],
-        "notesDia": "Avui és el gran dia! Recordeu: NO esmentar ni Alcúdia ni Joan Dausà fins a l'últim moment. La sorpresa és el millor regal d'aniversari. Porteu les entrades impreses o al mòbil, però assegureu-vos de tenir bateria suficient (porteu power bank). La pujada al Castell d'Alaró és exigent però les vistes ho valen. Calçat de muntanya imprescindible."
+        "enllacRuta": "https://loc.wiki/t/19160318?wa=sc",
+        "notesDia": "Avui és el gran dia! Recordeu: NO esmentar ni Alcúdia ni Joan Dausà fins a l'últim moment. La sorpresa és el millor regal d'aniversari. Porteu les entrades impreses o al mòbil, però assegureu-vos de tenir bateria suficient (porteu power bank). La ruta d'avui és llarga, porteu aigua i menjar per al camí."
       },
       {
         "numero": 5,
@@ -400,76 +317,50 @@
           {
             "horari": "10:30 - 11:00",
             "activitat": "Check-out de l'hotel",
-            "detalls": "Entrega de les claus a recepció. Recordeu que el check-out és a les 10:30, no a les 11:00 com havíem dit abans."
+            "detalls": "Entrega de les claus a recepció. Recordeu que el check-out és a les 10:30."
           },
           {
             "horari": "11:00 - 13:30",
-            "activitat": "Matí lliure (tres opcions)",
-            "detalls": "Trieu una opció: A) Senderisme suau a l'Embassament de Cúber (vistes de la Serra). B) Costa oest: Banyalbufar o Estellencs (pobles amb encant, vistes al mar). C) Relax a la piscina de l'hotel i últim bany."
+            "activitat": "Matí lliure",
+            "detalls": "Matí lliure: relax a la piscina de l'hotel, passeig per Alaró o última ruta curta pels voltants."
           },
           {
             "horari": "13:30 - 15:00",
             "activitat": "Dinar de comiat",
-            "detalls": "Dinar a Alaró (Sa Tafona, Traffic Restaurant, Vila Cinc) o a la costa oeste (Banyalbufar o Estellencs, si heu triat l'opció B)."
+            "detalls": "Dinar de comiat (a Alaró o en un poble proper)."
           },
           {
             "horari": "15:00 - 15:30",
             "activitat": "Conducció cap a l'oficina d'Autos Mallorca",
-            "detalls": "Trajecte de 20-25 minuts. Assegureu-vos de deixar el dipòsit del cotxe completament PLE abans de tornar-lo (gasolinera més propera)."
+            "detalls": "Sortida cap a l'oficina d'Autos Mallorca. Assegureu-vos de deixar el dipòsit del cotxe completament PLE abans de tornar-lo."
           },
           {
             "horari": "15:30 - 16:00",
             "activitat": "Devolució del cotxe",
-            "detalls": "Lliurament del cotxe a Autos Mallorca. Revisió ràpida. Assegureu-vos que no hi ha danys nous. Recollida del dipòsit (com que l'heu deixat ple, no hi ha càrrec addicional)."
+            "detalls": "Devolució del cotxe a Autos Mallorca (amb el dipòsit ple). Minibús de cortesia cap a l'Aeroport de Palma."
           },
           {
-            "horari": "16:00 - 16:15",
-            "activitat": "Minibús a l'aeroport",
-            "detalls": "Trasllat en minibús gratuït d'Autos Mallorca fins a l'aeroport de Palma (PMI)."
+            "horari": "16:00 - 19:35",
+            "activitat": "Arribada a l'aeroport, facturació i controls",
+            "detalls": "Arribada a l'aeroport, facturació i control de seguretat. Les cues a l'estiu poden ser llargues; aneu amb temps."
           },
           {
-            "horari": "16:15 - 18:30",
-            "activitat": "Facturació i controls de seguretat",
-            "detalls": "Arribada a l'aeroport amb temps. Facturar maletes i passar els controls de seguretat. Les cues a l'estiu poden ser llargues; aneu amb temps."
-          },
-          {
-            "horari": "18:30 - 19:00",
-            "activitat": "Embaràs al vol de tornada",
-            "detalls": "Aneu a la porta d'embarcament assignada. Recordeu fer el check-in online 24 hores abans."
-          },
-          {
-            "horari": "19:35 - 20:25",
+            "horari": "19:35 - 20:30",
             "activitat": "Vol VY3919 Palma → Barcelona",
-            "detalls": "Vol de tornada. Arribada prevista a les 20:25 (durada: 50 minuts)."
+            "detalls": "Vol de tornada. Arribada prevista a les 20:30 (durada: 55 minuts)."
           },
           {
-            "horari": "20:25 - 21:30",
+            "horari": "20:30 - 21:00",
             "activitat": "Recollida de maletes i trasllat a AparcaGo",
-            "detalls": "Un cop aterreu, recolliu les maletes i agafeu el minibús d'AparcaGo fins al pàrquing."
+            "detalls": "Recollida de maletes i trasllat en minibús d'AparcaGo fins al pàrquing."
           },
           {
-            "horari": "21:30 - 22:15",
+            "horari": "21:00 - 22:30",
             "activitat": "Recollida del cotxe a AparcaGo i tornada a Sant Sadurní",
-            "detalls": "Recollida del cotxe al pàrquing. Conducció de tornada a Sant Sadurní d'Anoia, arribada prevista cap a les 22:15. Final del viatge."
+            "detalls": "Recollida del cotxe al pàrquing. Conducció de tornada a Sant Sadurní d'Anoia, arribada prevista cap a les 22:30. Final del viatge."
           }
         ],
-        "restaurantsDinar": [
-          {
-            "nom": "Sa Tafona",
-            "especialitat": "Cuina mallorquina tradicional",
-            "ubicacio": "Alaró",
-            "telefon": "971 879 208",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Sa+Tafona+Alar%C3%B3"
-          },
-          {
-            "nom": "Traffic Restaurant",
-            "especialitat": "Cuina mallorquina tradicional",
-            "ubicacio": "Alaró",
-            "telefon": "971 879 117",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Traffic+Restaurant+Alar%C3%B3"
-          }
-        ],
-        "notesDia": "Recordeu deixar el dipòsit del cotxe PLE abans de tornar-lo (si no, us cobraran 10 € de taxa + el combustible). L'horari de check-out és a les 10:30, no a les 11:00. Puntualitat. Porteu les targetes d'embarcament digital o impresa. Les cues a l'aeroport de Palma a l'estiu poden ser llargues; aneu amb temps de sobres."
+        "notesDia": "Recordeu deixar el dipòsit del cotxe PLE abans de tornar-lo (si no, us cobraran 10 € de taxa + el combustible). L'horari de check-out és a les 10:30. Puntualitat. Porteu les targetes d'embarcament digital o impresa. Les cues a l'aeroport de Palma a l'estiu poden ser llargues; aneu amb temps de sobres."
       }
     ],
     "infoVol": {
@@ -489,7 +380,7 @@
         "ruta": "Palma (PMI) → Barcelona (BCN)",
         "data": "18/07/2026",
         "sortida": "19:35",
-        "arribada": "20:25",
+        "arribada": "20:30",
         "terminalSortida": "PMI",
         "terminalArribada": "T1 (BCN)"
       },
@@ -500,14 +391,13 @@
     "checklistGeneral": [
       "✅ Fer check-in online de Vueling (24h abans)",
       "✅ Confirmar reserva del cotxe amb Autos Mallorca",
-      "✅ Reservar l'arròs negre (com a mínim 1-2 dies abans)",
-      "✅ Reservar cenes a Alaró si es vol (opcional, però recomanat)",
+      "✅ Reservar U Mayol per al sopar d'arròs negre (+34 629 462 125)",
       "✅ Portar DNI, carnet de conduir, targeta de crèdit (Visa/Mastercard)",
       "✅ Portar les targetes d'embarcament (digital o impresa)",
       "✅ Deixar el dipòsit del cotxe PLE abans de tornar-lo",
       "✅ Confirmar amb AparcaGo l'hora d'arribada al pàrquing de BCN",
-      "✅ Portar calçat de muntanya per al senderisme al Castell d'Alaró",
-      "✅ Portar protecció solar, gorra i aigua abundant",
+      "✅ Portar calçat de muntanya per a les tres rutes",
+      "✅ Portar protecció solar, gorra i aigua abundant per a les excursions",
       "✅ Carregar els mòbils i portar power bank per al concert",
       "✅ Llevar-se d'hora el dia 14 (despertar a les 2:30)",
       "✅ Recordar la política de no fumar a l'hotel (prohibit a tot l'establiment)",
