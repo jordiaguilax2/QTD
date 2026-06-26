@@ -101,6 +101,7 @@ function mostrarDia(dia) {
     
     dayContent.innerHTML = '';
     
+    // --- FRANGES HORÀRIES ---
     if (dia.franges && dia.franges.length > 0) {
         dia.franges.forEach(franja => {
             const franjaElement = document.createElement('div');
@@ -114,7 +115,24 @@ function mostrarDia(dia) {
         });
     }
     
-    // --- NOU: Mostrar restaurants de DINAR (si n'hi ha) ---
+    // --- ENLLAÇ A LA RUTA DE WIKILOC (si n'hi ha) ---
+    if (dia.enllacRuta) {
+        const rutaSection = document.createElement('div');
+        rutaSection.className = 'day-info-panel';
+        rutaSection.style.borderLeftColor = '#e67e22';
+        rutaSection.innerHTML = `
+            <h4><i class="fas fa-hiking"></i> Ruta de senderisme</h4>
+            <a href="${dia.enllacRuta}" target="_blank" rel="noopener noreferrer" class="contact-link" style="display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; padding: 0.6rem 1.2rem;">
+                <i class="fas fa-external-link-alt"></i> Veure ruta a Wikiloc
+            </a>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #7f8c8d;">
+                <i class="fas fa-info-circle"></i> Obre l'enllaç per veure el track, descarregar-lo o seguir-lo en directe.
+            </p>
+        `;
+        dayContent.appendChild(rutaSection);
+    }
+    
+    // --- RESTAURANTS DE DINAR ---
     if (dia.restaurantsDinar && dia.restaurantsDinar.length > 0) {
         const restaurantsSection = document.createElement('div');
         restaurantsSection.className = 'day-info-panel';
@@ -134,6 +152,28 @@ function mostrarDia(dia) {
         restaurantsSection.innerHTML = html;
         dayContent.appendChild(restaurantsSection);
     }
+
+    // --- RESTAURANTS DE SOPAR ---
+    if (dia.restaurantsSopar && dia.restaurantsSopar.length > 0) {
+        const restaurantsSection = document.createElement('div');
+        restaurantsSection.className = 'day-info-panel';
+        let html = `<h4><i class="fas fa-utensils"></i> Restaurants recomanats per sopar</h4><div class="contact-list">`;
+        dia.restaurantsSopar.forEach(r => {
+            html += `<div class="contact-card">
+                        <h4>${r.nom}</h4>
+                        <div class="contact-info">
+                            <p><i class="fas fa-star"></i> ${r.especialitat}</p>
+                            <p><i class="fas fa-map-pin"></i> ${r.ubicacio}</p>
+                            ${r.telefon ? `<p><i class="fas fa-phone"></i> ${r.telefon}</p>` : ''}
+                            ${r.enllacMapa ? `<a href="${r.enllacMapa}" target="_blank" class="contact-link"><i class="fas fa-map-marked-alt"></i> Veure al mapa</a>` : ''}
+                        </div>
+                    </div>`;
+        });
+        html += `</div>`;
+        restaurantsSection.innerHTML = html;
+        dayContent.appendChild(restaurantsSection);
+    }
+}
 
     // Mostrar restaurants de SOPAR (si n'hi ha)
     if (dia.restaurantsSopar && dia.restaurantsSopar.length > 0) {
