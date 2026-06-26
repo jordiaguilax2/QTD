@@ -175,28 +175,6 @@ function mostrarDia(dia) {
     }
 }
 
-    // Mostrar restaurants de SOPAR (si n'hi ha)
-    if (dia.restaurantsSopar && dia.restaurantsSopar.length > 0) {
-        const restaurantsSection = document.createElement('div');
-        restaurantsSection.className = 'day-info-panel';
-        let html = `<h4><i class="fas fa-utensils"></i> Restaurants recomanats per sopar</h4><div class="contact-list">`;
-        dia.restaurantsSopar.forEach(r => {
-            html += `<div class="contact-card">
-                        <h4>${r.nom}</h4>
-                        <div class="contact-info">
-                            <p><i class="fas fa-star"></i> ${r.especialitat}</p>
-                            <p><i class="fas fa-map-pin"></i> ${r.ubicacio}</p>
-                            ${r.telefon ? `<p><i class="fas fa-phone"></i> ${r.telefon}</p>` : ''}
-                            ${r.enllacMapa ? `<a href="${r.enllacMapa}" target="_blank" class="contact-link"><i class="fas fa-map-marked-alt"></i> Veure al mapa</a>` : ''}
-                        </div>
-                    </div>`;
-        });
-        html += `</div>`;
-        restaurantsSection.innerHTML = html;
-        dayContent.appendChild(restaurantsSection);
-    }
-}
-
 // Mostrar informació dels vols
 function mostrarVols() {
     const dayHeader = document.getElementById('dayHeader');
@@ -266,7 +244,7 @@ function mostrarContactes() {
                 </div>`;
     }
 
-    // --- NOU: Autos Mallorca (companyia de lloguer) ---
+    // Autos Mallorca (companyia de lloguer)
     if (c.companyiaLloguer) {
         html += `<div class="contact-card">
                     <h4><i class="fas fa-car"></i> ${c.companyiaLloguer.nom}</h4>
@@ -328,7 +306,7 @@ function mostrarTemps() {
     
     dayContent.innerHTML = `<div class="loading-message"><i class="fas fa-spinner fa-spin"></i><p>Carregant dades meteorològiques...</p></div>`;
     
-    // IMPORTANT: Substituïu 'LA_TEVA_API_KEY' per la vostra clau de WeatherAPI.com
+    // Clau de WeatherAPI.com (substitueix si cal)
     const API_KEY = '8ff63a61fb324802af290015262302';
     const location = 'Mallorca, Spain';
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=5&aqi=no&alerts=no&lang=ca`;
