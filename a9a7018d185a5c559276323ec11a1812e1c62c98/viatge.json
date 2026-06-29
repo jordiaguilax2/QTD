@@ -251,59 +251,73 @@
         "notesDia": "IMPORTANT: Reservar U Mayol amb antelació (trucar al +34 629 462 125). La ruta del Penyal de l'Honor és moderada, porteu aigua suficient i calçat adequat."
       },
       {
-        "numero": 4,
-        "data": "Divendres, 17 de juliol",
-        "titol": "Alaró-Orient (pas de s'Escaleta i pas de s'Estaló) + CONCERT",
-        "franges": [
-          {
-            "horari": "09:00 - 09:45",
-            "activitat": "Esmorzar a l'hotel",
-            "detalls": "Esmorzar bufet. Avui toca senderisme i nit de concert."
-          },
-          {
-            "horari": "09:45 - 14:30",
-            "activitat": "Ruta: Alaró – Orient (pas de s'Escaleta i pas de s'Estaló)",
-            "detalls": "Inici de la ruta des del mateix Alaró. Distància: Uns 13 km. Dificultat: Moderada (el track original l'apunta com a 'molt fàcil', però tingues en compte que el desnivell és considerable i hi ha trams de pedra). Durada: Unes 4 – 5 hores (amb parades). Sombra: Bona part del recorregut transcorre per boscos d'alzines i pins. Punts d'interès: La ruta connecta els pobles d'Alaró i Orient. Passa per la Font de ses Artigues, una font històrica que data de l'època àrab. També travessa el Pas de s'Escaleta, un pas de muntanya amb vistes espectaculars, i enllaça amb el GR-221."
-          },
-          {
-            "horari": "14:30 - 16:00",
-            "activitat": "Final de la ruta, dutxa i descans",
-            "detalls": "Final de la ruta a Alaró. Dutxa i descans."
-          },
-          {
-            "horari": "16:00 - 18:00",
-            "activitat": "Temps lliure",
-            "detalls": "Temps lliure (migdiada, piscina, lectura)."
-          },
-          {
-            "horari": "18:00 - 18:45",
-            "activitat": "Sortida cap a Alcúdia",
-            "detalls": "Sortida en cotxe cap a Alcúdia (40-45 min)."
-          },
-          {
-            "horari": "18:45 - 21:45",
-            "activitat": "Arribada a Alcúdia i ambient pre-concert",
-            "detalls": "Arribada a Alcúdia. Aparcar amb temps a la zona del centre. Sopar lleuger a Alcúdia: tapes i cerveses en alguna terrassa del casc antic. És el moment de gaudir de l'ambient pre-concert."
-          },
-          {
-            "horari": "21:45 - 22:00",
-            "activitat": "Desplaçament cap a la Plaça de Toros",
-            "detalls": "Desplaçament cap a la Plaça de Toros d'Alcúdia."
-          },
-          {
-            "horari": "22:00 - 00:30",
-            "activitat": "🎸 CONCERT DE JOAN DAUSÀ 🎸",
-            "detalls": "Concert sorpresa! Gaudiu de l'espectacle. És la celebració del 40è aniversari. Duració aproximada: 1h30-2h."
-          },
-          {
-            "horari": "00:30 - 01:15",
-            "activitat": "Retorn a Alaró",
-            "detalls": "Retorn a Alaró (conducció tranquil·la i amb precaució). Arribada a l'hotel i descans."
-          }
-        ],
-        "enllacRuta": "https://loc.wiki/t/19160318?wa=sc",
-        "notesDia": "Avui és el gran dia! Recordeu: NO esmentar ni Alcúdia ni Joan Dausà fins a l'últim moment. La sorpresa és el millor regal d'aniversari. Porteu les entrades impreses o al mòbil, però assegureu-vos de tenir bateria suficient (porteu power bank). La ruta d'avui és llarga, porteu aigua i menjar per al camí."
-      },
+  "numero": 4,
+  "data": "Divendres, 17 de juliol",
+  "titol": "Volta a la Talaia de Cals Reis + CONCERT",
+  "franges": [
+    {
+      "horari": "08:00 - 08:45",
+      "activitat": "Esmorzar a l'hotel",
+      "detalls": "Esmorzar bufet. Avui toca una ruta llarga i nit de concert, cal sortir d'hora."
+    },
+    {
+      "horari": "08:45 - 09:00",
+      "activitat": "Preparació i sortida",
+      "detalls": "Motxilla amb aigua suficient (mínim 2L per persona), protecció solar, gorra, calçat de muntanya, fruits secs o barretes energètiques. La ruta surt des del mateix Alaró, no cal agafar el cotxe."
+    },
+    {
+      "horari": "09:00 - 14:30",
+      "activitat": "Ruta: Volta a la Talaia de Cals Reis (Alaró)",
+      "detalls": "Ruta circular des d'Alaró. Distància: 16,15 km. Desnivell: 841 m. Dificultat: Moderada-alta. Durada: unes 5-5,5 hores (amb parades). Punts d'interès: Sa font des Jardí, Font de ses Artigues, Pas de l'Escaleta, Pas de l'Estaló, Pou Des Quer, i vistes espectaculars del Castell d'Alaró i la Penya de la Bastida. La ruta transcorre per espessos boscos d'alzines i pins, amb molta ombra. IMPORTANT: Porteu aigua suficient, ja que no hi ha fonts al llarg del recorregut."
+    },
+    {
+      "horari": "14:30 - 16:00",
+      "activitat": "Final de la ruta, dutxa i descans",
+      "detalls": "Arribada a Alaró. Dutxa ràpida i descans per recuperar forces."
+    },
+    {
+      "horari": "16:00 - 17:45",
+      "activitat": "Temps lliure",
+      "detalls": "Temps per relaxar-se, migdiada o piscina."
+    },
+    {
+      "horari": "17:45 - 18:30",
+      "activitat": "Sortida cap a Alcúdia",
+      "detalls": "Sortida en cotxe cap a Alcúdia (40-45 min)."
+    },
+    {
+      "horari": "18:30 - 21:30",
+      "activitat": "Arribada a Alcúdia i ambient pre-concert",
+      "detalls": "Arribada a Alcúdia. Aparcar amb temps a la zona del centre. Sopar lleuger a Alcúdia: tapes i cerveses en alguna terrassa del casc antic. És el moment de gaudir de l'ambient pre-concert."
+    },
+    {
+      "horari": "21:30 - 22:00",
+      "activitat": "Desplaçament cap a la Plaça de Toros",
+      "detalls": "Desplaçament cap a la Plaça de Toros d'Alcúdia."
+    },
+    {
+      "horari": "22:00 - 00:30",
+      "activitat": "🎸 CONCERT DE JOAN DAUSÀ 🎸",
+      "detalls": "Concert sorpresa! Gaudiu de l'espectacle. És la celebració del 40è aniversari. Duració aproximada: 1h30-2h."
+    },
+    {
+      "horari": "00:30 - 01:15",
+      "activitat": "Retorn a Alaró",
+      "detalls": "Retorn a Alaró (conducció tranquil·la i amb precaució). Arribada a l'hotel i descans."
+    }
+  ],
+  "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/2023-86-volta-a-la-talaia-de-cals-reis-alaro-150666494",
+  "restaurantsSopar": [
+    {
+      "nom": "Tapes a Alcúdia",
+      "especialitat": "Tapes, pizza, menjar ràpid",
+      "ubicacio": "Centre d'Alcúdia",
+      "telefon": "No disponible",
+      "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Alc%C3%BAdia+centre+restaurants"
+    }
+  ],
+  "notesDia": "Avui és el gran dia! Recordeu: NO esmentar ni Alcúdia ni Joan Dausà fins a l'últim moment. La sorpresa és el millor regal d'aniversari. Porteu les entrades impreses o al mòbil i assegureu-vos de tenir bateria suficient (porteu power bank). La ruta d'avui és llarga (16 km) i amb 841 m de desnivell; sortiu d'hora, porteu aigua abundant i calçat adequat."
+},
       {
         "numero": 5,
         "data": "Dissabte, 18 de juliol",
