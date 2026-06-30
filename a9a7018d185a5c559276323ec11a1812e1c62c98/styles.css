@@ -130,7 +130,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* COMPARATIVA: dues columnes */
+/* COMPARATIVA: dues columnes amb horaris */
 .comparativa-container {
     display: flex;
     flex-direction: column;
@@ -205,29 +205,25 @@ body {
     color: #e67e22;
 }
 
-/* Franges horàries (dins de la columna original) */
-.time-slot {
-    background-color: #f8f9fa;
+.comparativa-columna .ruta-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #e3f2fd;
+    color: #1565c0;
     border-radius: 6px;
-    padding: 0.6rem 0.8rem;
-    margin-bottom: 0.6rem;
-    border-left: 3px solid #3498db;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
-.time-slot .time-range {
-    font-weight: bold;
-    font-size: 0.8rem;
-    color: #2980b9;
+.comparativa-columna .ruta-link:hover {
+    background-color: #bbdefb;
 }
 
-.time-slot .activity-title {
-    font-size: 0.9rem;
-    color: #1e3c32;
-}
-
-.time-slot .activity-details {
-    font-size: 0.8rem;
-    color: #555;
+.comparativa-columna .ruta-link i {
+    margin-right: 6px;
 }
 
 /* Enllaços i panells d'informació */
@@ -294,45 +290,62 @@ body {
     font-size: 0.85rem;
 }
 
-/* Checklist */
-.info-panel {
+/* CHECKLIST (pestanya separada) */
+.checklist-container {
     background-color: white;
     border-radius: 12px;
     padding: 1.5rem;
-    margin-top: 2.5rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border-top: 5px solid #2ecc71;
 }
 
-.info-panel h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
+.checklist-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-#checklist {
-    list-style: none;
-}
-
-#checklist li {
-    padding: 0.7rem 0;
-    border-bottom: 1px solid #f0f0f0;
-    display: flex;
-    align-items: flex-start;
     gap: 12px;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.95rem;
 }
 
-#checklist li:last-child {
+.checklist-item:hover {
+    background-color: #f9f9f9;
+}
+
+.checklist-item:last-child {
     border-bottom: none;
 }
 
-#checklist li:before {
-    content: "✓";
-    color: #2ecc71;
-    font-weight: bold;
+.checklist-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
     flex-shrink: 0;
+    accent-color: #2a5a4a;
+}
+
+.checklist-item .checklist-text {
+    flex: 1;
+}
+
+.checklist-item.completed .checklist-text {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+.checklist-progress {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #e8f5f0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.checklist-progress span {
+    font-weight: 600;
+    color: #2a5a4a;
 }
 
 /* Temps */
