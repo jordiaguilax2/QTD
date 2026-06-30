@@ -28,7 +28,6 @@ function inicialitzarAplicacio() {
     
     generarPestanyes(viatgeActual);
     mostrarDia(viatgeActual.dies[0]);
-    generarChecklist(viatgeActual.checklistGeneral);
     configurarEsdeveniments();
 }
 
@@ -51,6 +50,16 @@ function generarPestanyes(viatge) {
         });
         tabsContainer.appendChild(boto);
     });
+    
+    // Pestanya de Checklist
+    const botoChecklist = document.createElement('button');
+    botoChecklist.className = 'tab-button';
+    botoChecklist.innerHTML = `<i class="fas fa-tasks"></i> Checklist`;
+    botoChecklist.addEventListener('click', () => {
+        mostrarChecklist();
+        activarPestanya(botoChecklist);
+    });
+    tabsContainer.appendChild(botoChecklist);
     
     // Pestanya de Vols
     const botoVols = document.createElement('button');
@@ -89,16 +98,6 @@ function activarPestanya(pestanya) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Generar la checklist general
-function generarChecklist(checklistItems) {
-    const checklistContainer = document.getElementById('checklist');
-    if (checklistItems && checklistItems.length > 0) {
-        checklistContainer.innerHTML = checklistItems.map(item => `<li>${item}</li>`).join('');
-    } else {
-        checklistContainer.innerHTML = '<li>No hi ha elements a la checklist</li>';
-    }
-}
-
 // Mostrar el contingut d'un dia
 function mostrarDia(dia) {
     const dayHeader = document.getElementById('dayHeader');
@@ -131,15 +130,23 @@ function mostrarDia(dia) {
     colOriginal.innerHTML = originalHTML;
     comparativaContainer.appendChild(colOriginal);
     
-    // Columna dreta: nou pla (plaNou)
+    // Columna dreta: nou pla (amb horaris i enllaç a Wikiloc)
     const colNou = document.createElement('div');
     colNou.className = 'comparativa-columna nou';
     if (dia.plaNou) {
         let nouHTML = `<h3><i class="fas fa-map-signs"></i> Nou Pla: ${dia.plaNou.titol}</h3><ul>`;
-        dia.plaNou.activitats.forEach(act => {
-            nouHTML += `<li>${act}</li>`;
-        });
+        if (dia.plaNou.horaris && dia.plaNou.horaris.length > 0) {
+            dia.plaNou.horaris.forEach(activitat => {
+                nouHTML += `<li>${activitat}</li>`;
+            });
+        } else {
+            nouHTML += `<li>No hi ha horaris definits per a aquest dia.</li>`;
+        }
         nouHTML += `</ul>`;
+        // Enllaç a Wikiloc si existeix
+        if (dia.plaNou.enllacRuta) {
+            nouHTML += `<a href="${dia.plaNou.enllacRuta}" target="_blank" rel="noopener noreferrer" class="ruta-link"><i class="fas fa-hiking"></i> Veure ruta a Wikiloc</a>`;
+        }
         colNou.innerHTML = nouHTML;
     } else {
         colNou.innerHTML = `<h3><i class="fas fa-map-signs"></i> Nou Pla</h3><p>No hi ha un nou pla definit per a aquest dia.</p>`;
@@ -148,19 +155,16 @@ function mostrarDia(dia) {
     
     dayContent.appendChild(comparativaContainer);
     
-    // --- ENLLAÇ A LA RUTA DE WIKILOC (si n'hi ha) ---
+    // --- ENLLAÇ A LA RUTA ORIGINAL DE WIKILOC (si n'hi ha) ---
     if (dia.enllacRuta) {
         const rutaSection = document.createElement('div');
         rutaSection.className = 'day-info-panel';
-        rutaSection.style.borderLeftColor = '#e67e22';
+        rutaSection.style.borderLeftColor = '#3498db';
         rutaSection.innerHTML = `
-            <h4><i class="fas fa-hiking"></i> Ruta de senderisme</h4>
+            <h4><i class="fas fa-hiking"></i> Ruta original (pla original)</h4>
             <a href="${dia.enllacRuta}" target="_blank" rel="noopener noreferrer" class="contact-link" style="display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; padding: 0.6rem 1.2rem;">
                 <i class="fas fa-external-link-alt"></i> Veure ruta a Wikiloc
             </a>
-            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #7f8c8d;">
-                <i class="fas fa-info-circle"></i> Obre l'enllaç per veure el track, descarregar-lo o seguir-lo en directe.
-            </p>
         `;
         dayContent.appendChild(rutaSection);
     }
@@ -205,6 +209,82 @@ function mostrarDia(dia) {
         html += `</div>`;
         restaurantsSection.innerHTML = html;
         dayContent.appendChild(restaurantsSection);
+    }
+}
+
+// Mostrar la Checklist (pestanya separada)
+function mostrarChecklist() {
+    const dayHeader = document.getElementById('dayHeader');
+    const dayContent = document.getElementById('dayContent');
+    
+    dayHeader.innerHTML = `
+        <h2 class="day-title"><i class="fas fa-tasks"></i> Checklist del Viatge</h2>
+        <p class="day-date"><i class="fas fa-check-circle"></i> Marca els elements que ja tinguis preparats</p>
+    `;
+    
+    if (!viatgeActual.checklistGeneral || viatgeActual.checklistGeneral.length === 0) {
+        dayContent.innerHTML = '<p>No hi ha elements a la checklist.</p>';
+        return;
+    }
+    
+    const container = document.createElement('div');
+    container.className = 'checklist-container';
+    
+    let html = '<div class="checklist-list">';
+    viatgeActual.checklistGeneral.forEach((item, index) => {
+        const id = `checklist-${index}`;
+        // Recuperar estat des de localStorage
+        const checked = localStorage.getItem(id) === 'true' ? 'checked' : '';
+        html += `
+            <div class="checklist-item" data-index="${index}">
+                <input type="checkbox" id="${id}" ${checked}>
+                <label for="${id}" class="checklist-text">${item}</label>
+            </div>
+        `;
+    });
+    html += '</div>';
+    
+    // Barra de progrés
+    const total = viatgeActual.checklistGeneral.length;
+    const completed = viatgeActual.checklistGeneral.filter((_, i) => 
+        localStorage.getItem(`checklist-${i}`) === 'true'
+    ).length;
+    html += `
+        <div class="checklist-progress">
+            <i class="fas fa-chart-simple"></i> Progrés: <span>${completed}</span> / <span>${total}</span> elements completats
+        </div>
+    `;
+    
+    container.innerHTML = html;
+    
+    // Afegir event listeners per guardar l'estat
+    container.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(input => {
+        input.addEventListener('change', function() {
+            const id = this.id;
+            localStorage.setItem(id, this.checked);
+            // Actualitzar progrés
+            actualitzarProgres(container);
+        });
+    });
+    
+    dayContent.innerHTML = '';
+    dayContent.appendChild(container);
+}
+
+// Funció per actualitzar la barra de progrés
+function actualitzarProgres(container) {
+    const items = container.querySelectorAll('.checklist-item');
+    const total = items.length;
+    let completed = 0;
+    items.forEach(item => {
+        const checkbox = item.querySelector('input[type="checkbox"]');
+        if (checkbox && checkbox.checked) {
+            completed++;
+        }
+    });
+    const progressSpan = container.querySelector('.checklist-progress span:first-of-type');
+    if (progressSpan) {
+        progressSpan.textContent = completed;
     }
 }
 
