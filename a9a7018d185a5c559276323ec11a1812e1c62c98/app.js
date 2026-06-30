@@ -28,6 +28,7 @@ function inicialitzarAplicacio() {
     
     generarPestanyes(viatgeActual);
     mostrarDia(viatgeActual.dies[0]);
+    generarChecklist(viatgeActual.checklistGeneral);
     configurarEsdeveniments();
 }
 
@@ -88,6 +89,16 @@ function activarPestanya(pestanya) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Generar la checklist general
+function generarChecklist(checklistItems) {
+    const checklistContainer = document.getElementById('checklist');
+    if (checklistItems && checklistItems.length > 0) {
+        checklistContainer.innerHTML = checklistItems.map(item => `<li>${item}</li>`).join('');
+    } else {
+        checklistContainer.innerHTML = '<li>No hi ha elements a la checklist</li>';
+    }
+}
+
 // Mostrar el contingut d'un dia
 function mostrarDia(dia) {
     const dayHeader = document.getElementById('dayHeader');
@@ -101,19 +112,41 @@ function mostrarDia(dia) {
     
     dayContent.innerHTML = '';
     
-    // --- FRANGES HORÀRIES ---
+    // --- COMPARATIVA: dues columnes ---
+    const comparativaContainer = document.createElement('div');
+    comparativaContainer.className = 'comparativa-container';
+    
+    // Columna esquerra: pla original (franges horàries)
+    const colOriginal = document.createElement('div');
+    colOriginal.className = 'comparativa-columna original';
+    let originalHTML = `<h3><i class="fas fa-route"></i> Pla Original</h3><ul>`;
     if (dia.franges && dia.franges.length > 0) {
         dia.franges.forEach(franja => {
-            const franjaElement = document.createElement('div');
-            franjaElement.className = 'time-slot';
-            franjaElement.innerHTML = `
-                <div class="time-range"><i class="far fa-clock"></i> ${franja.horari}</div>
-                <h3 class="activity-title">${franja.activitat}</h3>
-                ${franja.detalls ? `<p class="activity-details">${franja.detalls}</p>` : ''}
-            `;
-            dayContent.appendChild(franjaElement);
+            originalHTML += `<li><strong>${franja.horari}</strong> — ${franja.activitat}</li>`;
         });
+    } else {
+        originalHTML += `<li>No hi ha activitats programades.</li>`;
     }
+    originalHTML += `</ul>`;
+    colOriginal.innerHTML = originalHTML;
+    comparativaContainer.appendChild(colOriginal);
+    
+    // Columna dreta: nou pla (plaNou)
+    const colNou = document.createElement('div');
+    colNou.className = 'comparativa-columna nou';
+    if (dia.plaNou) {
+        let nouHTML = `<h3><i class="fas fa-map-signs"></i> Nou Pla: ${dia.plaNou.titol}</h3><ul>`;
+        dia.plaNou.activitats.forEach(act => {
+            nouHTML += `<li>${act}</li>`;
+        });
+        nouHTML += `</ul>`;
+        colNou.innerHTML = nouHTML;
+    } else {
+        colNou.innerHTML = `<h3><i class="fas fa-map-signs"></i> Nou Pla</h3><p>No hi ha un nou pla definit per a aquest dia.</p>`;
+    }
+    comparativaContainer.appendChild(colNou);
+    
+    dayContent.appendChild(comparativaContainer);
     
     // --- ENLLAÇ A LA RUTA DE WIKILOC (si n'hi ha) ---
     if (dia.enllacRuta) {
@@ -244,7 +277,7 @@ function mostrarContactes() {
                 </div>`;
     }
 
-    // Autos Mallorca (companyia de lloguer)
+    // Autos Mallorca
     if (c.companyiaLloguer) {
         html += `<div class="contact-card">
                     <h4><i class="fas fa-car"></i> ${c.companyiaLloguer.nom}</h4>
@@ -306,7 +339,6 @@ function mostrarTemps() {
     
     dayContent.innerHTML = `<div class="loading-message"><i class="fas fa-spinner fa-spin"></i><p>Carregant dades meteorològiques...</p></div>`;
     
-    // Clau de WeatherAPI.com (substitueix si cal)
     const API_KEY = '8ff63a61fb324802af290015262302';
     const location = 'Mallorca, Spain';
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=5&aqi=no&alerts=no&lang=ca`;
