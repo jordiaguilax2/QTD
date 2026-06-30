@@ -114,15 +114,18 @@
           }
         ],
         "plaNou": {
-          "titol": "Sud (Es Trenc o Caló des Moro)",
-          "activitats": [
-            "Vol BCN→PMI (7:00)",
-            "Recollida cotxe",
-            "Deixar maletes a Alaró",
-            "Es Trenc o Caló des Moro (sur) + bany",
-            "Picnic o chiringuito",
-            "Sopar tranquil a Alaró"
-          ]
+          "titol": "Volta des General (Banyalbufar)",
+          "horaris": [
+            "07:00 Vol BCN→PMI",
+            "08:30 Recollida cotxe",
+            "09:30 Deixar maletes a Alaró",
+            "10:30 Sortida cap a Banyalbufar (30 min)",
+            "11:15 Inici de la ruta Volta des General (~5 km, fàcil)",
+            "14:00 Final de la ruta i dinar a Banyalbufar",
+            "16:00 Retorn a Alaró, check-in i dutxa",
+            "21:00 Sopar tranquil a Alaró"
+          ],
+          "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/volta-des-general-banyalbufar-139413324"
         },
         "restaurantsSopar": [
           {
@@ -198,14 +201,17 @@
         "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/el-cami-des-correu-esporles-banyalbufar-y-regreso-35602670",
         "plaNou": {
           "titol": "Valldemossa, Deià i Sa Foradada",
-          "activitats": [
-            "Esmorzar a l'hotel",
-            "Sortida cap a Valldemossa (30 min)",
-            "Visita a la Cartuja i carrers",
-            "Deià (15 min en cotxe). Passeig i Cala Deià (bany)",
-            "Sa Foradada (mirador)",
-            "Sopar tranquil a Alaró o a Deià"
-          ]
+          "horaris": [
+            "09:00 Esmorzar a l'hotel",
+            "10:00 Sortida cap a Valldemossa (30 min)",
+            "10:30 Visita a la Cartuja i carrers de Valldemossa",
+            "12:00 Sortida cap a Deià (15 min). Passeig i Cala Deià (bany)",
+            "14:00 Dinar a Deià",
+            "16:00 Mirador de Sa Foradada",
+            "18:00 Retorn a Alaró",
+            "21:00 Sopar tranquil a Alaró o a Deià"
+          ],
+          "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/ruta-valldemossa-deia-sa-foradada-82817019"
         },
         "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà. La ruta té molta ombra, ideal per a un dia de calor."
       },
@@ -262,16 +268,18 @@
         ],
         "enllacRuta": "https://es.wikiloc.com/rutas-carrera-por-montana/penyal-de-lhonor-77365916",
         "plaNou": {
-          "titol": "Cap de Formentor i Cala Sant Vicenç",
-          "activitats": [
-            "Esmorzar a l'hotel",
-            "Sortida cap al Cap de Formentor (50 min)",
-            "Mirador d'es Colomer",
-            "Platja de Formentor (bany ràpid)",
-            "Cala Sant Vicenç (Cala Barques / Molins). Tarda de platja i relax",
-            "Sopar d'arròs a U Mayol (19:30)",
-            "Retorn a Alaró (22:30)"
-          ]
+          "titol": "Cap de Formentor + Cala Sant Vicenç",
+          "horaris": [
+            "09:00 Esmorzar a l'hotel",
+            "10:00 Sortida cap al Cap de Formentor (50 min)",
+            "11:00 Mirador d'es Colomer",
+            "12:00 Platja de Formentor (bany ràpid)",
+            "13:30 Dinar a la zona",
+            "15:00 Cala Sant Vicenç (Cala Barques / Molins). Tarda de platja i relax",
+            "19:30 Sopar d'arròs a U Mayol",
+            "22:30 Retorn a Alaró"
+          ],
+          "enllacRuta": "https://ca.wikiloc.com/rutes-senderisme/les-millors-rutes-senderisme-a-formentor-22338039"
         },
         "restaurantsSopar": [
           {
@@ -342,16 +350,18 @@
         ],
         "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/2023-86-volta-a-la-talaia-de-cals-reis-alaro-150666494",
         "plaNou": {
-          "titol": "Ruta de les Cales (Llevant)",
-          "activitats": [
-            "Esmorzar a l'hotel (abans de les 8:00)",
-            "Sortida cap a Cala Torta (45 min)",
-            "Ruta de les Cales: Torta, Mitjana, Estreta, Déntol, Matzoc (5 km + 5 km). Bany a cada cala",
-            "Retorn a Alaró (13:00). Dutxa, dinar lleuger i siesta (15:00-17:00)",
-            "Sortida cap a Alcúdia (18:00). Tapas i cerveses",
-            "Concert de Joan Dausà (22:00)",
-            "Retorn a Alaró (00:30)"
-          ]
+          "titol": "Ruta de les Cales (Llevant) + Concert",
+          "horaris": [
+            "08:00 Esmorzar a l'hotel",
+            "09:00 Sortida cap a Cala Torta (45 min)",
+            "10:00 Inici ruta de les Cales: Torta, Mitjana, Estreta, Déntol, Matzoc (~10 km anada i tornada, fàcil)",
+            "14:00 Final de la ruta i picnic a Cala Torta",
+            "15:30 Retorn a Alaró. Dutxa i descans",
+            "18:00 Sortida cap a Alcúdia. Tapas i cerveses",
+            "22:00 Concert de Joan Dausà",
+            "00:30 Retorn a Alaró"
+          ],
+          "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/cala-torta-cala-mitjana-cala-estreta-cala-dentol-cala-matzoc-torre-daubarca-29433087"
         },
         "restaurantsSopar": [
           {
@@ -422,13 +432,16 @@
         ],
         "plaNou": {
           "titol": "Palma i Tornada",
-          "activitats": [
-            "Esmorzar a l'hotel",
-            "Can Joan de s'Aigo (Palma)",
-            "Passeig pel Born i Catedral",
-            "Compra d'ensaimades",
-            "Devolució cotxe (15:30)",
-            "✈️ Vol PMI→BCN (19:35)"
+          "horaris": [
+            "09:30 Últim esmorzar i preparació de l'equipatge",
+            "10:30 Check-out",
+            "11:00 Sortida cap a Palma (25 min)",
+            "11:30 Can Joan de s'Aigo. Esmorzar i compra d'ensaimades",
+            "12:30 Passeig pel Born i Catedral",
+            "14:00 Dinar de comiat a Palma",
+            "15:30 Devolució del cotxe a Autos Mallorca",
+            "16:00 Trasllat a l'aeroport",
+            "19:35 ✈️ Vol PMI→BCN"
           ]
         },
         "restaurantsDinar": [
@@ -483,11 +496,11 @@
       "✅ Portar les targetes d'embarcament (digital o impresa)",
       "✅ Deixar el dipòsit del cotxe PLE abans de tornar-lo",
       "✅ Confirmar amb AparcaGo l'hora d'arribada al pàrquing de BCN",
-      "✅ Portar calçat de muntanya per a les tres rutes",
+      "✅ Portar calçat de muntanya per a les rutes",
       "✅ Portar protecció solar, gorra i aigua abundant per a les excursions",
       "✅ Carregar els mòbils i portar power bank per al concert",
       "✅ Llevar-se d'hora el dia 14 (despertar a les 2:30)",
-      "✅ Recordar la política de no fumar a l'hotel (prohibit a tot l'establiment)",
+      "✅ Recordar la política de no fumar a l'hotel",
       "✅ No revelar la sorpresa del concert fins a l'últim moment"
     ]
   }
