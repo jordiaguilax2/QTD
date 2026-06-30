@@ -50,7 +50,7 @@
       {
         "numero": 1,
         "data": "Dimarts, 14 de juliol",
-        "titol": "Arribada, platja de Muro i primers passos",
+        "titol": "Arribada i primeres passes",
         "franges": [
           {
             "horari": "02:30 - 03:30",
@@ -113,6 +113,17 @@
             "detalls": "Sopar a Alaró (opcions: Es Verger, Sa Tafona o Traffic Restaurant)."
           }
         ],
+        "plaNou": {
+          "titol": "Sud (Es Trenc o Caló des Moro)",
+          "activitats": [
+            "Vol BCN→PMI (7:00)",
+            "Recollida cotxe",
+            "Deixar maletes a Alaró",
+            "Es Trenc o Caló des Moro (sur) + bany",
+            "Picnic o chiringuito",
+            "Sopar tranquil a Alaró"
+          ]
+        },
         "restaurantsSopar": [
           {
             "nom": "Es Verger",
@@ -141,7 +152,7 @@
       {
         "numero": 2,
         "data": "Dimecres, 15 de juliol",
-        "titol": "Camí des Correu (Esporles-Banyalbufar) i platja",
+        "titol": "Cala tranquila + arrossos fora d'Alcúdia",
         "franges": [
           {
             "horari": "09:00 - 09:45",
@@ -185,6 +196,17 @@
           }
         ],
         "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/el-cami-des-correu-esporles-banyalbufar-y-regreso-35602670",
+        "plaNou": {
+          "titol": "Valldemossa, Deià i Sa Foradada",
+          "activitats": [
+            "Esmorzar a l'hotel",
+            "Sortida cap a Valldemossa (30 min)",
+            "Visita a la Cartuja i carrers",
+            "Deià (15 min en cotxe). Passeig i Cala Deià (bany)",
+            "Sa Foradada (mirador)",
+            "Sopar tranquil a Alaró o a Deià"
+          ]
+        },
         "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà. La ruta té molta ombra, ideal per a un dia de calor."
       },
       {
@@ -239,6 +261,18 @@
           }
         ],
         "enllacRuta": "https://es.wikiloc.com/rutas-carrera-por-montana/penyal-de-lhonor-77365916",
+        "plaNou": {
+          "titol": "Cap de Formentor i Cala Sant Vicenç",
+          "activitats": [
+            "Esmorzar a l'hotel",
+            "Sortida cap al Cap de Formentor (50 min)",
+            "Mirador d'es Colomer",
+            "Platja de Formentor (bany ràpid)",
+            "Cala Sant Vicenç (Cala Barques / Molins). Tarda de platja i relax",
+            "Sopar d'arròs a U Mayol (19:30)",
+            "Retorn a Alaró (22:30)"
+          ]
+        },
         "restaurantsSopar": [
           {
             "nom": "U Mayol",
@@ -251,73 +285,85 @@
         "notesDia": "IMPORTANT: Reservar U Mayol amb antelació (trucar al +34 629 462 125). La ruta del Penyal de l'Honor és moderada, porteu aigua suficient i calçat adequat."
       },
       {
-  "numero": 4,
-  "data": "Divendres, 17 de juliol",
-  "titol": "Volta a la Talaia de Cals Reis + CONCERT",
-  "franges": [
-    {
-      "horari": "08:00 - 08:45",
-      "activitat": "Esmorzar a l'hotel",
-      "detalls": "Esmorzar bufet. Avui toca una ruta llarga i nit de concert, cal sortir d'hora."
-    },
-    {
-      "horari": "08:45 - 09:00",
-      "activitat": "Preparació i sortida",
-      "detalls": "Motxilla amb aigua suficient (mínim 2L per persona), protecció solar, gorra, calçat de muntanya, fruits secs o barretes energètiques. La ruta surt des del mateix Alaró, no cal agafar el cotxe."
-    },
-    {
-      "horari": "09:00 - 14:30",
-      "activitat": "Ruta: Volta a la Talaia de Cals Reis (Alaró)",
-      "detalls": "Ruta circular des d'Alaró. Distància: 16,15 km. Desnivell: 841 m. Dificultat: Moderada-alta. Durada: unes 5-5,5 hores (amb parades). Punts d'interès: Sa font des Jardí, Font de ses Artigues, Pas de l'Escaleta, Pas de l'Estaló, Pou Des Quer, i vistes espectaculars del Castell d'Alaró i la Penya de la Bastida. La ruta transcorre per espessos boscos d'alzines i pins, amb molta ombra. IMPORTANT: Porteu aigua suficient, ja que no hi ha fonts al llarg del recorregut."
-    },
-    {
-      "horari": "14:30 - 16:00",
-      "activitat": "Final de la ruta, dutxa i descans",
-      "detalls": "Arribada a Alaró. Dutxa ràpida i descans per recuperar forces."
-    },
-    {
-      "horari": "16:00 - 17:45",
-      "activitat": "Temps lliure",
-      "detalls": "Temps per relaxar-se, migdiada o piscina."
-    },
-    {
-      "horari": "17:45 - 18:30",
-      "activitat": "Sortida cap a Alcúdia",
-      "detalls": "Sortida en cotxe cap a Alcúdia (40-45 min)."
-    },
-    {
-      "horari": "18:30 - 21:30",
-      "activitat": "Arribada a Alcúdia i ambient pre-concert",
-      "detalls": "Arribada a Alcúdia. Aparcar amb temps a la zona del centre. Sopar lleuger a Alcúdia: tapes i cerveses en alguna terrassa del casc antic. És el moment de gaudir de l'ambient pre-concert."
-    },
-    {
-      "horari": "21:30 - 22:00",
-      "activitat": "Desplaçament cap a la Plaça de Toros",
-      "detalls": "Desplaçament cap a la Plaça de Toros d'Alcúdia."
-    },
-    {
-      "horari": "22:00 - 00:30",
-      "activitat": "🎸 CONCERT DE JOAN DAUSÀ 🎸",
-      "detalls": "Concert sorpresa! Gaudiu de l'espectacle. És la celebració del 40è aniversari. Duració aproximada: 1h30-2h."
-    },
-    {
-      "horari": "00:30 - 01:15",
-      "activitat": "Retorn a Alaró",
-      "detalls": "Retorn a Alaró (conducció tranquil·la i amb precaució). Arribada a l'hotel i descans."
-    }
-  ],
-  "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/2023-86-volta-a-la-talaia-de-cals-reis-alaro-150666494",
-  "restaurantsSopar": [
-    {
-      "nom": "Tapes a Alcúdia",
-      "especialitat": "Tapes, pizza, menjar ràpid",
-      "ubicacio": "Centre d'Alcúdia",
-      "telefon": "No disponible",
-      "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Alc%C3%BAdia+centre+restaurants"
-    }
-  ],
-  "notesDia": "Avui és el gran dia! Recordeu: NO esmentar ni Alcúdia ni Joan Dausà fins a l'últim moment. La sorpresa és el millor regal d'aniversari. Porteu les entrades impreses o al mòbil i assegureu-vos de tenir bateria suficient (porteu power bank). La ruta d'avui és llarga (16 km) i amb 841 m de desnivell; sortiu d'hora, porteu aigua abundant i calçat adequat."
-},
+        "numero": 4,
+        "data": "Divendres, 17 de juliol",
+        "titol": "Volta a la Talaia de Cals Reis + CONCERT",
+        "franges": [
+          {
+            "horari": "08:00 - 08:45",
+            "activitat": "Esmorzar a l'hotel",
+            "detalls": "Esmorzar bufet. Avui toca una ruta llarga i nit de concert, cal sortir d'hora."
+          },
+          {
+            "horari": "08:45 - 09:00",
+            "activitat": "Preparació i sortida",
+            "detalls": "Motxilla amb aigua suficient (mínim 2L per persona), protecció solar, gorra, calçat de muntanya, fruits secs o barretes energètiques. La ruta surt des del mateix Alaró, no cal agafar el cotxe."
+          },
+          {
+            "horari": "09:00 - 14:30",
+            "activitat": "Ruta: Volta a la Talaia de Cals Reis (Alaró)",
+            "detalls": "Ruta circular des d'Alaró. Distància: 16,15 km. Desnivell: 841 m. Dificultat: Moderada-alta. Durada: unes 5-5,5 hores (amb parades). Punts d'interès: Sa font des Jardí, Font de ses Artigues, Pas de l'Escaleta, Pas de l'Estaló, Pou Des Quer, i vistes espectaculars del Castell d'Alaró i la Penya de la Bastida. La ruta transcorre per espessos boscos d'alzines i pins, amb molta ombra. IMPORTANT: Porteu aigua suficient, ja que no hi ha fonts al llarg del recorregut."
+          },
+          {
+            "horari": "14:30 - 16:00",
+            "activitat": "Final de la ruta, dutxa i descans",
+            "detalls": "Arribada a Alaró. Dutxa ràpida i descans per recuperar forces."
+          },
+          {
+            "horari": "16:00 - 17:45",
+            "activitat": "Temps lliure",
+            "detalls": "Temps per relaxar-se, migdiada o piscina."
+          },
+          {
+            "horari": "17:45 - 18:30",
+            "activitat": "Sortida cap a Alcúdia",
+            "detalls": "Sortida en cotxe cap a Alcúdia (40-45 min)."
+          },
+          {
+            "horari": "18:30 - 21:30",
+            "activitat": "Arribada a Alcúdia i ambient pre-concert",
+            "detalls": "Arribada a Alcúdia. Aparcar amb temps a la zona del centre. Sopar lleuger a Alcúdia: tapes i cerveses en alguna terrassa del casc antic. És el moment de gaudir de l'ambient pre-concert."
+          },
+          {
+            "horari": "21:30 - 22:00",
+            "activitat": "Desplaçament cap a la Plaça de Toros",
+            "detalls": "Desplaçament cap a la Plaça de Toros d'Alcúdia."
+          },
+          {
+            "horari": "22:00 - 00:30",
+            "activitat": "🎸 CONCERT DE JOAN DAUSÀ 🎸",
+            "detalls": "Concert sorpresa! Gaudiu de l'espectacle. És la celebració del 40è aniversari. Duració aproximada: 1h30-2h."
+          },
+          {
+            "horari": "00:30 - 01:15",
+            "activitat": "Retorn a Alaró",
+            "detalls": "Retorn a Alaró (conducció tranquil·la i amb precaució). Arribada a l'hotel i descans."
+          }
+        ],
+        "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/2023-86-volta-a-la-talaia-de-cals-reis-alaro-150666494",
+        "plaNou": {
+          "titol": "Ruta de les Cales (Llevant)",
+          "activitats": [
+            "Esmorzar a l'hotel (abans de les 8:00)",
+            "Sortida cap a Cala Torta (45 min)",
+            "Ruta de les Cales: Torta, Mitjana, Estreta, Déntol, Matzoc (5 km + 5 km). Bany a cada cala",
+            "Retorn a Alaró (13:00). Dutxa, dinar lleuger i siesta (15:00-17:00)",
+            "Sortida cap a Alcúdia (18:00). Tapas i cerveses",
+            "Concert de Joan Dausà (22:00)",
+            "Retorn a Alaró (00:30)"
+          ]
+        },
+        "restaurantsSopar": [
+          {
+            "nom": "Tapes a Alcúdia",
+            "especialitat": "Tapes, pizza, menjar ràpid",
+            "ubicacio": "Centre d'Alcúdia",
+            "telefon": "No disponible",
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Alc%C3%BAdia+centre+restaurants"
+          }
+        ],
+        "notesDia": "Avui és el gran dia! Recordeu: NO esmentar ni Alcúdia ni Joan Dausà fins a l'últim moment. La sorpresa és el millor regal d'aniversari. Porteu les entrades impreses o al mòbil i assegureu-vos de tenir bateria suficient (porteu power bank). La ruta d'avui és llarga (16 km) i amb 841 m de desnivell; sortiu d'hora, porteu aigua abundant i calçat adequat."
+      },
       {
         "numero": 5,
         "data": "Dissabte, 18 de juliol",
@@ -372,6 +418,33 @@
             "horari": "21:00 - 22:30",
             "activitat": "Recollida del cotxe a AparcaGo i tornada a Sant Sadurní",
             "detalls": "Recollida del cotxe al pàrquing. Conducció de tornada a Sant Sadurní d'Anoia, arribada prevista cap a les 22:30. Final del viatge."
+          }
+        ],
+        "plaNou": {
+          "titol": "Palma i Tornada",
+          "activitats": [
+            "Esmorzar a l'hotel",
+            "Can Joan de s'Aigo (Palma)",
+            "Passeig pel Born i Catedral",
+            "Compra d'ensaimades",
+            "Devolució cotxe (15:30)",
+            "✈️ Vol PMI→BCN (19:35)"
+          ]
+        },
+        "restaurantsDinar": [
+          {
+            "nom": "Sa Tafona",
+            "especialitat": "Cuina mallorquina tradicional",
+            "ubicacio": "Alaró",
+            "telefon": "971 879 208",
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Sa+Tafona+Alar%C3%B3"
+          },
+          {
+            "nom": "Traffic Restaurant",
+            "especialitat": "Cuina mallorquina tradicional",
+            "ubicacio": "Alaró",
+            "telefon": "971 879 117",
+            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Traffic+Restaurant+Alar%C3%B3"
           }
         ],
         "notesDia": "Recordeu deixar el dipòsit del cotxe PLE abans de tornar-lo (si no, us cobraran 10 € de taxa + el combustible). L'horari de check-out és a les 10:30. Puntualitat. Porteu les targetes d'embarcament digital o impresa. Les cues a l'aeroport de Palma a l'estiu poden ser llargues; aneu amb temps de sobres."
