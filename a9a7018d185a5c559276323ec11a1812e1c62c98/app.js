@@ -127,6 +127,10 @@ function mostrarDia(dia) {
         originalHTML += `<li>No hi ha activitats programades.</li>`;
     }
     originalHTML += `</ul>`;
+    // Afegir enllaç de la ruta original si existeix
+    if (dia.enllacRuta) {
+        originalHTML += `<a href="${dia.enllacRuta}" target="_blank" rel="noopener noreferrer" class="ruta-link"><i class="fas fa-hiking"></i> Veure ruta a Wikiloc</a>`;
+    }
     colOriginal.innerHTML = originalHTML;
     comparativaContainer.appendChild(colOriginal);
     
@@ -137,7 +141,15 @@ function mostrarDia(dia) {
         let nouHTML = `<h3><i class="fas fa-map-signs"></i> Nou Pla: ${dia.plaNou.titol}</h3><ul>`;
         if (dia.plaNou.horaris && dia.plaNou.horaris.length > 0) {
             dia.plaNou.horaris.forEach(activitat => {
-                nouHTML += `<li>${activitat}</li>`;
+                // Detecta si l'activitat comença amb un format d'hora (ex: "09:00", "10:30", etc.)
+                const ambHora = activitat.match(/^(\d{1,2}:\d{2})/);
+                if (ambHora) {
+                    const hora = ambHora[0];
+                    const text = activitat.substring(hora.length).trim();
+                    nouHTML += `<li><strong>${hora}</strong>${text ? ' — ' + text : ''}</li>`;
+                } else {
+                    nouHTML += `<li>${activitat}</li>`;
+                }
             });
         } else {
             nouHTML += `<li>No hi ha horaris definits per a aquest dia.</li>`;
@@ -154,20 +166,6 @@ function mostrarDia(dia) {
     comparativaContainer.appendChild(colNou);
     
     dayContent.appendChild(comparativaContainer);
-    
-    // --- ENLLAÇ A LA RUTA ORIGINAL DE WIKILOC (si n'hi ha) ---
-    if (dia.enllacRuta) {
-        const rutaSection = document.createElement('div');
-        rutaSection.className = 'day-info-panel';
-        rutaSection.style.borderLeftColor = '#3498db';
-        rutaSection.innerHTML = `
-            <h4><i class="fas fa-hiking"></i> Ruta original (pla original)</h4>
-            <a href="${dia.enllacRuta}" target="_blank" rel="noopener noreferrer" class="contact-link" style="display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; padding: 0.6rem 1.2rem;">
-                <i class="fas fa-external-link-alt"></i> Veure ruta a Wikiloc
-            </a>
-        `;
-        dayContent.appendChild(rutaSection);
-    }
     
     // --- RESTAURANTS DE DINAR ---
     if (dia.restaurantsDinar && dia.restaurantsDinar.length > 0) {
