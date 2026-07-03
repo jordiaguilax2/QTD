@@ -205,6 +205,7 @@ body {
     color: #e67e22;
 }
 
+/* Enllaços dins de les columnes */
 .comparativa-columna .ruta-link {
     display: inline-block;
     margin-top: 1rem;
@@ -226,7 +227,7 @@ body {
     margin-right: 6px;
 }
 
-/* Enllaços i panells d'informació */
+/* Enllaços i panells d'informació generals */
 .day-info-panel {
     background-color: #f8f9fa;
     border-radius: 10px;
