@@ -111,63 +111,78 @@ function mostrarDia(dia) {
     
     dayContent.innerHTML = '';
     
-    // --- COMPARATIVA: dues columnes ---
-    const comparativaContainer = document.createElement('div');
-    comparativaContainer.className = 'comparativa-container';
-    
-    // Columna esquerra: pla original (franges horàries)
-    const colOriginal = document.createElement('div');
-    colOriginal.className = 'comparativa-columna original';
-    let originalHTML = `<h3><i class="fas fa-route"></i> Pla Original</h3><ul>`;
-    if (dia.franges && dia.franges.length > 0) {
-        dia.franges.forEach(franja => {
-            originalHTML += `<li><strong>${franja.horari}</strong> — ${franja.activitat}</li>`;
-        });
-    } else {
-        originalHTML += `<li>No hi ha activitats programades.</li>`;
-    }
-    originalHTML += `</ul>`;
-    colOriginal.innerHTML = originalHTML;
-    comparativaContainer.appendChild(colOriginal);
-    
-    // Columna dreta: nou pla (amb horaris i enllaç a Wikiloc)
-    const colNou = document.createElement('div');
-    colNou.className = 'comparativa-columna nou';
+    // --- Si el dia té plaNou, mostra dues columnes (Opció A i Opció B) ---
     if (dia.plaNou) {
-        let nouHTML = `<h3><i class="fas fa-map-signs"></i> Nou Pla: ${dia.plaNou.titol}</h3><ul>`;
+        const comparativaContainer = document.createElement('div');
+        comparativaContainer.className = 'comparativa-container';
+        
+        // Columna esquerra: Opció A (franges originals)
+        const colOriginal = document.createElement('div');
+        colOriginal.className = 'comparativa-columna original';
+        let originalHTML = `<h3><i class="fas fa-route"></i> Opció A</h3><ul>`;
+        if (dia.franges && dia.franges.length > 0) {
+            dia.franges.forEach(franja => {
+                originalHTML += `<li><strong>${franja.horari}</strong> — ${franja.activitat}</li>`;
+            });
+        } else {
+            originalHTML += `<li>No hi ha activitats programades.</li>`;
+        }
+        originalHTML += `</ul>`;
+        // Enllaç de la ruta original
+        if (dia.enllacRuta) {
+            originalHTML += `<a href="${dia.enllacRuta}" target="_blank" rel="noopener noreferrer" class="ruta-link"><i class="fas fa-hiking"></i> Veure ruta a Wikiloc</a>`;
+        }
+        colOriginal.innerHTML = originalHTML;
+        comparativaContainer.appendChild(colOriginal);
+        
+        // Columna dreta: Opció B (plaNou)
+        const colNou = document.createElement('div');
+        colNou.className = 'comparativa-columna nou';
+        let nouHTML = `<h3><i class="fas fa-map-signs"></i> ${dia.plaNou.titol}</h3><ul>`;
         if (dia.plaNou.horaris && dia.plaNou.horaris.length > 0) {
             dia.plaNou.horaris.forEach(activitat => {
-                // Utilitzem innerHTML per permetre etiquetes <strong>
                 nouHTML += `<li>${activitat}</li>`;
             });
         } else {
-            nouHTML += `<li>No hi ha horaris definits per a aquest dia.</li>`;
+            nouHTML += `<li>No hi ha horaris definits per a aquesta opció.</li>`;
         }
         nouHTML += `</ul>`;
-        // Enllaç a Wikiloc si existeix (dins de la columna)
+        // Enllaç de la ruta de l'opció B
         if (dia.plaNou.enllacRuta) {
             nouHTML += `<a href="${dia.plaNou.enllacRuta}" target="_blank" rel="noopener noreferrer" class="ruta-link"><i class="fas fa-hiking"></i> Veure ruta a Wikiloc</a>`;
         }
         colNou.innerHTML = nouHTML;
+        comparativaContainer.appendChild(colNou);
+        
+        dayContent.appendChild(comparativaContainer);
     } else {
-        colNou.innerHTML = `<h3><i class="fas fa-map-signs"></i> Nou Pla</h3><p>No hi ha un nou pla definit per a aquest dia.</p>`;
-    }
-    comparativaContainer.appendChild(colNou);
-    
-    dayContent.appendChild(comparativaContainer);
-    
-    // --- ENLLAÇ A LA RUTA ORIGINAL DE WIKILOC (si n'hi ha) ---
-    if (dia.enllacRuta) {
-        const rutaSection = document.createElement('div');
-        rutaSection.className = 'day-info-panel';
-        rutaSection.style.borderLeftColor = '#3498db';
-        rutaSection.innerHTML = `
-            <h4><i class="fas fa-hiking"></i> Ruta original (pla original)</h4>
-            <a href="${dia.enllacRuta}" target="_blank" rel="noopener noreferrer" class="contact-link" style="display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; padding: 0.6rem 1.2rem;">
-                <i class="fas fa-external-link-alt"></i> Veure ruta a Wikiloc
-            </a>
-        `;
-        dayContent.appendChild(rutaSection);
+        // --- Si NO té plaNou, mostra un sol pla (franges) ---
+        const plaContainer = document.createElement('div');
+        plaContainer.className = 'comparativa-container';
+        
+        const colUnica = document.createElement('div');
+        colUnica.className = 'comparativa-columna original';
+        colUnica.style.borderLeftColor = '#2a5a4a';
+        colUnica.style.flex = '1';
+        
+        let html = `<h3><i class="fas fa-calendar-check"></i> Pla del dia</h3><ul>`;
+        if (dia.franges && dia.franges.length > 0) {
+            dia.franges.forEach(franja => {
+                html += `<li><strong>${franja.horari}</strong> — ${franja.activitat}</li>`;
+            });
+        } else {
+            html += `<li>No hi ha activitats programades.</li>`;
+        }
+        html += `</ul>`;
+        
+        // Enllaç de la ruta si existeix
+        if (dia.enllacRuta) {
+            html += `<a href="${dia.enllacRuta}" target="_blank" rel="noopener noreferrer" class="ruta-link" style="margin-top: 1rem; display: inline-block;"><i class="fas fa-hiking"></i> Veure ruta a Wikiloc</a>`;
+        }
+        
+        colUnica.innerHTML = html;
+        plaContainer.appendChild(colUnica);
+        dayContent.appendChild(plaContainer);
     }
     
     // --- RESTAURANTS DE DINAR ---
@@ -234,7 +249,6 @@ function mostrarChecklist() {
     let html = '<div class="checklist-list">';
     viatgeActual.checklistGeneral.forEach((item, index) => {
         const id = `checklist-${index}`;
-        // Recuperar estat des de localStorage
         const checked = localStorage.getItem(id) === 'true' ? 'checked' : '';
         html += `
             <div class="checklist-item" data-index="${index}">
@@ -245,7 +259,6 @@ function mostrarChecklist() {
     });
     html += '</div>';
     
-    // Barra de progrés
     const total = viatgeActual.checklistGeneral.length;
     const completed = viatgeActual.checklistGeneral.filter((_, i) => 
         localStorage.getItem(`checklist-${i}`) === 'true'
@@ -258,12 +271,10 @@ function mostrarChecklist() {
     
     container.innerHTML = html;
     
-    // Afegir event listeners per guardar l'estat
     container.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(input => {
         input.addEventListener('change', function() {
             const id = this.id;
             localStorage.setItem(id, this.checked);
-            // Actualitzar progrés
             actualitzarProgres(container);
         });
     });
@@ -272,7 +283,6 @@ function mostrarChecklist() {
     dayContent.appendChild(container);
 }
 
-// Funció per actualitzar la barra de progrés
 function actualitzarProgres(container) {
     const items = container.querySelectorAll('.checklist-item');
     const total = items.length;
@@ -346,7 +356,6 @@ function mostrarContactes() {
     const c = viatgeActual.contactesGenerals;
     let html = `<div class="contact-list">`;
     
-    // Hotel
     if (c.hotel) {
         html += `<div class="contact-card">
                     <h4><i class="fas fa-hotel"></i> ${c.hotel.nom}</h4>
@@ -358,7 +367,6 @@ function mostrarContactes() {
                 </div>`;
     }
 
-    // Autos Mallorca
     if (c.companyiaLloguer) {
         html += `<div class="contact-card">
                     <h4><i class="fas fa-car"></i> ${c.companyiaLloguer.nom}</h4>
@@ -370,7 +378,6 @@ function mostrarContactes() {
                 </div>`;
     }
     
-    // Forn d'ensaimades
     if (c.fornEnsaimades) {
         html += `<div class="contact-card">
                     <h4><i class="fas fa-bread-slice"></i> ${c.fornEnsaimades.nom}</h4>
@@ -382,7 +389,6 @@ function mostrarContactes() {
                 </div>`;
     }
     
-    // Restaurants generals (si n'hi ha)
     if (c.restaurantsGenerals && c.restaurantsGenerals.length > 0) {
         c.restaurantsGenerals.forEach(r => {
             html += `<div class="contact-card">
@@ -397,7 +403,6 @@ function mostrarContactes() {
         });
     }
     
-    // Lloc especial
     if (c.llocEspecial) {
         html += `<div class="contact-card">
                     <h4>${c.llocEspecial.nom}</h4>
@@ -437,7 +442,6 @@ function mostrarTemps() {
 
 function renderitzarTemps(data, container) {
     const current = data.current;
-    const location = data.location;
     const forecast = data.forecast.forecastday;
     
     let html = `<div class="weather-container">
