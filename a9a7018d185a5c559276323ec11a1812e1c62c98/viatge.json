@@ -50,7 +50,7 @@
       {
         "numero": 1,
         "data": "Dimarts, 14 de juliol",
-        "titol": "Arribada i primeres passes",
+        "titol": "Volta des General + bany",
         "franges": [
           {
             "horari": "02:30 - 03:30",
@@ -94,16 +94,21 @@
           },
           {
             "horari": "10:00 - 10:45",
-            "activitat": "Conducció cap a Platja de Muro",
-            "detalls": "Sortida cap a Platja de Muro (35-40 min en cotxe per la Ma-13)."
+            "activitat": "Conducció cap a Banyalbufar",
+            "detalls": "Sortida cap a Banyalbufar (30 min en cotxe)."
           },
           {
-            "horari": "10:45 - 15:00",
-            "activitat": "Matí i migdia a Platja de Muro",
-            "detalls": "Arribada a Platja de Muro. Aparcament gratuït. Gaudir del matí: bany, sol, ombra sota els pins del passeig. Dinar lleuger a la platja (picnic o chiringuito). Migdiada a la sorra o lectura."
+            "horari": "10:45 - 13:30",
+            "activitat": "Ruta: Volta des General (Banyalbufar)",
+            "detalls": "Ruta de senderisme de 5 km (anada i tornada), fàcil, amb vistes espectaculars a la costa. L'inici és a l'aparcament de la platja de Banyalbufar. Porteu aigua i protecció solar."
           },
           {
-            "horari": "18:00 - 19:00",
+            "horari": "13:30 - 16:00",
+            "activitat": "Bany i dinar a Banyalbufar",
+            "detalls": "Dinar lleuger a Banyalbufar (picnic o algun restaurant del poble). Bany a la platja de Banyalbufar (còdols i aigua cristal·lina)."
+          },
+          {
+            "horari": "16:00 - 18:00",
             "activitat": "Retorn a Alaró i check-in",
             "detalls": "Retorn a Alaró. Arribada a l'hotel, check-in i dutxa."
           },
@@ -113,20 +118,7 @@
             "detalls": "Sopar a Alaró (opcions: Es Verger, Sa Tafona o Traffic Restaurant)."
           }
         ],
-        "plaNou": {
-          "titol": "Volta des General (Banyalbufar)",
-          "horaris": [
-            "<strong>07:00</strong> Vol BCN→PMI",
-            "<strong>08:30</strong> Recollida cotxe",
-            "<strong>09:30</strong> Deixar maletes a Alaró",
-            "<strong>10:30</strong> Sortida cap a Banyalbufar (30 min)",
-            "<strong>11:15</strong> Inici de la ruta Volta des General (~5 km, fàcil)",
-            "<strong>14:00</strong> Final de la ruta i dinar a Banyalbufar",
-            "<strong>16:00</strong> Retorn a Alaró, check-in i dutxa",
-            "<strong>21:00</strong> Sopar tranquil a Alaró"
-          ],
-          "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/volta-des-general-banyalbufar-139413324"
-        },
+        "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/volta-des-general-banyalbufar-139413324",
         "restaurantsSopar": [
           {
             "nom": "Es Verger",
@@ -155,7 +147,7 @@
       {
         "numero": 2,
         "data": "Dimecres, 15 de juliol",
-        "titol": "Cala tranquila + arrossos fora d'Alcúdia",
+        "titol": "Opció A: Camí des Correu / Opció B: Cala Torta",
         "franges": [
           {
             "horari": "09:00 - 09:45",
@@ -200,26 +192,23 @@
         ],
         "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/el-cami-des-correu-esporles-banyalbufar-y-regreso-35602670",
         "plaNou": {
-          "titol": "Fornalutx i Biniaraix",
+          "titol": "Opció B: Cala Torta (Llevant)",
           "horaris": [
             "<strong>09:00</strong> Esmorzar a l'hotel",
-            "<strong>10:00</strong> Sortida cap a Fornalutx (25 min)",
-            "<strong>10:30</strong> Passeig per Fornalutx: carrers, església i mirador",
-            "<strong>11:30</strong> Camí de Biniaraix (15 min a peu o en cotxe)",
-            "<strong>12:00</strong> Passeig per Biniaraix i el Barranc de Biniaraix",
-            "<strong>14:00</strong> Dinar a Fornalutx o Biniaraix",
-            "<strong>16:00</strong> Visita a Sa Foradada (mirador)",
-            "<strong>19:00</strong> Retorn a Alaró",
+            "<strong>10:00</strong> Sortida cap a Cala Torta (45 min)",
+            "<strong>11:00</strong> Inici ruta de les Cales: Torta, Mitjana, Estreta, Déntol, Matzoc (~10 km anada i tornada, fàcil)",
+            "<strong>15:00</strong> Final de la ruta i picnic a Cala Torta",
+            "<strong>16:30</strong> Retorn a Alaró",
             "<strong>21:00</strong> Sopar tranquil a Alaró"
           ],
-          "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/fornalutx-biniaraix-34209902"
+          "enllacRuta": "https://ca.wikiloc.com/rutes-a-peu/cala-torta-cala-mitjana-cala-estreta-cala-dentol-cala-matzoc-torre-daubarca-31232795"
         },
-        "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà. La ruta té molta ombra, ideal per a un dia de calor."
+        "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà."
       },
       {
         "numero": 3,
         "data": "Dijous, 16 de juliol",
-        "titol": "Penyal de l'Honor (Bunyola) i sopar d'arròs negre",
+        "titol": "Penyal de l'Honor + Sopar U Mayol",
         "franges": [
           {
             "horari": "09:00 - 09:45",
@@ -268,20 +257,6 @@
           }
         ],
         "enllacRuta": "https://es.wikiloc.com/rutas-carrera-por-montana/penyal-de-lhonor-77365916",
-        "plaNou": {
-          "titol": "Cala Sant Vicenç + Coves Blanques",
-          "horaris": [
-            "<strong>09:00</strong> Esmorzar a l'hotel",
-            "<strong>10:00</strong> Sortida cap a Cala Sant Vicenç (45 min)",
-            "<strong>10:45</strong> Arribada i matí de platja: Cala Barques o Cala Molins",
-            "<strong>13:00</strong> Dinar a Cala Sant Vicenç",
-            "<strong>15:00</strong> Ruta fàcil: Coves Blanques (Punta de la Carroja)",
-            "<strong>18:00</strong> Tarda de relax a la platja",
-            "<strong>19:30</strong> Sopar d'arròs a U Mayol",
-            "<strong>22:30</strong> Retorn a Alaró"
-          ],
-          "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/punta-coves-blanques-pollenca-97965927"
-        },
         "restaurantsSopar": [
           {
             "nom": "U Mayol",
@@ -296,32 +271,32 @@
       {
         "numero": 4,
         "data": "Divendres, 17 de juliol",
-        "titol": "Volta a la Talaia de Cals Reis + CONCERT",
+        "titol": "Dia a Alcúdia + Concert de Joan Dausà",
         "franges": [
           {
-            "horari": "08:00 - 08:45",
+            "horari": "09:00 - 10:00",
             "activitat": "Esmorzar a l'hotel",
-            "detalls": "Esmorzar bufet. Avui toca una ruta llarga i nit de concert, cal sortir d'hora."
+            "detalls": "Esmorzar bufet. Avui és el gran dia!"
           },
           {
-            "horari": "08:45 - 09:00",
-            "activitat": "Preparació i sortida",
-            "detalls": "Motxilla amb aigua suficient (mínim 2L per persona), protecció solar, gorra, calçat de muntanya, fruits secs o barretes energètiques. La ruta surt des del mateix Alaró, no cal agafar el cotxe."
+            "horari": "10:00 - 12:30",
+            "activitat": "Matí lliure a Alaró",
+            "detalls": "Temps per relaxar-se, passejar o piscina."
           },
           {
-            "horari": "09:00 - 14:30",
-            "activitat": "Ruta: Volta a la Talaia de Cals Reis (Alaró)",
-            "detalls": "Ruta circular des d'Alaró. Distància: 16,15 km. Desnivell: 841 m. Dificultat: Moderada-alta. Durada: unes 5-5,5 hores (amb parades). Punts d'interès: Sa font des Jardí, Font de ses Artigues, Pas de l'Escaleta, Pas de l'Estaló, Pou Des Quer, i vistes espectaculars del Castell d'Alaró i la Penya de la Bastida. La ruta transcorre per espessos boscos d'alzines i pins, amb molta ombra. IMPORTANT: Porteu aigua suficient, ja que no hi ha fonts al llarg del recorregut."
+            "horari": "12:30 - 13:30",
+            "activitat": "Dinar lleuger a Alaró",
+            "detalls": "Dinar ràpid a Alaró per agafar forces."
           },
           {
-            "horari": "14:30 - 16:00",
-            "activitat": "Final de la ruta, dutxa i descans",
-            "detalls": "Arribada a Alaró. Dutxa ràpida i descans per recuperar forces."
+            "horari": "13:30 - 17:00",
+            "activitat": "Temps lliure / Migdiada",
+            "detalls": "Descans per arribar amb energia al concert."
           },
           {
-            "horari": "16:00 - 17:45",
-            "activitat": "Temps lliure",
-            "detalls": "Temps per relaxar-se, migdiada o piscina."
+            "horari": "17:00 - 17:45",
+            "activitat": "Preparatius per al concert",
+            "detalls": "Dutxa, canvi de roba, agafar les entrades, mòbil carregat."
           },
           {
             "horari": "17:45 - 18:30",
@@ -349,22 +324,6 @@
             "detalls": "Retorn a Alaró (conducció tranquil·la i amb precaució). Arribada a l'hotel i descans."
           }
         ],
-        "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/2023-86-volta-a-la-talaia-de-cals-reis-alaro-150666494",
-        "plaNou": {
-          "titol": "Ruta de les Cales (Llevant)",
-          "horaris": [
-            "<strong>08:00</strong> Esmorzar a l'hotel (abans de les 8:00)",
-            "<strong>09:00</strong> Sortida cap a Cala Torta (45 min)",
-            "<strong>10:00</strong> Inici ruta de les Cales: Torta, Mitjana, Estreta, Déntol, Matzoc (~10 km anada i tornada, fàcil)",
-            "<strong>14:00</strong> Final de la ruta. Picnic a Cala Torta",
-            "<strong>15:30</strong> Retorn a Alaró. Dutxa i descans",
-            "<strong>18:00</strong> Sortida cap a Alcúdia",
-            "<strong>19:00</strong> Tapas i cerveses a Alcúdia",
-            "<strong>22:00</strong> Concert de Joan Dausà",
-            "<strong>00:30</strong> Retorn a Alaró"
-          ],
-          "enllacRuta": "https://www.wikiloc.com/walking-trails/cala-torta-cala-mitjana-cala-estreta-cala-dentol-cala-matzoc-torre-daubarca-31232795"
-        },
         "restaurantsSopar": [
           {
             "nom": "Tapes a Alcúdia",
@@ -374,12 +333,12 @@
             "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Alc%C3%BAdia+centre+restaurants"
           }
         ],
-        "notesDia": "Avui és el gran dia! Recordeu: NO esmentar ni Alcúdia ni Joan Dausà fins a l'últim moment. La sorpresa és el millor regal d'aniversari. Porteu les entrades impreses o al mòbil i assegureu-vos de tenir bateria suficient (porteu power bank). La ruta d'avui és llarga (16 km) i amb 841 m de desnivell; sortiu d'hora, porteu aigua abundant i calçat adequat."
+        "notesDia": "Avui és el gran dia! Recordeu: NO esmentar ni Alcúdia ni Joan Dausà fins a l'últim moment. La sorpresa és el millor regal d'aniversari. Porteu les entrades impreses o al mòbil i assegureu-vos de tenir bateria suficient (porteu power bank)."
       },
       {
         "numero": 5,
         "data": "Dissabte, 18 de juliol",
-        "titol": "Últim dia, comiat i tornada",
+        "titol": "Palma + Can Joan de s'Aigo",
         "franges": [
           {
             "horari": "09:30 - 10:30",
@@ -392,18 +351,28 @@
             "detalls": "Entrega de les claus a recepció. Recordeu que el check-out és a les 10:30."
           },
           {
-            "horari": "11:00 - 13:30",
-            "activitat": "Matí lliure",
-            "detalls": "Matí lliure: relax a la piscina de l'hotel, passeig per Alaró o última ruta curta pels voltants."
+            "horari": "11:00 - 11:30",
+            "activitat": "Conducció cap a Palma",
+            "detalls": "Sortida cap a Palma (25 min). Aparcament recomanat: Carrer Àngel Guimerà (zona ORA) o Park & Ride Son Fuster (gratis + metro)."
           },
           {
-            "horari": "13:30 - 15:00",
-            "activitat": "Dinar de comiat",
-            "detalls": "Dinar de comiat (a Alaró o en un poble proper)."
+            "horari": "11:30 - 12:30",
+            "activitat": "Can Joan de s'Aigo",
+            "detalls": "Esmorzar de comiat a Can Joan de s'Aigo (Carrer Can Sanç, 10). No marxeu sense provar les ensaimades!"
+          },
+          {
+            "horari": "12:30 - 14:00",
+            "activitat": "Passeig pel Born i Catedral",
+            "detalls": "Passeig pel Passeig del Born i visita a l'exterior de la Catedral de Mallorca."
+          },
+          {
+            "horari": "14:00 - 15:00",
+            "activitat": "Dinar de comiat a Palma",
+            "detalls": "Dinar lleuger a Palma."
           },
           {
             "horari": "15:00 - 15:30",
-            "activitat": "Conducció cap a l'oficina d'Autos Mallorca",
+            "activitat": "Devolució del cotxe a Autos Mallorca",
             "detalls": "Sortida cap a l'oficina d'Autos Mallorca. Assegureu-vos de deixar el dipòsit del cotxe completament PLE abans de tornar-lo."
           },
           {
@@ -432,20 +401,6 @@
             "detalls": "Recollida del cotxe al pàrquing. Conducció de tornada a Sant Sadurní d'Anoia, arribada prevista cap a les 22:30. Final del viatge."
           }
         ],
-        "plaNou": {
-          "titol": "Palma i Tornada",
-          "horaris": [
-            "<strong>09:30</strong> Últim esmorzar i preparació de l'equipatge",
-            "<strong>10:30</strong> Check-out",
-            "<strong>11:00</strong> Sortida cap a Palma (25 min)",
-            "<strong>11:30</strong> Can Joan de s'Aigo. Esmorzar i compra d'ensaimades",
-            "<strong>12:30</strong> Passeig pel Born i Catedral",
-            "<strong>14:00</strong> Dinar de comiat a Palma",
-            "<strong>15:30</strong> Devolució del cotxe a Autos Mallorca",
-            "<strong>16:00</strong> Trasllat a l'aeroport",
-            "<strong>19:35</strong> ✈️ Vol PMI→BCN"
-          ]
-        },
         "restaurantsDinar": [
           {
             "nom": "Sa Tafona",
