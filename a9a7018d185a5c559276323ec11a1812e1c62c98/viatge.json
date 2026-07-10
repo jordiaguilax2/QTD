@@ -13,10 +13,9 @@
         "cotxe": "177,84 €",
         "hotel": "588,00 €",
         "parkingBCN": "78,50 €",
-        "concert": "88,00 €",
-        "totalFix": "1.128,30 €",
+        "totalFix": "1.040,30 €",
         "regalFamiliar": "-500,00 €",
-        "totalButxaca": "628,30 €"
+        "totalButxaca": "540,30 €"
       },
       "notes": "Pressupost excel·lent per a juliol a Mallorca. El cotxe és un Renault Clio amb assegurança total sense franquícia."
     },
@@ -74,7 +73,7 @@
           },
           {
             "horari": "07:00 - 07:50",
-            "activitat": "Vol VY3918 Barcelona → Palma",
+            "activitat": "Vol VY3902 Barcelona → Palma",
             "detalls": "Vol directe. Arribada prevista a les 7:50. Durada: 50 minuts."
           },
           {
@@ -203,7 +202,7 @@
           ],
           "enllacRuta": "https://ca.wikiloc.com/rutes-a-peu/cala-torta-cala-mitjana-cala-estreta-cala-dentol-cala-matzoc-torre-daubarca-31232795"
         },
-        "notesDia": "La sorpresa del concert encara no s'ha de revelar! Eviteu esmentar Alcúdia o Joan Dausà."
+        "notesDia": "Si trieu l'Opció B (Cala Torta), recordeu portar aigua i menjar per al picnic, ja que són cales sense serveis."
       },
       {
         "numero": 3,
@@ -271,69 +270,54 @@
       {
         "numero": 4,
         "data": "Divendres, 17 de juliol",
-        "titol": "Dia a Alcúdia + Concert de Joan Dausà",
+        "titol": "Platja Es Morer Vermell + Sopar a Alcúdia",
         "franges": [
           {
             "horari": "09:00 - 10:00",
             "activitat": "Esmorzar a l'hotel",
-            "detalls": "Esmorzar bufet. Avui és el gran dia!"
+            "detalls": "Esmorzar bufet. Avui és dia de platja i sopar a Alcúdia."
           },
           {
-            "horari": "10:00 - 12:30",
-            "activitat": "Matí lliure a Alaró",
-            "detalls": "Temps per relaxar-se, passejar o piscina."
-          },
-          {
-            "horari": "12:30 - 13:30",
-            "activitat": "Dinar lleuger a Alaró",
-            "detalls": "Dinar ràpid a Alaró per agafar forces."
-          },
-          {
-            "horari": "13:30 - 17:00",
-            "activitat": "Temps lliure / Migdiada",
-            "detalls": "Descans per arribar amb energia al concert."
-          },
-          {
-            "horari": "17:00 - 17:45",
-            "activitat": "Preparatius per al concert",
-            "detalls": "Dutxa, canvi de roba, agafar les entrades, mòbil carregat."
-          },
-          {
-            "horari": "17:45 - 18:30",
+            "horari": "10:00 - 11:00",
             "activitat": "Sortida cap a Alcúdia",
-            "detalls": "Sortida en cotxe cap a Alcúdia (40-45 min)."
+            "detalls": "Conducció cap a Alcúdia (40-45 min)."
           },
           {
-            "horari": "18:30 - 21:30",
-            "activitat": "Arribada a Alcúdia i ambient pre-concert",
-            "detalls": "Arribada a Alcúdia. Aparcar amb temps a la zona del centre. Sopar lleuger a Alcúdia: tapes i cerveses en alguna terrassa del casc antic. És el moment de gaudir de l'ambient pre-concert."
+            "horari": "11:00 - 17:00",
+            "activitat": "Platja Es Morer Vermell (Alcúdia)",
+            "detalls": "Platja de sorra blanca i aigües cristal·lines. Zona tranquil·la, menys massificada que el centre d'Alcúdia. Aparcament gratuït a la vora. Porteu menjar i aigua per passar el dia."
           },
           {
-            "horari": "21:30 - 22:00",
-            "activitat": "Desplaçament cap a la Plaça de Toros",
-            "detalls": "Desplaçament cap a la Plaça de Toros d'Alcúdia."
+            "horari": "17:00 - 18:00",
+            "activitat": "Dutxa i canvi de roba a la Platja d'Alcúdia",
+            "detalls": "Després del bany, aneu a la Platja d'Alcúdia (zona del port) on hi ha dutxes públiques i serveis per poder-vos refrescar abans del sopar."
           },
           {
-            "horari": "22:00 - 00:30",
-            "activitat": "🎸 CONCERT DE JOAN DAUSÀ 🎸",
-            "detalls": "Concert sorpresa! Gaudiu de l'espectacle. És la celebració del 40è aniversari. Duració aproximada: 1h30-2h."
+            "horari": "18:00 - 20:30",
+            "activitat": "Passeig pel centre d'Alcúdia",
+            "detalls": "Passeig pel casc antic d'Alcúdia, les muralles romanes i les seves places amb encant."
           },
           {
-            "horari": "00:30 - 01:15",
+            "horari": "20:30 - 23:30",
+            "activitat": "Sopar a Alcúdia",
+            "detalls": "Sopar a Alcúdia. Gaudiu de la nit a la zona del port o del centre històric. Hi ha moltes terrasses amb bona cuina mediterrània."
+          },
+          {
+            "horari": "23:30 - 00:15",
             "activitat": "Retorn a Alaró",
-            "detalls": "Retorn a Alaró (conducció tranquil·la i amb precaució). Arribada a l'hotel i descans."
+            "detalls": "Retorn a Alaró (conducció tranquil·la). Arribada a l'hotel i descans."
           }
         ],
         "restaurantsSopar": [
           {
             "nom": "Tapes a Alcúdia",
-            "especialitat": "Tapes, pizza, menjar ràpid",
+            "especialitat": "Tapes, pizza, cuina mediterrània",
             "ubicacio": "Centre d'Alcúdia",
             "telefon": "No disponible",
             "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Alc%C3%BAdia+centre+restaurants"
           }
         ],
-        "notesDia": "Avui és el gran dia! Recordeu: NO esmentar ni Alcúdia ni Joan Dausà fins a l'últim moment. La sorpresa és el millor regal d'aniversari. Porteu les entrades impreses o al mòbil i assegureu-vos de tenir bateria suficient (porteu power bank)."
+        "notesDia": "La Platja Es Morer Vermell és més tranquil·la que la zona central d'Alcúdia. Si la barrera del Cap de Formentor està tancada, aquesta és una bona alternativa."
       },
       {
         "numero": 5,
@@ -387,7 +371,7 @@
           },
           {
             "horari": "19:35 - 20:30",
-            "activitat": "Vol VY3919 Palma → Barcelona",
+            "activitat": "Vol VY3917 Palma → Barcelona",
             "detalls": "Vol de tornada. Arribada prevista a les 20:30 (durada: 55 minuts)."
           },
           {
@@ -423,7 +407,7 @@
     "infoVol": {
       "anada": {
         "companyia": "Vueling",
-        "numeroVol": "VY3918",
+        "numeroVol": "VY3902",
         "ruta": "Barcelona (BCN) → Palma (PMI)",
         "data": "14/07/2026",
         "sortida": "07:00",
@@ -433,7 +417,7 @@
       },
       "tornada": {
         "companyia": "Vueling",
-        "numeroVol": "VY3919",
+        "numeroVol": "VY3917",
         "ruta": "Palma (PMI) → Barcelona (BCN)",
         "data": "18/07/2026",
         "sortida": "19:35",
@@ -455,10 +439,8 @@
       "✅ Confirmar amb AparcaGo l'hora d'arribada al pàrquing de BCN",
       "✅ Portar calçat de muntanya per a les rutes",
       "✅ Portar protecció solar, gorra i aigua abundant per a les excursions",
-      "✅ Carregar els mòbils i portar power bank per al concert",
       "✅ Llevar-se d'hora el dia 14 (despertar a les 2:30)",
-      "✅ Recordar la política de no fumar a l'hotel",
-      "✅ No revelar la sorpresa del concert fins a l'últim moment"
+      "✅ Recordar la política de no fumar a l'hotel"
     ]
   }
 }
