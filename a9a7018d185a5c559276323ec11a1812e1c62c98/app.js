@@ -3,7 +3,6 @@
 let dadesViatge = null;
 let viatgeActual = null;
 
-// Carregar les dades del viatge
 async function carregarDadesViatge() {
     try {
         const resposta = await fetch('viatge.json');
@@ -20,23 +19,18 @@ async function carregarDadesViatge() {
     }
 }
 
-// Inicialitzar l'aplicació
 function inicialitzarAplicacio() {
     if (!viatgeActual) return;
-    
     document.title = `Itinerari ${viatgeActual.destinacio} | ${viatgeActual.dates}`;
-    
     generarPestanyes(viatgeActual);
     mostrarDia(viatgeActual.dies[0]);
     configurarEsdeveniments();
 }
 
-// Generar les pestanyes
 function generarPestanyes(viatge) {
     const tabsContainer = document.getElementById('tabsList');
     tabsContainer.innerHTML = '';
     
-    // Pestanyes per a cada dia
     viatge.dies.forEach((dia, index) => {
         const boto = document.createElement('button');
         boto.className = 'tab-button';
@@ -51,7 +45,6 @@ function generarPestanyes(viatge) {
         tabsContainer.appendChild(boto);
     });
     
-    // Pestanya de Checklist
     const botoChecklist = document.createElement('button');
     botoChecklist.className = 'tab-button';
     botoChecklist.innerHTML = `<i class="fas fa-tasks"></i> Checklist`;
@@ -61,7 +54,6 @@ function generarPestanyes(viatge) {
     });
     tabsContainer.appendChild(botoChecklist);
     
-    // Pestanya de Vols
     const botoVols = document.createElement('button');
     botoVols.className = 'tab-button';
     botoVols.innerHTML = `<i class="fas fa-plane"></i> Vols`;
@@ -71,7 +63,6 @@ function generarPestanyes(viatge) {
     });
     tabsContainer.appendChild(botoVols);
     
-    // Pestanya de Contactes
     const botoContactes = document.createElement('button');
     botoContactes.className = 'tab-button';
     botoContactes.innerHTML = `<i class="fas fa-address-book"></i> Contactes`;
@@ -81,7 +72,6 @@ function generarPestanyes(viatge) {
     });
     tabsContainer.appendChild(botoContactes);
     
-    // Pestanya de Temps
     const botoTemps = document.createElement('button');
     botoTemps.className = 'tab-button';
     botoTemps.innerHTML = `<i class="fas fa-cloud-sun"></i> Temps`;
@@ -90,6 +80,16 @@ function generarPestanyes(viatge) {
         activarPestanya(botoTemps);
     });
     tabsContainer.appendChild(botoTemps);
+    
+    // Pestanya Extres (Formentor)
+    const botoExtres = document.createElement('button');
+    botoExtres.className = 'tab-button';
+    botoExtres.innerHTML = `<i class="fas fa-info-circle"></i> Extres`;
+    botoExtres.addEventListener('click', () => {
+        mostrarExtres();
+        activarPestanya(botoExtres);
+    });
+    tabsContainer.appendChild(botoExtres);
 }
 
 function activarPestanya(pestanya) {
@@ -98,7 +98,6 @@ function activarPestanya(pestanya) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Mostrar el contingut d'un dia
 function mostrarDia(dia) {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
@@ -111,12 +110,10 @@ function mostrarDia(dia) {
     
     dayContent.innerHTML = '';
     
-    // --- Si el dia té plaNou, mostra dues columnes (Opció A i Opció B) ---
     if (dia.plaNou) {
         const comparativaContainer = document.createElement('div');
         comparativaContainer.className = 'comparativa-container';
         
-        // Columna esquerra: Opció A (franges originals)
         const colOriginal = document.createElement('div');
         colOriginal.className = 'comparativa-columna original';
         let originalHTML = `<h3><i class="fas fa-route"></i> Opció A</h3><ul>`;
@@ -128,14 +125,12 @@ function mostrarDia(dia) {
             originalHTML += `<li>No hi ha activitats programades.</li>`;
         }
         originalHTML += `</ul>`;
-        // Enllaç de la ruta original
         if (dia.enllacRuta) {
             originalHTML += `<a href="${dia.enllacRuta}" target="_blank" rel="noopener noreferrer" class="ruta-link"><i class="fas fa-hiking"></i> Veure ruta a Wikiloc</a>`;
         }
         colOriginal.innerHTML = originalHTML;
         comparativaContainer.appendChild(colOriginal);
         
-        // Columna dreta: Opció B (plaNou)
         const colNou = document.createElement('div');
         colNou.className = 'comparativa-columna nou';
         let nouHTML = `<h3><i class="fas fa-map-signs"></i> ${dia.plaNou.titol}</h3><ul>`;
@@ -147,7 +142,6 @@ function mostrarDia(dia) {
             nouHTML += `<li>No hi ha horaris definits per a aquesta opció.</li>`;
         }
         nouHTML += `</ul>`;
-        // Enllaç de la ruta de l'opció B
         if (dia.plaNou.enllacRuta) {
             nouHTML += `<a href="${dia.plaNou.enllacRuta}" target="_blank" rel="noopener noreferrer" class="ruta-link"><i class="fas fa-hiking"></i> Veure ruta a Wikiloc</a>`;
         }
@@ -156,7 +150,6 @@ function mostrarDia(dia) {
         
         dayContent.appendChild(comparativaContainer);
     } else {
-        // --- Si NO té plaNou, mostra un sol pla (franges) ---
         const plaContainer = document.createElement('div');
         plaContainer.className = 'comparativa-container';
         
@@ -175,7 +168,6 @@ function mostrarDia(dia) {
         }
         html += `</ul>`;
         
-        // Enllaç de la ruta si existeix
         if (dia.enllacRuta) {
             html += `<a href="${dia.enllacRuta}" target="_blank" rel="noopener noreferrer" class="ruta-link" style="margin-top: 1rem; display: inline-block;"><i class="fas fa-hiking"></i> Veure ruta a Wikiloc</a>`;
         }
@@ -185,7 +177,6 @@ function mostrarDia(dia) {
         dayContent.appendChild(plaContainer);
     }
     
-    // --- RESTAURANTS DE DINAR ---
     if (dia.restaurantsDinar && dia.restaurantsDinar.length > 0) {
         const restaurantsSection = document.createElement('div');
         restaurantsSection.className = 'day-info-panel';
@@ -206,7 +197,6 @@ function mostrarDia(dia) {
         dayContent.appendChild(restaurantsSection);
     }
 
-    // --- RESTAURANTS DE SOPAR ---
     if (dia.restaurantsSopar && dia.restaurantsSopar.length > 0) {
         const restaurantsSection = document.createElement('div');
         restaurantsSection.className = 'day-info-panel';
@@ -228,7 +218,6 @@ function mostrarDia(dia) {
     }
 }
 
-// Mostrar la Checklist (pestanya separada)
 function mostrarChecklist() {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
@@ -299,7 +288,6 @@ function actualitzarProgres(container) {
     }
 }
 
-// Mostrar informació dels vols
 function mostrarVols() {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
@@ -341,7 +329,6 @@ function mostrarVols() {
     `;
 }
 
-// Mostrar tots els contactes
 function mostrarContactes() {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
@@ -416,7 +403,6 @@ function mostrarContactes() {
     dayContent.innerHTML = html;
 }
 
-// Mostrar el temps
 function mostrarTemps() {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
@@ -475,8 +461,43 @@ function renderitzarTemps(data, container) {
     container.innerHTML = html;
 }
 
+function mostrarExtres() {
+    const dayHeader = document.getElementById('dayHeader');
+    const dayContent = document.getElementById('dayContent');
+    
+    dayHeader.innerHTML = `
+        <h2 class="day-title"><i class="fas fa-info-circle"></i> Extres: Platja de Formentor</h2>
+        <p class="day-date">🚧 Si us ve de gust, aquí teniu la informació</p>
+    `;
+    
+    dayContent.innerHTML = `
+        <div class="day-info-panel" style="border-left-color: #e67e22;">
+            <h4><i class="fas fa-triangle-exclamation"></i> Restriccions 2026</h4>
+            <div class="contact-info">
+                <p>Del 15 de maig al 18 d'octubre, de 10:00 a 22:00, l'accés amb vehicle privat a la MA-2210 està restringit.</p>
+                <p>La barrera (km 8,7) es tanca quan l'aparcament (300 places) és ple.</p>
+                <p><strong>Multes:</strong> De 100 a 200 € per accés no autoritzat.</p>
+            </div>
+        </div>
+        <div class="day-info-panel" style="border-left-color: #3498db;">
+            <h4><i class="fas fa-lightbulb"></i> Com anar-hi</h4>
+            <div class="contact-info">
+                <p><strong>Horari recomanat:</strong> Cal sortir d'Alaró a les 7:30 i arribar abans de les 9:00 per trobar aparcament.</p>
+                <p>Si la barrera està tancada, gireu cua i aneu a <strong>Cala Sant Vicenç</strong> o <strong>Platja de Muro</strong>.</p>
+            </div>
+        </div>
+        <div class="day-info-panel" style="border-left-color: #2ecc71;">
+            <h4><i class="fas fa-bus"></i> Alternativa en transport públic</h4>
+            <div class="contact-info">
+                <p>Bus TIB línia 334 (Alcúdia-Formentor) durant les hores de restricció.</p>
+                <p><a href="https://www.tib.org" target="_blank" rel="noopener noreferrer" class="contact-link">Veure horaris a TIB</a></p>
+            </div>
+        </div>
+    `;
+}
+
 function obtenirIconaDia(numeroDia) {
-    const icones = ['plane', 'sun', 'mountain', 'music', 'plane-departure'];
+    const icones = ['plane', 'sun', 'mountain', 'umbrella-beach', 'plane-departure'];
     return icones[numeroDia - 1] || 'calendar-day';
 }
 
