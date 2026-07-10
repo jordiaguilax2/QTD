@@ -205,8 +205,13 @@ body {
     color: #e67e22;
 }
 
+.comparativa-columna ul li strong {
+    font-weight: 700;
+    color: #1e3c32;
+}
+
 /* Enllaços dins de les columnes */
-.comparativa-columna .ruta-link {
+.ruta-link {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
@@ -219,11 +224,11 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.comparativa-columna .ruta-link:hover {
+.ruta-link:hover {
     background-color: #bbdefb;
 }
 
-.comparativa-columna .ruta-link i {
+.ruta-link i {
     margin-right: 6px;
 }
 
