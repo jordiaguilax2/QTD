@@ -1,182 +1,46 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viatge a Mallorca · Jordi i Llúcia</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-            background: #f5f2ed;
-            color: #1e2b2f;
-            padding: 2rem 1rem;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem 1.5rem;
-            border-radius: 28px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-        }
-        h1 { font-size: 2.2rem; font-weight: 600; letter-spacing: -0.5px; color: #0f3b3f; margin-bottom: 0.2rem; }
-        .subhead { color: #4a6a6f; font-size: 1.1rem; border-bottom: 2px solid #e0d6cc; padding-bottom: 1.2rem; margin-bottom: 2rem; }
-        .flight-badge {
-            background: #e8f0f2;
-            display: inline-block;
-            padding: 0.25rem 0.9rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #1e4a52;
-            margin-right: 0.5rem;
-        }
-        .day {
-            background: #faf8f6;
-            border-radius: 20px;
-            padding: 1.5rem 1.5rem 1.2rem;
-            margin-bottom: 1.8rem;
-            border-left: 5px solid #b2c9c0;
-            transition: 0.2s;
-        }
-        .day:hover { background: #f8f5f0; }
-        .day-header {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.6rem;
-        }
-        .day-title { font-size: 1.5rem; font-weight: 600; color: #1a3d42; }
-        .day-sub { font-weight: 400; color: #5f7e83; font-size: 0.95rem; }
-        .day-content { display: flex; flex-wrap: wrap; gap: 0.5rem 1.8rem; }
-        .day-content p { margin: 0.2rem 0; }
-        .label { font-weight: 500; color: #2b5a62; }
-        .tag {
-            background: #dce9e4;
-            padding: 0.15rem 0.9rem;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #1d4f4a;
-            display: inline-block;
-            margin-right: 0.4rem;
-        }
-        .route-link {
-            color: #1f6b6b;
-            text-decoration: none;
-            border-bottom: 1px dotted #b7cfc9;
-        }
-        .route-link:hover { color: #0a3d3d; border-bottom: 1px solid #1f6b6b; }
-        .formentor-note {
-            background: #f0f5f2;
-            border-radius: 16px;
-            padding: 1.2rem 1.5rem;
-            margin: 1.8rem 0 0.8rem;
-            border: 1px solid #dce6e0;
-        }
-        .formentor-note h4 { color: #1f4f4a; margin-bottom: 0.4rem; }
-        hr { border: none; border-top: 1px solid #e3dbd2; margin: 1.8rem 0; }
-        .footer { text-align: center; color: #7a9599; font-size: 0.9rem; padding-top: 1.2rem; }
-        @media (max-width: 600px) {
-            .container { padding: 1.2rem; }
-            h1 { font-size: 1.7rem; }
-            .day { padding: 1.2rem; }
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Itinerari Mallorca | Juliol 2026</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-<div class="container">
-    <h1>🌴 Jordi & Llúcia · Mallorca 2026</h1>
-    <div class="subhead">
-        <span class="flight-badge">✈️ VY3902 · 14/07 7:00</span>
-        <span class="flight-badge">✈️ VY3917 · 18/07 19:30</span>
-        <span style="margin-left: 0.5rem;">🏨 Alaró Natura · 🚗 Renault Clio</span>
+    <div class="container">
+        <!-- Capçalera -->
+        <header class="header">
+            <h1><i class="fas fa-suitcase-rolling"></i> Mallorca 2026</h1>
+            <p class="subtitle">14-18 de juliol | Viatge en parella</p>
+            <p class="destino"><i class="fas fa-map-marker-alt"></i> Alaró, Serra de Tramuntana & Palma</p>
+        </header>
+
+        <!-- Pestanyes -->
+        <div class="tabs-container">
+            <nav class="tabs" id="tabsList"></nav>
+        </div>
+
+        <!-- Contingut dinàmic -->
+        <main class="main-content">
+            <section class="day-header" id="dayHeader"></section>
+            <div class="day-content" id="dayContent"></div>
+
+            <!-- Panell d'informació general (Checklist) -->
+            <section class="info-panel" id="infoPanel">
+                <h3><i class="fas fa-tasks"></i> Checklist i Consells Generals</h3>
+                <ul id="checklist"></ul>
+            </section>
+        </main>
+
+        <!-- Peu de pàgina -->
+        <footer class="footer">
+            <p>Itinerari creat per a unes vacances inoblidables</p>
+            <p class="tip"><i class="fas fa-lightbulb"></i> Aquest pla és flexible. L'important és gaudir!</p>
+        </footer>
     </div>
 
-    <!-- DIA 1 -->
-    <div class="day">
-        <div class="day-header">
-            <span class="day-title">Dimarts 14 · Volta des General</span>
-            <span class="day-sub">Arribada i primer bany</span>
-        </div>
-        <div class="day-content">
-            <p><span class="label">✈️ Vol:</span> VY3902 (BCN 7:00 → PMI 7:55). Recollida del cotxe a Autos Mallorca.</p>
-            <p><span class="label">🥾 Ruta:</span> <a class="route-link" href="https://es.wikiloc.com/rutas-senderismo/volta-des-general-banyalbufar-139413324" target="_blank">Volta des General (Banyalbufar)</a> — 5 km, fàcil, amb ombra i vistes al mar. Aparcament al km 85,250 de la MA-10.</p>
-            <p><span class="label">🏖️ Tarda:</span> Bany a les cales de Banyalbufar o Port de Canonge. Relax i primer contacte amb el mar.</p>
-            <p><span class="label">🍽️ Nit:</span> Sopar tranquil a Alaró.</p>
-        </div>
-    </div>
-
-    <!-- DIA 2 -->
-    <div class="day">
-        <div class="day-header">
-            <span class="day-title">Dimecres 15 · Camí des Correu <span style="font-weight:400; font-size:0.9rem;">o Cala Torta</span></span>
-            <span class="day-sub">Dues opcions, una decisió</span>
-        </div>
-        <div class="day-content">
-            <p><span class="label">🥾 Opció A:</span> <a class="route-link" href="https://es.wikiloc.com/rutas-senderismo/el-cami-des-correu-esporles-banyalbufar-y-regreso-35602670" target="_blank">Camí des Correu</a> (Esporles–Banyalbufar). 8 km, molta ombra, paisatge de bosc i muntanya.</p>
-            <p><span class="label">🏖️ Opció B:</span> <a class="route-link" href="https://www.wikiloc.com/walking-trails/cala-torta-cala-mitjana-cala-estreta-cala-dentol-cala-matzoc-torre-daubarca-31232795" target="_blank">Cala Torta · Mitjana · Estreta · Déntol · Matzoc</a> — 6,3 km, cales verges, poca ombra, pista de terra amb compte.</p>
-            <p><span class="label">🌊 Tarda:</span> Bany i relax a la platja escollida. Si aneu a Cala Torta, dutxa després a la Platja d'Alcúdia.</p>
-            <p><span class="label">🍽️ Nit:</span> Sopar tranquil a Alaró.</p>
-        </div>
-    </div>
-
-    <!-- DIA 3 -->
-    <div class="day">
-        <div class="day-header">
-            <span class="day-title">Dijous 16 · Penyal de l'Honor <span style="font-weight:400; font-size:0.9rem;">+ sopar U Mayol</span></span>
-            <span class="day-sub">Muntanya i arròs</span>
-        </div>
-        <div class="day-content">
-            <p><span class="label">🥾 Ruta:</span> <a class="route-link" href="https://es.wikiloc.com/rutas-carrera-por-montana/penyal-de-lhonor-77365916" target="_blank">Penyal de l'Honor (Bunyola)</a> — 10,5 km, molta ombra, unes 3 hores de caminada.</p>
-            <p><span class="label">🚿 Tarda:</span> Retorn a Alaró, dutxa i migdiada reparadora.</p>
-            <p><span class="label">🍚 Sopar:</span> <strong>U Mayol (Cala Sant Vicenç)</strong> — Arroz negre amb chipirones. Reserva imprescindible al <strong>+34 629 462 125</strong>.</p>
-            <p><span class="label">🚗 Retorn:</span> 22:30 cap a Alaró (40 min).</p>
-        </div>
-    </div>
-
-    <!-- DIA 4 -->
-    <div class="day">
-        <div class="day-header">
-            <span class="day-title">Divendres 17 · Dia a Alcúdia</span>
-            <span class="day-sub">Platja, dutxa i sopar de tapes</span>
-        </div>
-        <div class="day-content">
-            <p><span class="label">🏖️ Matí:</span> Sortida cap a Alcúdia. Platja <strong>Es Morer Vermell</strong> — tranquil·la, ambient local, aparcament fàcil als carrers dels voltants. <span class="tag">Sense serveis (només papereres)</span></p>
-            <p><span class="label">🚿 Tarda:</span> Dutxa i lavabos a la <strong>Platja d'Alcúdia</strong> (disposa de dutxes públiques i gratuïtes al llarg de tota la platja).</p>
-            <p><span class="label">🍽️ Nit:</span> Sopar de tapes al centre d'Alcúdia. Passeig nocturn pel casc antic.</p>
-            <p><span class="label">🚗 Retorn:</span> 23:30 cap a Alaró.</p>
-        </div>
-    </div>
-
-    <!-- DIA 5 -->
-    <div class="day">
-        <div class="day-header">
-            <span class="day-title">Dissabte 18 · Palma & tornada</span>
-            <span class="day-sub">L'últim tast</span>
-        </div>
-        <div class="day-content">
-            <p><span class="label">🥐 Matí:</span> <strong>Can Joan de s'Aigo</strong> (Carrer Can Sanç, 10) — ensaimada + xocolata desfeta. Aparcament recomanat: carrer Àngel Guimerà (zona ORA) o Park & Ride Son Fuster.</p>
-            <p><span class="label">🚗 Tarda:</span> Devolució del cotxe a Autos Mallorca (15:30).</p>
-            <p><span class="label">✈️ Vol:</span> VY3917 (PMI 19:30 → BCN 20:30). Arribada a Sant Sadurní cap a les 22:30.</p>
-        </div>
-    </div>
-
-    <!-- FORMENTOR (SECCIÓ INFORMATIVA) -->
-    <hr>
-    <div class="formentor-note">
-        <h4>🚧 Si us ve de gust: Platja de Formentor</h4>
-        <p><strong>Restriccions 2026:</strong> Del 15 de maig al 18 d'octubre, de 10:00 a 22:00, l'accés amb vehicle privat a la MA-2210 està restringit. La barrera (km 8,7) es tanca quan l'aparcament (300 places) és ple. <strong>Multes de 100 a 200 €</strong> per accés no autoritzat <a class="route-link" href="https://www.ultimahora.es/noticias/part-forana/2026/06/02/2636839/formentor-colas-caos-silencio-buses-del-tib-invasion-cabras/relacionadas.html" target="_blank">[font]</a>.</p>
-        <p><strong>Per anar-hi:</strong> Cal <strong>sortir d'Alaró a les 7:30</strong> i arribar abans de les 9:00 per trobar aparcament. <span class="tag">Si la barrera està tancada, gireu cua i aneu a Cala Sant Vicenç o Platja de Muro</span>.</p>
-        <p><strong>Alternativa:</strong> Bus TIB línia 334 (Alcúdia-Formentor) durant les hores de restricció <a class="route-link" href="https://www.tib.org" target="_blank">[TIB]</a>.</p>
-    </div>
-
-    <div class="footer">
-        🍻 Bon viatge, Jordi & Llúcia · Juliol 2026
-    </div>
-</div>
+    <script src="./viatge.json"></script>
+    <script src="./app.js"></script>
 </body>
 </html>
