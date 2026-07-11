@@ -40,6 +40,71 @@
         "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Can+Joan+de+s%27Aigo+Palma",
         "recomanacio": "No marxeu sense provar les ensaimades!"
       },
+      "restaurantsAlaro": [
+        {
+          "nom": "La Bufala",
+          "tipus": "Italiana",
+          "descripcio": "Pizzes artesanes al forn de llenya i pasta fresca. Massa de llarga fermentació i ingredients de qualitat. Terrassa molt agradable.",
+          "telefon": "+34 971 879 454",
+          "enllacMapa": "https://www.google.com/maps/search/?api=1&query=La+Bufala+Alar%C3%B3"
+        },
+        {
+          "nom": "Gallardo Restaurante Pizzeria",
+          "tipus": "Italiana",
+          "descripcio": "Autèntica cuina italiana amb pizzas romanes i plats creatius. El cuiner és italià.",
+          "telefon": "+34 647 924 577",
+          "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Gallardo+Restaurante+Pizzeria+Alar%C3%B3"
+        },
+        {
+          "nom": "Sa Tafona",
+          "tipus": "Mallorquina tradicional",
+          "descripcio": "Cuina casolana amb receptes tradicionals: tumbet, porcella, xai, pa amb oli. Ambient acollidor.",
+          "telefon": "+34 871 153 868",
+          "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Sa+Tafona+Alar%C3%B3"
+        },
+        {
+          "nom": "Traffic Restaurant",
+          "tipus": "Mallorquina i mediterrània",
+          "descripcio": "Clàssic des de 1991. Cuina mediterrània i mallorquina al cor de la plaça. Terrassa amb bon ambient.",
+          "telefon": "+34 971 879 117",
+          "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Traffic+Restaurant+Alar%C3%B3"
+        },
+        {
+          "nom": "Vila Cinc",
+          "tipus": "Mediterrània moderna",
+          "descripcio": "Restauració moderna amb terrassa a la plaça. Plats creatius i ambient relaxat.",
+          "telefon": "+34 658 899 261",
+          "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Vila+Cinc+Alar%C3%B3"
+        },
+        {
+          "nom": "El Trastero Cuina Bar",
+          "tipus": "Mediterrània, tapes",
+          "descripcio": "El millor per sopar segons les crítiques. Tapes creatives, menjar fresc i bon preu.",
+          "telefon": "+34 677 986 639",
+          "enllacMapa": "https://www.google.com/maps/search/?api=1&query=El+Trastero+Cuina+Bar+Alar%C3%B3"
+        },
+        {
+          "nom": "Sis Market Café",
+          "tipus": "Brunch, entrepans, cafeteria",
+          "descripcio": "Ideal per esmorzar o dinar. Terrassa preciosa al mercat. Plats lleugers i bons esmorzars.",
+          "telefon": "+34 971 519 060",
+          "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Sis+Market+Caf%C3%A9+Alar%C3%B3"
+        },
+        {
+          "nom": "Forastera",
+          "tipus": "Cervesa artesana, menjar casolà",
+          "descripcio": "Microcerveseria amb ambient de ciclistes. Bona selecció de cerveses artesanes i menjar casolà.",
+          "telefon": "+34 633 728 897",
+          "enllacMapa": "https://maps.app.goo.gl/g96sSt7XVGoZGRFn8"
+        },
+        {
+          "nom": "Restaurant Terra Mar & Foc",
+          "tipus": "Graella, carn i peix a la brasa",
+          "descripcio": "Graella de carbó amb porcions generoses. Especialistes en carns i peix a la brasa.",
+          "telefon": "+34 619 106 928",
+          "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Terra+Mar+Foc+Alar%C3%B3"
+        }
+      ],
       "llocEspecial": {
         "nom": "❤️ El nostre racó especial",
         "enllacMapa": "https://maps.app.goo.gl/a8hDrqyQ9UucBPgL9"
@@ -114,33 +179,10 @@
           {
             "horari": "21:00 - 23:00",
             "activitat": "Sopar tranquil a Alaró",
-            "detalls": "Sopar a Alaró (opcions: Es Verger, Sa Tafona o Traffic Restaurant)."
+            "detalls": "Sopar a Alaró (consulteu la pestanya Restaurants per a les opcions disponibles)."
           }
         ],
         "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/volta-des-general-banyalbufar-139413324",
-        "restaurantsSopar": [
-          {
-            "nom": "Es Verger",
-            "especialitat": "Cordero a la brasa, cuina mallorquina tradicional",
-            "ubicacio": "Cami del Castell, s/n, Alaró",
-            "telefon": "971 182 126",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Es+Verger+Alar%C3%B3"
-          },
-          {
-            "nom": "Sa Tafona",
-            "especialitat": "Cuina mallorquina tradicional",
-            "ubicacio": "Carrer de la Verge del Refugi, 1, Alaró",
-            "telefon": "971 879 208",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Sa+Tafona+Alar%C3%B3"
-          },
-          {
-            "nom": "Traffic Restaurant",
-            "especialitat": "Cuina mallorquina i mediterrània",
-            "ubicacio": "Plaça de la Vila, 8, Alaró",
-            "telefon": "971 879 117",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Traffic+Restaurant+Alar%C3%B3"
-          }
-        ],
         "notesDia": "Recordeu que a Alaró Natura NO es pot fumar enlloc de l'establiment (habitacions, terrasses, zones comunes). Per fumar cal sortir al carrer o al jardí."
       },
       {
@@ -186,7 +228,7 @@
           {
             "horari": "21:00 - 23:00",
             "activitat": "Sopar tranquil a Alaró",
-            "detalls": "Sopar a Alaró."
+            "detalls": "Sopar a Alaró (consulteu la pestanya Restaurants per a les opcions disponibles)."
           }
         ],
         "enllacRuta": "https://es.wikiloc.com/rutas-senderismo/el-cami-des-correu-esporles-banyalbufar-y-regreso-35602670",
@@ -256,15 +298,6 @@
           }
         ],
         "enllacRuta": "https://es.wikiloc.com/rutas-carrera-por-montana/penyal-de-lhonor-77365916",
-        "restaurantsSopar": [
-          {
-            "nom": "U Mayol",
-            "especialitat": "Arròs negre amb chipirones cruixents i all i oli d'all rostit",
-            "ubicacio": "Cala Sant Vicenç",
-            "telefon": "+34 629 462 125",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=U+Mayol+Cala+Sant+Vicen%C3%A7"
-          }
-        ],
         "notesDia": "IMPORTANT: Reservar U Mayol amb antelació (trucar al +34 629 462 125). La ruta del Penyal de l'Honor és moderada, porteu aigua suficient i calçat adequat."
       },
       {
@@ -306,15 +339,6 @@
             "horari": "23:30 - 00:15",
             "activitat": "Retorn a Alaró",
             "detalls": "Retorn a Alaró (conducció tranquil·la). Arribada a l'hotel i descans."
-          }
-        ],
-        "restaurantsSopar": [
-          {
-            "nom": "Tapes a Alcúdia",
-            "especialitat": "Tapes, pizza, cuina mediterrània",
-            "ubicacio": "Centre d'Alcúdia",
-            "telefon": "No disponible",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Alc%C3%BAdia+centre+restaurants"
           }
         ],
         "notesDia": "La Platja Es Morer Vermell és més tranquil·la que la zona central d'Alcúdia. Si la barrera del Cap de Formentor està tancada, aquesta és una bona alternativa."
@@ -383,22 +407,6 @@
             "horari": "21:00 - 22:30",
             "activitat": "Recollida del cotxe a AparcaGo i tornada a Sant Sadurní",
             "detalls": "Recollida del cotxe al pàrquing. Conducció de tornada a Sant Sadurní d'Anoia, arribada prevista cap a les 22:30. Final del viatge."
-          }
-        ],
-        "restaurantsDinar": [
-          {
-            "nom": "Sa Tafona",
-            "especialitat": "Cuina mallorquina tradicional",
-            "ubicacio": "Alaró",
-            "telefon": "971 879 208",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Sa+Tafona+Alar%C3%B3"
-          },
-          {
-            "nom": "Traffic Restaurant",
-            "especialitat": "Cuina mallorquina tradicional",
-            "ubicacio": "Alaró",
-            "telefon": "971 879 117",
-            "enllacMapa": "https://www.google.com/maps/search/?api=1&query=Traffic+Restaurant+Alar%C3%B3"
           }
         ],
         "notesDia": "Recordeu deixar el dipòsit del cotxe PLE abans de tornar-lo (si no, us cobraran 10 € de taxa + el combustible). L'horari de check-out és a les 10:30. Puntualitat. Porteu les targetes d'embarcament digital o impresa. Les cues a l'aeroport de Palma a l'estiu poden ser llargues; aneu amb temps de sobres."
