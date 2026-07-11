@@ -45,6 +45,15 @@ function generarPestanyes(viatge) {
         tabsContainer.appendChild(boto);
     });
     
+    const botoRestaurants = document.createElement('button');
+    botoRestaurants.className = 'tab-button';
+    botoRestaurants.innerHTML = `<i class="fas fa-utensils"></i> Restaurants`;
+    botoRestaurants.addEventListener('click', () => {
+        mostrarRestaurants();
+        activarPestanya(botoRestaurants);
+    });
+    tabsContainer.appendChild(botoRestaurants);
+    
     const botoChecklist = document.createElement('button');
     botoChecklist.className = 'tab-button';
     botoChecklist.innerHTML = `<i class="fas fa-tasks"></i> Checklist`;
@@ -81,7 +90,6 @@ function generarPestanyes(viatge) {
     });
     tabsContainer.appendChild(botoTemps);
     
-    // Pestanya Extres (Formentor)
     const botoExtres = document.createElement('button');
     botoExtres.className = 'tab-button';
     botoExtres.innerHTML = `<i class="fas fa-info-circle"></i> Extres`;
@@ -176,46 +184,41 @@ function mostrarDia(dia) {
         plaContainer.appendChild(colUnica);
         dayContent.appendChild(plaContainer);
     }
-    
-    if (dia.restaurantsDinar && dia.restaurantsDinar.length > 0) {
-        const restaurantsSection = document.createElement('div');
-        restaurantsSection.className = 'day-info-panel';
-        let html = `<h4><i class="fas fa-utensils"></i> Restaurants recomanats per dinar</h4><div class="contact-list">`;
-        dia.restaurantsDinar.forEach(r => {
-            html += `<div class="contact-card">
-                        <h4>${r.nom}</h4>
-                        <div class="contact-info">
-                            <p><i class="fas fa-star"></i> ${r.especialitat}</p>
-                            <p><i class="fas fa-map-pin"></i> ${r.ubicacio}</p>
-                            ${r.telefon && r.telefon !== "No disponible" ? `<p><i class="fas fa-phone"></i> ${r.telefon}</p>` : ''}
-                            ${r.enllacMapa ? `<a href="${r.enllacMapa}" target="_blank" class="contact-link"><i class="fas fa-map-marked-alt"></i> Veure al mapa</a>` : ''}
-                        </div>
-                    </div>`;
-        });
-        html += `</div>`;
-        restaurantsSection.innerHTML = html;
-        dayContent.appendChild(restaurantsSection);
-    }
+}
 
-    if (dia.restaurantsSopar && dia.restaurantsSopar.length > 0) {
-        const restaurantsSection = document.createElement('div');
-        restaurantsSection.className = 'day-info-panel';
-        let html = `<h4><i class="fas fa-utensils"></i> Restaurants recomanats per sopar</h4><div class="contact-list">`;
-        dia.restaurantsSopar.forEach(r => {
-            html += `<div class="contact-card">
-                        <h4>${r.nom}</h4>
-                        <div class="contact-info">
-                            <p><i class="fas fa-star"></i> ${r.especialitat}</p>
-                            <p><i class="fas fa-map-pin"></i> ${r.ubicacio}</p>
-                            ${r.telefon ? `<p><i class="fas fa-phone"></i> ${r.telefon}</p>` : ''}
-                            ${r.enllacMapa ? `<a href="${r.enllacMapa}" target="_blank" class="contact-link"><i class="fas fa-map-marked-alt"></i> Veure al mapa</a>` : ''}
-                        </div>
-                    </div>`;
-        });
-        html += `</div>`;
-        restaurantsSection.innerHTML = html;
-        dayContent.appendChild(restaurantsSection);
+function mostrarRestaurants() {
+    const dayHeader = document.getElementById('dayHeader');
+    const dayContent = document.getElementById('dayContent');
+    
+    dayHeader.innerHTML = `
+        <h2 class="day-title"><i class="fas fa-utensils"></i> Restaurants d'Alaró</h2>
+        <p class="day-date"><i class="fas fa-info-circle"></i> Totes les opcions per sopar al poble</p>
+    `;
+    
+    const restaurants = viatgeActual.contactesGenerals.restaurantsAlaro;
+    if (!restaurants || restaurants.length === 0) {
+        dayContent.innerHTML = '<p>No hi ha restaurants disponibles.</p>';
+        return;
     }
+    
+    let html = '<div class="contact-list">';
+    restaurants.forEach(r => {
+        html += `
+            <div class="contact-card">
+                <h4>${r.nom}</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-star"></i> <strong>${r.tipus}</strong></p>
+                    <p><i class="fas fa-info-circle"></i> ${r.descripcio}</p>
+                    <p><i class="fas fa-phone"></i> ${r.telefon}</p>
+                    <a href="${r.enllacMapa}" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <i class="fas fa-map-marked-alt"></i> Veure al mapa
+                    </a>
+                </div>
+            </div>
+        `;
+    });
+    html += '</div>';
+    dayContent.innerHTML = html;
 }
 
 function mostrarChecklist() {
@@ -374,20 +377,6 @@ function mostrarContactes() {
                         <p><i class="fas fa-star"></i> No marxeu sense provar les ensaimades!</p>
                     </div>
                 </div>`;
-    }
-    
-    if (c.restaurantsGenerals && c.restaurantsGenerals.length > 0) {
-        c.restaurantsGenerals.forEach(r => {
-            html += `<div class="contact-card">
-                        <h4><i class="fas fa-utensils"></i> ${r.nom}</h4>
-                        <div class="contact-info">
-                            <p><i class="fas fa-star"></i> ${r.especialitat}</p>
-                            <p><i class="fas fa-map-pin"></i> ${r.ubicacio}</p>
-                            ${r.telefon && r.telefon !== "No trobat" ? `<p><i class="fas fa-phone"></i> ${r.telefon}</p>` : '<p><i class="fas fa-phone"></i> Telèfon no trobat</p>'}
-                            <a href="${r.enllacMapa}" target="_blank" class="contact-link"><i class="fas fa-map-marked-alt"></i> Veure al mapa</a>
-                        </div>
-                    </div>`;
-        });
     }
     
     if (c.llocEspecial) {
