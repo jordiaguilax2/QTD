@@ -3,6 +3,15 @@
 let dadesViatge = null;
 let viatgeActual = null;
 
+// Colors per a cada dia
+const colorsDia = {
+    1: { principal: '#3498db', fons: '#ebf5fb', classe: 'dia-1' },
+    2: { principal: '#2ecc71', fons: '#eafaf1', classe: 'dia-2' },
+    3: { principal: '#e67e22', fons: '#fdf2e9', classe: 'dia-3' },
+    4: { principal: '#e84393', fons: '#fce4ec', classe: 'dia-4' },
+    5: { principal: '#8e44ad', fons: '#f4ecf7', classe: 'dia-5' }
+};
+
 async function carregarDadesViatge() {
     try {
         const resposta = await fetch('viatge.json');
@@ -36,6 +45,7 @@ function generarPestanyes(viatge) {
         boto.className = 'tab-button';
         boto.dataset.type = 'dia';
         boto.dataset.index = index;
+        boto.dataset.dia = dia.numero;
         if (index === 0) boto.classList.add('active');
         boto.innerHTML = `<i class="fas fa-${obtenirIconaDia(dia.numero)}"></i> Dia ${dia.numero}`;
         boto.addEventListener('click', () => {
@@ -47,6 +57,7 @@ function generarPestanyes(viatge) {
     
     const botoRestaurants = document.createElement('button');
     botoRestaurants.className = 'tab-button';
+    botoRestaurants.dataset.type = 'restaurants';
     botoRestaurants.innerHTML = `<i class="fas fa-utensils"></i> Restaurants`;
     botoRestaurants.addEventListener('click', () => {
         mostrarRestaurants();
@@ -56,6 +67,7 @@ function generarPestanyes(viatge) {
     
     const botoChecklist = document.createElement('button');
     botoChecklist.className = 'tab-button';
+    botoChecklist.dataset.type = 'checklist';
     botoChecklist.innerHTML = `<i class="fas fa-tasks"></i> Checklist`;
     botoChecklist.addEventListener('click', () => {
         mostrarChecklist();
@@ -65,6 +77,7 @@ function generarPestanyes(viatge) {
     
     const botoVols = document.createElement('button');
     botoVols.className = 'tab-button';
+    botoVols.dataset.type = 'vols';
     botoVols.innerHTML = `<i class="fas fa-plane"></i> Vols`;
     botoVols.addEventListener('click', () => {
         mostrarVols();
@@ -74,6 +87,7 @@ function generarPestanyes(viatge) {
     
     const botoContactes = document.createElement('button');
     botoContactes.className = 'tab-button';
+    botoContactes.dataset.type = 'contactes';
     botoContactes.innerHTML = `<i class="fas fa-address-book"></i> Contactes`;
     botoContactes.addEventListener('click', () => {
         mostrarContactes();
@@ -83,6 +97,7 @@ function generarPestanyes(viatge) {
     
     const botoTemps = document.createElement('button');
     botoTemps.className = 'tab-button';
+    botoTemps.dataset.type = 'temps';
     botoTemps.innerHTML = `<i class="fas fa-cloud-sun"></i> Temps`;
     botoTemps.addEventListener('click', () => {
         mostrarTemps();
@@ -92,6 +107,7 @@ function generarPestanyes(viatge) {
     
     const botoExtres = document.createElement('button');
     botoExtres.className = 'tab-button';
+    botoExtres.dataset.type = 'extres';
     botoExtres.innerHTML = `<i class="fas fa-info-circle"></i> Extres`;
     botoExtres.addEventListener('click', () => {
         mostrarExtres();
@@ -101,14 +117,36 @@ function generarPestanyes(viatge) {
 }
 
 function activarPestanya(pestanya) {
-    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+        // Eliminar classes de color
+        btn.classList.remove('dia-1', 'dia-2', 'dia-3', 'dia-4', 'dia-5');
+    });
     pestanya.classList.add('active');
+    
+    // Si és una pestanya de dia, afegir la classe de color corresponent
+    const diaNum = pestanya.dataset.dia;
+    if (diaNum && colorsDia[diaNum]) {
+        pestanya.classList.add(colorsDia[diaNum].classe);
+    }
+    
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function mostrarDia(dia) {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
+    
+    // Eliminar classes de color anteriors
+    dayHeader.className = 'day-header';
+    dayContent.className = 'day-content';
+    
+    // Afegir la classe de color del dia
+    const color = colorsDia[dia.numero];
+    if (color) {
+        dayHeader.classList.add(color.classe);
+        dayContent.classList.add(color.classe);
+    }
     
     dayHeader.innerHTML = `
         <h2 class="day-title"><i class="fas fa-${obtenirIconaDia(dia.numero)}"></i> ${dia.titol}</h2>
@@ -163,7 +201,7 @@ function mostrarDia(dia) {
         
         const colUnica = document.createElement('div');
         colUnica.className = 'comparativa-columna original';
-        colUnica.style.borderLeftColor = '#2a5a4a';
+        colUnica.style.borderLeftColor = color ? color.principal : '#2a5a4a';
         colUnica.style.flex = '1';
         
         let html = `<h3><i class="fas fa-calendar-check"></i> Pla del dia</h3><ul>`;
@@ -190,8 +228,12 @@ function mostrarRestaurants() {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
     
+    // Eliminar classes de color anteriors
+    dayHeader.className = 'day-header';
+    dayContent.className = 'day-content';
+    
     dayHeader.innerHTML = `
-        <h2 class="day-title"><i class="fas fa-utensils"></i> Restaurants d'Alaró</h2>
+        <h2 class="day-title" style="color: #e67e22;"><i class="fas fa-utensils"></i> Restaurants d'Alaró</h2>
         <p class="day-date"><i class="fas fa-info-circle"></i> Totes les opcions per sopar al poble</p>
     `;
     
@@ -225,8 +267,11 @@ function mostrarChecklist() {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
     
+    dayHeader.className = 'day-header';
+    dayContent.className = 'day-content';
+    
     dayHeader.innerHTML = `
-        <h2 class="day-title"><i class="fas fa-tasks"></i> Checklist del Viatge</h2>
+        <h2 class="day-title" style="color: #2a5a4a;"><i class="fas fa-tasks"></i> Checklist del Viatge</h2>
         <p class="day-date"><i class="fas fa-check-circle"></i> Marca els elements que ja tinguis preparats</p>
     `;
     
@@ -295,7 +340,10 @@ function mostrarVols() {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
     
-    dayHeader.innerHTML = `<h2 class="day-title"><i class="fas fa-plane"></i> Informació dels Vols</h2>`;
+    dayHeader.className = 'day-header';
+    dayContent.className = 'day-content';
+    
+    dayHeader.innerHTML = `<h2 class="day-title" style="color: #2980b9;"><i class="fas fa-plane"></i> Informació dels Vols</h2>`;
     
     if (!viatgeActual.infoVol) {
         dayContent.innerHTML = '<p>No hi ha informació de vols disponible.</p>';
@@ -336,7 +384,10 @@ function mostrarContactes() {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
     
-    dayHeader.innerHTML = `<h2 class="day-title"><i class="fas fa-address-book"></i> Contactes i Informació Útil</h2>`;
+    dayHeader.className = 'day-header';
+    dayContent.className = 'day-content';
+    
+    dayHeader.innerHTML = `<h2 class="day-title" style="color: #2c3e50;"><i class="fas fa-address-book"></i> Contactes i Informació Útil</h2>`;
     
     if (!viatgeActual.contactesGenerals) {
         dayContent.innerHTML = '<p>No hi ha contactes disponibles.</p>';
@@ -396,7 +447,10 @@ function mostrarTemps() {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
     
-    dayHeader.innerHTML = `<h2 class="day-title"><i class="fas fa-cloud-sun"></i> Temps a Mallorca</h2><p class="day-date"><i class="fas fa-sync-alt"></i> Dades en temps real</p>`;
+    dayHeader.className = 'day-header';
+    dayContent.className = 'day-content';
+    
+    dayHeader.innerHTML = `<h2 class="day-title" style="color: #3498db;"><i class="fas fa-cloud-sun"></i> Temps a Mallorca</h2><p class="day-date"><i class="fas fa-sync-alt"></i> Dades en temps real</p>`;
     
     dayContent.innerHTML = `<div class="loading-message"><i class="fas fa-spinner fa-spin"></i><p>Carregant dades meteorològiques...</p></div>`;
     
@@ -454,8 +508,11 @@ function mostrarExtres() {
     const dayHeader = document.getElementById('dayHeader');
     const dayContent = document.getElementById('dayContent');
     
+    dayHeader.className = 'day-header';
+    dayContent.className = 'day-content';
+    
     dayHeader.innerHTML = `
-        <h2 class="day-title"><i class="fas fa-info-circle"></i> Extres: Platja de Formentor</h2>
+        <h2 class="day-title" style="color: #95a5a6;"><i class="fas fa-info-circle"></i> Extres: Platja de Formentor</h2>
         <p class="day-date">🚧 Si us ve de gust, aquí teniu la informació</p>
     `;
     
