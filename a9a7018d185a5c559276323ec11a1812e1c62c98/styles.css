@@ -19,10 +19,10 @@ body {
     flex-direction: column;
 }
 
-/* Capçalera */
+/* CAPÇALERA - MÉS ALEGRE */
 .header {
-    background: linear-gradient(135deg, #1e3c32 0%, #2a5a4a 100%);
-    color: white;
+    background: linear-gradient(135deg, #ff9a56 0%, #ffde7d 100%);
+    color: #1e3c32;
     padding: 1.5rem 1rem;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -35,21 +35,24 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    color: #1e3c32;
 }
 
 .subtitle {
     font-size: 0.95rem;
     opacity: 0.9;
     margin-bottom: 0.5rem;
+    color: #1e3c32;
 }
 
 .destino {
     font-size: 0.85rem;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.3);
     display: inline-block;
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     margin-top: 0.5rem;
+    color: #1e3c32;
 }
 
 /* Pestanyes */
@@ -91,6 +94,33 @@ body {
     background-color: #e8f5f0;
 }
 
+/* Colors per a les pestanyes actives (s'apliquen des de JavaScript) */
+.tab-button.active.dia-1 {
+    color: #3498db;
+    border-bottom-color: #3498db;
+    background-color: #ebf5fb;
+}
+.tab-button.active.dia-2 {
+    color: #2ecc71;
+    border-bottom-color: #2ecc71;
+    background-color: #eafaf1;
+}
+.tab-button.active.dia-3 {
+    color: #e67e22;
+    border-bottom-color: #e67e22;
+    background-color: #fdf2e9;
+}
+.tab-button.active.dia-4 {
+    color: #e84393;
+    border-bottom-color: #e84393;
+    background-color: #fce4ec;
+}
+.tab-button.active.dia-5 {
+    color: #8e44ad;
+    border-bottom-color: #8e44ad;
+    background-color: #f4ecf7;
+}
+
 /* Contingut principal */
 .main-content {
     flex: 1;
@@ -130,7 +160,58 @@ body {
     font-size: 0.9rem;
 }
 
-/* COMPARATIVA: dues columnes amb horaris */
+/* COLORS PER DIA */
+/* Dia 1 - Blau */
+.dia-1 .day-title { color: #3498db; }
+.dia-1 .day-title i { color: #3498db; }
+.dia-1 .day-header { border-bottom-color: #3498db; }
+.dia-1 .time-slot { border-left-color: #3498db; }
+.dia-1 .time-range { color: #2980b9; }
+.dia-1 .day-notes { border-left-color: #3498db; background-color: #ebf5fb; }
+.dia-1 .ruta-link { background-color: #3498db20; color: #2980b9; border: 1px solid #3498db40; }
+.dia-1 .ruta-link:hover { background-color: #3498db40; }
+
+/* Dia 2 - Verd */
+.dia-2 .day-title { color: #2ecc71; }
+.dia-2 .day-title i { color: #2ecc71; }
+.dia-2 .day-header { border-bottom-color: #2ecc71; }
+.dia-2 .time-slot { border-left-color: #2ecc71; }
+.dia-2 .time-range { color: #27ae60; }
+.dia-2 .day-notes { border-left-color: #2ecc71; background-color: #eafaf1; }
+.dia-2 .ruta-link { background-color: #2ecc7120; color: #27ae60; border: 1px solid #2ecc7140; }
+.dia-2 .ruta-link:hover { background-color: #2ecc7140; }
+
+/* Dia 3 - Taronja */
+.dia-3 .day-title { color: #e67e22; }
+.dia-3 .day-title i { color: #e67e22; }
+.dia-3 .day-header { border-bottom-color: #e67e22; }
+.dia-3 .time-slot { border-left-color: #e67e22; }
+.dia-3 .time-range { color: #d35400; }
+.dia-3 .day-notes { border-left-color: #e67e22; background-color: #fdf2e9; }
+.dia-3 .ruta-link { background-color: #e67e2220; color: #d35400; border: 1px solid #e67e2240; }
+.dia-3 .ruta-link:hover { background-color: #e67e2240; }
+
+/* Dia 4 - Rosa */
+.dia-4 .day-title { color: #e84393; }
+.dia-4 .day-title i { color: #e84393; }
+.dia-4 .day-header { border-bottom-color: #e84393; }
+.dia-4 .time-slot { border-left-color: #e84393; }
+.dia-4 .time-range { color: #c2185b; }
+.dia-4 .day-notes { border-left-color: #e84393; background-color: #fce4ec; }
+.dia-4 .ruta-link { background-color: #e8439320; color: #c2185b; border: 1px solid #e8439340; }
+.dia-4 .ruta-link:hover { background-color: #e8439340; }
+
+/* Dia 5 - Lila */
+.dia-5 .day-title { color: #8e44ad; }
+.dia-5 .day-title i { color: #8e44ad; }
+.dia-5 .day-header { border-bottom-color: #8e44ad; }
+.dia-5 .time-slot { border-left-color: #8e44ad; }
+.dia-5 .time-range { color: #6c3483; }
+.dia-5 .day-notes { border-left-color: #8e44ad; background-color: #f4ecf7; }
+.dia-5 .ruta-link { background-color: #8e44ad20; color: #6c3483; border: 1px solid #8e44ad40; }
+.dia-5 .ruta-link:hover { background-color: #8e44ad40; }
+
+/* COMPARATIVA: dues columnes */
 .comparativa-container {
     display: flex;
     flex-direction: column;
@@ -215,17 +296,11 @@ body {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #e3f2fd;
-    color: #1565c0;
     border-radius: 6px;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
     transition: background-color 0.3s ease;
-}
-
-.ruta-link:hover {
-    background-color: #bbdefb;
 }
 
 .ruta-link i {
@@ -296,7 +371,7 @@ body {
     font-size: 0.85rem;
 }
 
-/* CHECKLIST (pestanya separada) */
+/* CHECKLIST */
 .checklist-container {
     background-color: white;
     border-radius: 12px;
